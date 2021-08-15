@@ -12,8 +12,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'sale',
     pathMatch: 'full'
+  },
+  {
+    path: 'sale',
+    loadChildren: () => import('./sale/sale.module').then( m => m.SalePageModule)
   },
 ];
 
