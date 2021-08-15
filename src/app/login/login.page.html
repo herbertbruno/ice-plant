@@ -2,20 +2,22 @@
   <div class="outer">
     <h3>SIGN IN</h3>
     <ion-item>
-      <ion-icon name="person-circle"></ion-icon>
+      <div class="circle">
+        <ion-icon name="person-circle"></ion-icon>
+      </div>
       <ion-label>User Name:</ion-label>
       <ion-input></ion-input>
     </ion-item>
     <ion-item>
-      <ion-icon name="lock-closed"></ion-icon>
+      <div class="lock">
+        <ion-icon name="lock-closed"></ion-icon>
+      </div>
       <ion-label>Password:</ion-label>
       <ion-input></ion-input>
     </ion-item>
-    <ion-button expand="full" color="danger">SIGN IN </ion-button>
+    <ion-button expand="full" color="success">SIGN IN </ion-button>
     <ion-toggle color="danger"> </ion-toggle>
-   <ion-note color="danger">Remember me </ion-note>  
-   <ion-button  color="primary">Forgot password </ion-button>
-   <ion-button color="success">SIGN UP</ion-button>
- 
+    <ion-note color="danger">Remember me </ion-note>
+    <ion-button color="primary">Forgot password </ion-button>
   </div>
 </ion-content>
