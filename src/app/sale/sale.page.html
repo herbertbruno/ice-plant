@@ -7,7 +7,10 @@
 <ion-content class="ion-padding brunog">
   <ion-item>
     <ion-label> Date</ion-label>
-    <ion-datetime displayFormat="DD-MM-YYYY" placeholder="Select Date"></ion-datetime>
+    <ion-datetime
+      displayFormat="DD-MM-YYYY"
+      placeholder="Select Date"
+    ></ion-datetime>
   </ion-item>
   <ion-item>
     <ion-label>Time</ion-label>
@@ -23,42 +26,34 @@
     </ion-select>
   </ion-item>
   <ion-item>
-    <ion-label>Rate Per Ice :</ion-label>
-    <ion-input type="number"></ion-input>
-  
+    <ion-label> Rate Per Ice : </ion-label>
+    <ion-input type="number" [(ngModel)]="ratePerItem"></ion-input>
   </ion-item>
+  <ion-item>
+    <ion-label> No.of.Bars :</ion-label>
+    <ion-input type="number" [(ngModel)]="numberOfItems"></ion-input>
+  </ion-item>
+  <ion-radio-group>
+    <ion-item>Ice Type</ion-item>
     <ion-item>
-      <ion-label>
-        No.of.Bars :</ion-label>
-        <ion-input type="number"></ion-input>
-        
-      </ion-item>
-      <ion-radio-group >
-        <ion-item>Ice Type</ion-item>
-        <ion-item>
-          <ion-label>Full</ion-label>
-          <ion-radio slot="start" value="Full"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>Smashed</ion-label>
-          <ion-radio slot="start" value="Smashed"></ion-radio>
-        </ion-item>
+      <ion-label>Full</ion-label>
+      <ion-radio slot="start" value="Full"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Smashed</ion-label>
+      <ion-radio slot="start" value="Smashed"></ion-radio>
+    </ion-item>
   </ion-radio-group>
   <ion-item>
     <ion-button color="dark">Customer</ion-button>(optional)
     <ion-toolbar>
-  <ion-searchbar></ion-searchbar>
-</ion-toolbar>
+      <ion-searchbar></ion-searchbar>
+    </ion-toolbar>
   </ion-item>
   <ion-item>
-    <ion-label>
-      TOTAL :</ion-label>
-      
-      </ion-item>
-     <ion-item>
-        <ion-button color="dark">COMPLETE SALE</ion-button>
-      </ion-item>
-    </ion-content>
-      
-  
-      
+    <ion-label> TOTAL : {{numberOfItems * ratePerItem}} </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-button color="dark">COMPLETE SALE</ion-button>
+  </ion-item>
+</ion-content>
