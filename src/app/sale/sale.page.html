@@ -7,40 +7,58 @@
 <ion-content class="ion-padding brunog">
   <ion-item>
     <ion-label> Date</ion-label>
-    <ion-datetime
-      displayFormat="DD-MM-YYYY"
-      placeholder="selete Date"
-    ></ion-datetime>
+    <ion-datetime displayFormat="DD-MM-YYYY" placeholder="Select Date"></ion-datetime>
   </ion-item>
-
   <ion-item>
     <ion-label>Time</ion-label>
     <ion-datetime id="Time" displayFormat="HH:mm"></ion-datetime>
   </ion-item>
-
   <ion-item>
     <ion-label>Vechicle Type</ion-label>
-    <ion-select value="brown" ok-text="Okay" cancel-text="Dismiss">
-      <ion-select-option value="brown">Brown</ion-select-option>
-      <ion-select-option value="blonde">Blonde</ion-select-option>
-      <ion-select-option value="black">Black</ion-select-option>
-      <ion-select-option value="red">Red</ion-select-option>
+    <ion-select value="Two Wheeler" ok-text="Okay" cancel-text="Dismiss">
+      <ion-select-option value="Two Wheeler">Two Wheeler</ion-select-option>
+      <ion-select-option value="Auto">Auto</ion-select-option>
+      <ion-select-option value="Tembo">Tembo</ion-select-option>
+      <ion-select-option value="Truck">Truck</ion-select-option>
     </ion-select>
   </ion-item>
-
-  <input type="number" />
-  <h2>No Of Bars</h2>
-  <input type="number" />
-  <h2>Rate per Ice</h2>
-  <input type="number" />
-  <h2>Type of Ice</h2>
-  Full<ion-checkbox></ion-checkbox> Smashed<ion-checkbox></ion-checkbox>
-  <h2>Customer</h2>
-  optional
-  <ion-list>
+  <ion-item>
+    <ion-label>Rate Per Ice :</ion-label>
+    <ion-input type="number1"></ion-input>
+  
+  </ion-item>
     <ion-item>
-      <ion-note slot="start"></ion-note>
-      <ion-label>Note (Start)</ion-label>
-    </ion-item>
-  </ion-list>
-</ion-content>
+      <ion-label>
+        No.of.Bars :</ion-label>
+        <ion-input type="number2"></ion-input>
+        
+      </ion-item>
+      <ion-radio-group >
+        <ion-item>Ice Type</ion-item>
+        <ion-item>
+          <ion-label>Full</ion-label>
+          <ion-radio slot="start" value="Full"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Smashed</ion-label>
+          <ion-radio slot="start" value="Smashed"></ion-radio>
+        </ion-item>
+  </ion-radio-group>
+  <ion-item>
+    <ion-button color="primary">Customer</ion-button>(optional)
+    <ion-toolbar>
+  <ion-searchbar></ion-searchbar>
+</ion-toolbar>
+  </ion-item>
+  <ion-item>
+    <ion-label>
+      TOTAL :</ion-label>
+      <ion-button>Result</ion-button>
+      </ion-item>
+     <ion-item>
+        <ion-button expand="full">COMPLETE SALE</ion-button>
+      </ion-item>
+    </ion-content>
+      
+  
+      
