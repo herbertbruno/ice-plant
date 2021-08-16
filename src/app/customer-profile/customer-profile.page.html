@@ -5,20 +5,19 @@
     </div>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
   <div class="outer">
     <ion-item>
       <ion-label> Name:</ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="Name"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Mobile Number:</ion-label>
-      <ion-input type="tel"></ion-input>
+      <ion-input type="tel" [(ngModel)]="Mobile"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Email Id:</ion-label>
-      <ion-input type="email"></ion-input>
+      <ion-input type="Email" [(ngModel)]="Email"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Vechicle Type:</ion-label>
@@ -44,4 +43,9 @@
     </ion-radio-group>
     <ion-button color="success">Save</ion-button>
   </div>
+  <ion-item>
+    <ion-label> Name:{{Name}} </ion-label>
+    <ion-label> Mobile Number:{{Mobile}} </ion-label>
+    <ion-label> Email ID:{{Email}} </ion-label>
+  </ion-item>
 </ion-content>
