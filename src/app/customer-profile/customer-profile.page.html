@@ -1,0 +1,46 @@
+<ion-header>
+<ion-toolbar>
+    <div class="head">
+    <ion-title>Customer-Profile </ion-title>
+  </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="outer">
+  <ion-item>
+    <ion-label> Name:</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Mobile Number:</ion-label>
+    <ion-input type="number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Email Id:</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Vechicle Type:</ion-label>
+    <ion-select ok-text="Okay" cancel-text="Dismiss">
+    <ion-select-option value="Two Wheeler">Two Wheeler</ion-select-option>
+    <ion-select-option value="Auto">Auto</ion-select-option>
+    <ion-select-option value="Tembo">Tembo</ion-select-option>
+    <ion-select-option value="Truck">Truck</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Need Receipt :</ion-label>
+  </ion-item>
+  <ion-radio-group>
+    <ion-item>
+      <ion-label>Yes</ion-label>
+      <ion-radio slot="start" value="Yes"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>No</ion-label>
+      <ion-radio slot="start" value="No"></ion-radio>
+    </ion-item>
+ </ion-radio-group>
+</div>
+</ion-content>
