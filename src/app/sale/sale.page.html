@@ -5,16 +5,20 @@
 </ion-header>
 
 <ion-content class="ion-padding brunog">
+  <div class= "outer">
   <ion-item>
     <ion-label> Date</ion-label>
     <ion-datetime
       displayFormat="DD-MM-YYYY"
       placeholder="Select Date"
-    ></ion-datetime>
+    > </ion-datetime> 
+    <ion-input [(ngModel)]="Date"></ion-input>
+    
   </ion-item>
   <ion-item>
     <ion-label>Time</ion-label>
     <ion-datetime id="Time" displayFormat="HH:mm"></ion-datetime>
+    <ion-input [(ngModel)]="Time"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label>Vechicle Type</ion-label>
@@ -24,10 +28,12 @@
       <ion-select-option value="Tembo">Tembo</ion-select-option>
       <ion-select-option value="Truck">Truck</ion-select-option>
     </ion-select>
+    
   </ion-item>
   <ion-item>
     <ion-label> Rate Per Ice : </ion-label>
     <ion-input type="number" [(ngModel)]="ratePerItem"></ion-input>
+    
   </ion-item>
   <ion-item>
     <ion-label> No.of.Bars :</ion-label>
@@ -56,4 +62,9 @@
   <ion-item>
     <ion-button color="dark">COMPLETE SALE</ion-button>
   </ion-item>
+  <ion-item>
+    <ion-label>Date:{{Date}}</ion-label>
+    <ion-label>Time{{Time}}</ion-label>
+  </ion-item>
+</div>
 </ion-content>
