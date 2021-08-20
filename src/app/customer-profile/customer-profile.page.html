@@ -21,37 +21,17 @@
     </ion-item>
     <ion-item>
       <ion-label>Vechicle Type:</ion-label>
-      <div class="vechicle">
       <ion-select [(ngModel)]="vechicle">
-      <ion-select ok-text="Okay" cancel-text="Dismiss">
         <ion-select-option value="Two Wheeler">Two Wheeler</ion-select-option>
         <ion-select-option value="Auto">Auto</ion-select-option>
         <ion-select-option value="Tembo">Tembo</ion-select-option>
         <ion-select-option value="Truck">Truck</ion-select-option>
       </ion-select>
-      </ion-select>
-    </div>
     </ion-item>
     <ion-item>
       <ion-label>Need Receipt :</ion-label>
+      <ion-toggle [(ngModel)]="Receipt" color="danger"></ion-toggle>
     </ion-item>
-    <div class="receipt">
-    <ion-radio-group>
-      <ion-item>
-        
-        <ion-label>Yes</ion-label>
-        <ion-radio slot="start" value="Yes"></ion-radio>
-    
-      </ion-item>
-      <ion-item>
-       
-        <ion-label>No</ion-label>
-        <ion-radio slot="start" value="No"></ion-radio>
-     
-      </ion-item>
-    </ion-radio-group>
-  
-</div>
     <ion-button color="success">Save</ion-button>
   </div>
   <ion-item>
@@ -59,6 +39,6 @@
     <ion-label> Mobile Number:{{Mobile}} </ion-label>
     <ion-label> Email ID:{{Email}} </ion-label>
     <ion-label> Vechicle Type:{{vechicle}} </ion-label>
-    <ion-label> Need Receipt:{{receipt }} </ion-label>
+    <ion-label> Need Receipt:{{Receipt}} </ion-label>
   </ion-item>
 </ion-content>
