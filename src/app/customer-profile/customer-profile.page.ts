@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customer-profile.page.scss'],
 })
 export class CustomerProfilePage implements OnInit {
-
+  name: string;
+  mobile: number;
+  email: string;
+  vechicleType: string;
+  needRecipt: boolean;
   constructor() { }
 
   ngOnInit() {
