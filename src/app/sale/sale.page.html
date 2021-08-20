@@ -5,66 +5,73 @@
 </ion-header>
 
 <ion-content class="ion-padding brunog">
-  <div class= "outer">
-  <ion-item>
-    <ion-label> Date</ion-label>
-    <ion-datetime
-      displayFormat="DD-MM-YYYY"
-      placeholder="Select Date"
-    > </ion-datetime> 
-    <ion-input [(ngModel)]="Date"></ion-input>
-    
-  </ion-item>
-  <ion-item>
-    <ion-label>Time</ion-label>
-    <ion-datetime id="Time" displayFormat="HH:mm"></ion-datetime>
-    <ion-input [(ngModel)]="Time"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Vechicle Type</ion-label>
-    <ion-select value="Two Wheeler" ok-text="Okay" cancel-text="Dismiss">
-      <ion-select-option value="Two Wheeler">Two Wheeler</ion-select-option>
-      <ion-select-option value="Auto">Auto</ion-select-option>
-      <ion-select-option value="Tembo">Tembo</ion-select-option>
-      <ion-select-option value="Truck">Truck</ion-select-option>
-    </ion-select>
-    
-  </ion-item>
-  <ion-item>
-    <ion-label> Rate Per Ice : </ion-label>
-    <ion-input type="number" [(ngModel)]="ratePerItem"></ion-input>
-    
-  </ion-item>
-  <ion-item>
-    <ion-label> No.of.Bars :</ion-label>
-    <ion-input type="number" [(ngModel)]="numberOfItems"></ion-input>
-  </ion-item>
-  <ion-radio-group>
-    <ion-item>Ice Type</ion-item>
+  <div class="outer">
     <ion-item>
-      <ion-label>Full</ion-label>
-      <ion-radio slot="start" value="Full"></ion-radio>
+      <ion-label> Date</ion-label>
+      <ion-datetime [(ngModel)]="Date" displayFormat="DD-MM-YYYY" placeholder="Select Date"> </ion-datetime>
+
+
     </ion-item>
     <ion-item>
-      <ion-label>Smashed</ion-label>
-      <ion-radio slot="start" value="Smashed"></ion-radio>
+      <ion-label>Time</ion-label>
+      <ion-datetime id="Time" [(ngModel)]="Time" displayFormat="HH:mm"></ion-datetime>
     </ion-item>
-  </ion-radio-group>
-  <ion-item>
-    <ion-button color="dark">Customer</ion-button>(optional)
-    <ion-toolbar>
-      <ion-searchbar></ion-searchbar>
-    </ion-toolbar>
-  </ion-item>
-  <ion-item>
-    <ion-label> TOTAL : {{numberOfItems * ratePerItem}} </ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-button color="dark">COMPLETE SALE</ion-button>
-  </ion-item>
-  <ion-item>
-    <ion-label>Date:{{Date}}</ion-label>
-    <ion-label>Time{{Time}}</ion-label>
-  </ion-item>
-</div>
+
+    <ion-item>
+      <ion-label>Vechicle Type</ion-label>
+      <ion-select [(ngModel)]="vechicleType">
+        <ion-select-option value="Two Wheeler"> Two Wheeler</ion-select-option>
+        <ion-select-option value="Auto">Auto</ion-select-option>
+        <ion-select-option value="Tembo">Tembo</ion-select-option>
+        <ion-select-option value="Truck">Truck</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label> Rate Per Ice : </ion-label>
+      <ion-input type="number" [(ngModel)]="ratePerItem"></ion-input>
+
+    </ion-item>
+    <ion-item>
+      <ion-label> No.of.Bars :</ion-label>
+      <ion-input type="number" [(ngModel)]="numberOfItems"></ion-input>
+    </ion-item>
+    <!-- <ion-item>Ice Type</ion-item> -->
+    <ion-row>
+      <ion-col>Ice Type</ion-col>
+      <ion-col> 
+         <ion-segment [(ngModel)]="iceType"> 
+       
+        <ion-segment-button  value="full">
+          <ion-label>Full</ion-label>
+        </ion-segment-button>
+     
+        <ion-segment-button value="smashed">
+          <ion-label>Smashed</ion-label>
+        </ion-segment-button>
+      
+    </ion-segment></ion-col>
+    </ion-row>
+  
+    <ion-item>
+      <ion-button color="dark">Customer</ion-button>(optional)
+      <ion-toolbar>
+        <ion-searchbar></ion-searchbar>
+      </ion-toolbar>
+    </ion-item>
+    <ion-item>
+      <ion-label> TOTAL : </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-button color="dark">COMPLETE SALE</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-label>Date:{{Date}}</ion-label>
+      <ion-label>Time{{Time}}</ion-label>
+      <ion-label>Vechile Type:{{vechicleType}}</ion-label>
+      <ion-label>iceType:{{iceType}}</ion-label>
+      <ion-label>ratePerIce :</ion-label>
+      <ion-label>No.Of.Ice:</ion-label>
+    </ion-item>
+  </div>
 </ion-content>
