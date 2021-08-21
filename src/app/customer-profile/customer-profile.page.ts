@@ -11,6 +11,7 @@ export class CustomerProfilePage implements OnInit {
   email: string;
   vechicleType: string;
   needRecipt: boolean;
+
   constructor() { }
 
   ngOnInit() {
