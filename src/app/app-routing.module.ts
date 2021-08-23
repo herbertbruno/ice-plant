@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'language',
     pathMatch: 'full'
   },
   {
@@ -25,7 +25,11 @@ const routes: Routes = [
   },
   {
     path: 'lang',
-    loadChildren: () => import('./lang/lang.module').then( m => m.LangPageModule)
+    loadChildren: () => import('./lang/lang.module').then(m => m.LangPageModule)
+  },
+  {
+    path: 'language',
+    loadChildren: () => import('./language/language.module').then(m => m.LanguagePageModule)
   },
 
 ];
