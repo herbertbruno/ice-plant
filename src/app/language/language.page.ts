@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TranslateConfigService } from '../services/translate-config.service';
 
 @Component({
   selector: 'app-language',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LanguagePage implements OnInit {
 
-  constructor() { }
-
+  constructor(private translate: TranslateConfigService, private router: Router) { }
   ngOnInit() {
+
+  }
+  setLanguage(lang: string = 'en') {
+    this.translate.setLanguage(lang);
+    this.router.navigate(['/home']);
+
   }
 
 }

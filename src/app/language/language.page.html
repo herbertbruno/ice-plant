@@ -3,28 +3,28 @@
     <ion-img src="/assets/img/iceLogo.webp"></ion-img>
   </div>
 
-  <ion-card>
+  <ion-card (click)="setLanguage('en')">
     <ion-item lines="none">
       <ion-icon slot="start" name="language-outline"></ion-icon>
       Englsih
     </ion-item>
   </ion-card>
 
-  <ion-card>
+  <ion-card (click)="setLanguage('tamil')">
     <ion-item lines="none">
       <ion-icon slot="start" name="language-outline"></ion-icon>
       தமிழ்
     </ion-item>
   </ion-card>
 
-  <ion-card>
+  <ion-card (click)="setLanguage('hindi')">
     <ion-item lines="none">
       <ion-icon slot="start" name="language-outline"></ion-icon>
       हिंदी
     </ion-item>
   </ion-card>
 
-  <ion-card>
+  <ion-card (click)="setLanguage('asami')">
     <ion-item lines="none">
       <ion-icon slot="start" name="language-outline"></ion-icon>
       অসমীয়া
