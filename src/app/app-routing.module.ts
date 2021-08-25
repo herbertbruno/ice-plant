@@ -30,7 +30,15 @@ const routes: Routes = [
   {
     path: 'language',
     loadChildren: () => import('./language/language.module').then(m => m.LanguagePageModule)
+  },  {
+    path: 'worker',
+    loadChildren: () => import('./worker/worker.module').then( m => m.WorkerPageModule)
   },
+  {
+    path: 'worker',
+    loadChildren: () => import('./worker/worker.module').then( m => m.WorkerPageModule)
+  },
+
 
 ];
 
