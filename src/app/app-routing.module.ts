@@ -32,6 +32,27 @@ const routes: Routes = [
     loadChildren: () => import('./language/language.module').then(m => m.LanguagePageModule)
   },
   {
+    path: 'worker',
+    loadChildren: () => import('./worker/worker.module').then(m => m.WorkerPageModule)
+  },
+
+  {
+    path: 'customer-profile',
+    loadChildren: () => import('./customer-profile/customer-profile.module').then(m => m.CustomerProfilePageModule)
+  },
+  {
+    path: 'sale',
+    loadChildren: () => import('./sale/sale.module').then(m => m.SalePageModule)
+  },
+  {
+    path: 'lang',
+    loadChildren: () => import('./lang/lang.module').then(m => m.LangPageModule)
+  },
+  {
+    path: 'language',
+    loadChildren: () => import('./language/language.module').then(m => m.LanguagePageModule)
+  },
+  {
     path: 'login',
     loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
   },
