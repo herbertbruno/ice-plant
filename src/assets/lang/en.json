@@ -7,5 +7,10 @@
     "EXPENSE_NOTE":"Expense Note",
     "DATE":"Date",
     "TIME":"Time",
-    "AMOUNT":"Amount"
+    "AMOUNT":"Amount",
+    "VEHICLE EXPENSE":"VEHICLE EXPENSE",
+    "ELECTRICAL EXPENSE":"ELECTRICAL EXPENSE",
+    "MEDICAl EXPENSE":"MEDICAl EXPENSE",
+   "OTHER EXPENSE":"OTHER EXPENSE"
+
 }

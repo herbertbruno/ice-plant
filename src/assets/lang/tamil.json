@@ -7,7 +7,12 @@
     "EXPENSE_NOTE":"செலவு குறிப்பு",
     "DATE":"தேதி",
     "TIME":"நேரம்",
-    "AMOUNT":"தொகை"
+    "AMOUNT":"தொகை",
+    "VEHICLE EXPENSE":"வாகனச் செலவு",
+    "ELECTRICAL EXPENSE":"மின்சார செலவு",
+    "MEDICAl EXPENSE":"மருத்துவ செலவு",
+    "OTHER EXPENSE":"மற்ற செலவு"
+
     
     
 }
