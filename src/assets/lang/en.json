@@ -1,5 +1,6 @@
 {
     "CUSTOMER":"Customer",
     "NEW_SALE":"New Sale",
-    "SALE":"Sale"
+    "SALE":"Sale",
+    "WORKER":"Worker"
 }
