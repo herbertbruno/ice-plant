@@ -5,15 +5,15 @@
 </ion-header>
 <ion-content >
     <ion-item>
-      <ion-label> Date</ion-label>
+      <ion-label> {{'DATE' | translate}}</ion-label>
       <ion-datetime [(ngModel)]="Date" displayFormat="DD-MM-YYYY" placeholder="Select Date"> </ion-datetime>
     </ion-item>
     <ion-item>
-      <ion-label>Time</ion-label>
+      <ion-label>{{'TIME' | translate}}</ion-label>
       <ion-datetime id="Time" [(ngModel)]="Time" displayFormat="hh:mm" placeholder="Select time"></ion-datetime>
     </ion-item>
     <ion-item>
-      <ion-label> No of Ice produced : </ion-label>
+      <ion-label>{{'NO_OF_ICE_PRODUCED' | translate}}</ion-label>
       <ion-input type="number"[(ngModel)]="iceproduced" ></ion-input>
     </ion-item> <div class="ion-padding">
       <ion-button color="success" expand="block">Save</ion-button>

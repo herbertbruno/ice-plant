@@ -1,6 +1,9 @@
-{
+_{
     "CUSTOMER":"Customer",
     "NEW_SALE":"New Sale",
     "SALE":"Sale",
-   "WORKER":"worker"
+   "WORKER":"worker",
+   "DATE":"date",
+   "TIME":"time",
+   "NO_OF_ICE_PRODUCED":"ice produced"
 }
