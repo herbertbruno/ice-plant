@@ -1,5 +1,11 @@
 {
     "CUSTOMER":"Customer",
     "NEW_SALE":"New Sale",
-    "SALE":"Sale"
+    "SALE":"Sale",
+    "EXPENSE":"Expense",
+    "EXPENSE_TYPE":"Expense Type",
+    "EXPENSE_NOTE":"Expense Note",
+    "DATE":"Date",
+    "TIME":"Time",
+    "AMOUNT":"Amount"
 }

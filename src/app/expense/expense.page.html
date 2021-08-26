@@ -1,0 +1,48 @@
+<ion-header>
+  <div class= "out">
+  <ion-toolbar>
+    <ion-title> {{'EXPENSE' | translate}}</ion-title>
+  </ion-toolbar>
+</div>
+</ion-header>
+
+<ion-content>
+
+<ion-item>
+  <ion-label>{{'EXPENSE_TYPE' | translate}} </ion-label>
+  <ion-select [(ngModel)]="expensesType">
+    <ion-select-option value="vechicleExpenses"> Vechicles Expenses</ion-select-option>
+    <ion-select-option value="electricalExpenses">Electrical Expenses </ion-select-option>
+    <ion-select-option value="medicalExpenses">Medical Expenses</ion-select-option>
+    <ion-select-option value="otherlExpenses">Other Expenses</ion-select-option>
+  </ion-select>
+</ion-item>
+
+<ion-item>
+  <ion-label>{{'EXPENSE_NOTE' |  translate}}</ion-label>
+  <ion-input [(ngModel)]="expenseNotes"  type="string"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label> {{'DATE' |  translate}}</ion-label>
+  <ion-datetime [(ngModel)]="Date" displayFormat="DD-MM-YYYY" placeholder="Select Date"> 
+  </ion-datetime>
+</ion-item>
+
+<ion-item>
+  <ion-label>{{'TIME' | translate}}</ion-label>
+  <ion-datetime id="Time" [(ngModel)]="Time" displayFormat="HH:mm"></ion-datetime>
+</ion-item>
+
+<ion-item>
+  
+  <ion-label>{{'AMOUNT' | translate}}</ion-label>
+  <ion-input [(ngModel)]="Amount"  type="number"></ion-input>
+</ion-item>
+
+ 
+  <ion-button size="medium" (click)="saveExpense()">Save</ion-button>
+  
+ 
+
+</ion-content>
