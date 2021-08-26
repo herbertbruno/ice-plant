@@ -14,8 +14,8 @@
     </ion-item>
     <ion-item>
       <ion-label>{{'NO_OF_ICE_PRODUCED' | translate}}</ion-label>
-      <ion-input type="number"[(ngModel)]="iceproduced" ></ion-input>
+      <ion-input type="number"[(ngModel)]="nooficeproduced" ></ion-input>
     </ion-item> <div class="ion-padding">
-      <ion-button color="success" expand="block">Save</ion-button>
+      <ion-button color="success" expand="block" (click)="saveWorker()">Save</ion-button>
     </div>
 </ion-content>

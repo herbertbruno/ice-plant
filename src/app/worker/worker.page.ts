@@ -10,20 +10,18 @@ export class WorkerPage implements OnInit {
 constructor() { }
 Date;
 Time;
-nooficeproduced: number;
-
-
+nooficeproduced;
 ngOnInit() {
 }
-saveworker(){
-let  workerValues = {
-  nooficeproduced:this.nooficeproduced,
+saveWorker(){
+let Values = {
+  Date:this.Date,
   Time:this.Time,
-  Date:this.Date
+  nooficeproduced:this.nooficeproduced
 
 
 }
-  console.log(workerValues);
+  console.log(Values);
 }
 
 }
