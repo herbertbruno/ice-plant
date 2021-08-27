@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>owner</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item>
+    <ion-label> Date</ion-label>
+    <ion-datetime [(ngModel)]="Date" displayFormat="DD-MM-YYYY  (DDDD) " placeholder="Select Date"> </ion-datetime>
+  </ion-item>
+ 
+
+  <ion-item>
+    <ion-label> on Duty:</ion-label>
+    <ion-input value="biju"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label> no of Bars sold:</ion-label>
+    <ion-input type="Number" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label> last Production</ion-label>
+    <ion-input value="300/150" ></ion-input>
+  </ion-item>
+  <ion-item><ion-progress-bar color="primary" value="0.5"></ion-progress-bar></ion-item>
+  <ion-item>
+    <ion-label> expense:</ion-label>
+    <ion-input type="Number" ></ion-input>
+  </ion-item><ion-item>
+    <ion-label> credit:</ion-label>
+    <ion-input type="Number" ></ion-input>
+  </ion-item><ion-item>
+    <ion-label> total sale:</ion-label>
+    <ion-input type="Number" ></ion-input>
+  </ion-item>
+</ion-content>
