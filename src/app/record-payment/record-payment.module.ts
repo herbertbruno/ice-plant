@@ -7,12 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { RecordPaymentPageRoutingModule } from './record-payment-routing.module';
 
 import { RecordPaymentPage } from './record-payment.page';
+import { TranslateModule } from '@ngx-translate/core';
+
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    TranslateModule.forChild(),
     RecordPaymentPageRoutingModule
   ],
   declarations: [RecordPaymentPage]
