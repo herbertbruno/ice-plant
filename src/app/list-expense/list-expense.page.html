@@ -6,33 +6,15 @@
 
 <ion-content>
   <ion-list>
-  <ion-item>
-    <ion-label>EXPENSE-1</ion-label>
-  </ion-item>
+    <ion-item  *ngFor="let expense of expenses " >
+      
+      {{ expense}}
+     
+    </ion-item> 
 
-  <ion-item>
-    <ion-label>EXPENSE-2</ion-label>
-  </ion-item>
+  
 
-  <ion-item>
-    <ion-label>EXPENSE-3</ion-label>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>EXPENSE-4</ion-label>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>EXPENSE-5</ion-label>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>EXPENSE-6</ion-label>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>EXPENSE-7</ion-label>
-  </ion-item>
+  
 </ion-list>
 
   <ion-fab vertical="center" horizontal="end" slot="fixed">

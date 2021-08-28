@@ -6,14 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-expense.page.scss'],
 })
 export class ListExpensePage implements OnInit {
-
+  expenses=[];
   constructor() { }
 
   ngOnInit() {
-    let arr1:number[]=[1,2,3];
-    let arr2:(number | boolean| string)[]=[1,'a1',2,'a2',3,'a3',true];
-    arr1[0]=2;
-    arr2.forEach(a=>console.log(a));
+    this.expenses = ['expense 1', 'expense 2', 'expense 3', 'expense 4', 'expense 5', 'expense 6'];
+    
   }
 
 
