@@ -1,0 +1,16 @@
+label {
+    padding-right: 10px;
+    font-size: 1rem;
+}
+.warning {
+    border: 4mm ridge rgba(50, 220, 101, 0.6);
+    background-color: rgba(255, 255, 128, .5);
+    padding: .5rem;
+   display: block flow;
+    flex-direction: column;
+}
+
+.warning label {
+    font: small-caps bold 1.2rem sans-serif;
+    text-align: center;
+}

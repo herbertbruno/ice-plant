@@ -3,32 +3,41 @@
     <ion-title>owner</ion-title>
   </ion-toolbar>
 </ion-header>
+<div class="warning">
+  <label for="file">last Production:</label><br>
+  <progress id="file" max="100" value="50"> </progress>
+
+</div>
 <ion-content>
   <ion-item>
-  <label for="start">Date:</label>
-  <input type="date" id="start" name="trip-start" value="27-08-2021"
-  >  </ion-item>
+    <div class="date">
+    <label for="start">Date:</label>
+    <input type="date" id="start" name="trip-start" value="27-08-2021">
+  </div>
+  </ion-item>
   <ion-item>
     <ion-label> on Duty:</ion-label>
     <ion-input value="biju"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label> no of Bars sold:</ion-label>
-    <ion-input type="Number" ></ion-input>
+    <ion-input type="Number"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label> last Production</ion-label>
-    <ion-input value="300/150" ></ion-input>
+    <label for="file">last Production:</label>
+    <ion-input value="300/150"></ion-input>
+    <progress id="file" max="100" value="50"> </progress>
   </ion-item>
-  <ion-item><ion-progress-bar color="primary" value="0.5"></ion-progress-bar></ion-item>
   <ion-item>
     <ion-label> expense:</ion-label>
-    <ion-input type="Number" ></ion-input>
-  </ion-item><ion-item>
-    <ion-label> credit:</ion-label>
-    <ion-input type="Number" ></ion-input>
-  </ion-item><ion-item>
-    <ion-label> total sale:</ion-label>
-    <ion-input type="Number" ></ion-input>
+    <ion-input type="Number"></ion-input>
   </ion-item>
-</ion-content>
+  <ion-item>
+    <ion-label> credit:</ion-label>
+    <ion-input type="Number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label> total sale:</ion-label>
+    <ion-input type="Number"></ion-input>
+  </ion-item>
+ 
