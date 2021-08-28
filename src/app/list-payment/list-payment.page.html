@@ -9,16 +9,19 @@
   
     <ion-item  *ngFor="let payment of payments" >
       
-      {{ payment  }}
+      {{ payment.payment_date  }}
+   
+      <ion-badge slot="end"> {{ payment.payment_amount }}</ion-badge>
+     
      
     </ion-item> 
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-      <ion-fab-button>
-        <ion-icon name="add"></ion-icon>  
-      </ion-fab-button>
-    </ion-fab>
+   
     
   </ion-list>
 
-
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>  
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

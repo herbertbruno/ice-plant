@@ -10,7 +10,12 @@ export class ListPaymentPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this. payments= ['payment 1', 'payment 2', 'payment 3', 'payment 4', 'payment 5', 'payment 6'];
+    this. payments= [
+      {payment_date:"20-028-2021",payment_amount:"30"},
+      {payment_date:"23-028-2021",payment_amount:"40"},
+      {payment_date:"24-028-2021",payment_amount:"80"},
+      {payment_date:"21-028-2021",payment_amount:"50"},
+    ];
   }
 
 }
