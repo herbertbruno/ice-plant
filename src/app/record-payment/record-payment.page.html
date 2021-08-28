@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>RECORD PAYMENT</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Date:</ion-label>
+    <ion-datetime displayFormat="DD-MM-YYYY" placeholder="Select Date"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>Time:</ion-label>
+    <ion-datetime displayFormat="hh:mm A" placeholder="Select Time"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>Customer Name:</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Payment Type:</ion-label>
+    <ion-select placeholder="Select One">
+      <ion-select-option value="f">Cash</ion-select-option>
+      <ion-select-option value="m">Cheque</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Amount:</ion-label>
+    <ion-input type="number"></ion-input>
+  </ion-item>
+  <ion-button color="success">Save</ion-button>
+
+  
+</ion-content>
