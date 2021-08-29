@@ -3,14 +3,28 @@ label {
     font-size: 1rem;
 }
 .warning {
-    border: 4mm ridge rgb(1, 79, 248);
-    background-color: rgba(4, 103, 253, 0.993);
+    
+    background-color: rgba(4, 103, 253, 0.993); 
+    border-radius: 15px;
     padding: .5rem;
    display: block flow;
     flex-direction: column;
+    font: 1.2em "Fira Sans", sans-serif;
+    padding: 5pt;
 }
 
-.warning label {
+.warning progress {
+    background-color: rgba(33, 253, 4, 0.993); 
     font: 1.2em "Fira Sans", sans-serif;
     padding: 500pt;
 }
+#example1{
+    border: 2px solid red;
+    border-radius: 25px;
+  }
+  
+  #example2 {
+    border: 2px solid red;
+    border-radius: 50px 20px;
+  }
+  
