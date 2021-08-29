@@ -10,11 +10,12 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateConfigService } from './services/translate-config.service';
+import { CurPipe } from './pipe/cur.pipe';
 export function LanguageLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/lang/', '.json');
 }
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, CurPipe],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), HttpClientModule,
     TranslateModule.forRoot({
