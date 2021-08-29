@@ -1,26 +1,26 @@
 <ion-header>
   <ion-toolbar>
     <div class="head">
-      <ion-title>Customer-Profile </ion-title>
+      <ion-title>{{'CUSTOMER-PROFILE' |  translate}} </ion-title>
     </div>
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <div class="outer">
     <ion-item>
-      <ion-label> Name:</ion-label>
+      <ion-label>{{'NAME' | translate}} </ion-label>
       <ion-input [(ngModel)]="Name"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Mobile Number:</ion-label>
+      <ion-label>{{'MOBILE-NUMBER | translate}}</ion-label>
       <ion-input type="tel" [(ngModel)]="Mobile"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Email Id:</ion-label>
+      <ion-label>{{'EMAIL-ID' |  translate}}</ion-label>
       <ion-input type="Email" [(ngModel)]="Email"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Vechicle Type:</ion-label>
+      <ion-label>{{'VECHICLE-TYPE' | translate}}</ion-label>
       <ion-select [(ngModel)]="vechicle">
         <ion-select-option value="Two Wheeler">Two Wheeler</ion-select-option>
         <ion-select-option value="Auto">Auto</ion-select-option>
@@ -29,10 +29,10 @@
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label>Need Receipt :</ion-label>
+      <ion-label>{{'NEED-RECEIPT' | translate}}</ion-label>
       <ion-toggle [(ngModel)]="Receipt" color="danger"></ion-toggle>
     </ion-item>
-    <ion-button color="success">Save</ion-button>
+    <ion-button color="success">{{'SAVE' | translate}}</ion-button>
   </div>
   <ion-item>
     <ion-label> Name:{{Name}} </ion-label>
