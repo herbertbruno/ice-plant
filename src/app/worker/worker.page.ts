@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkerPage implements OnInit {
 
-  constructor() { }
+  
+constructor() { }
 
-  ngOnInit() {
-  }
+Date:number;
+Time:number;
+iceProduced:number;
+ngOnInit() {
+}
+savechanges(){
+let  changeValues = {
+
+  iceProduced:this.iceProduced,
+  Date:this.Date,
+  Time:this.Time,
+  
+}
+  console.log(changeValues);
+}
 
 }

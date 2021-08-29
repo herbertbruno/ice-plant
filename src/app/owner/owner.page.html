@@ -12,32 +12,36 @@
 </div>
 <ion-content>
   <ion-item>
-    <label  display format="dd/mm/yyyy">{{'DATE' | translate}}:</label>
-    <input type="date"  >
+    <ion-label> {{'DATE' |  translate}}</ion-label>
+    <ion-datetime [(ngModel)]="Date" displayFormat="DD-MM-YYYY" placeholder="Select Date"> 
+    </ion-datetime>
   </ion-item>
   <ion-item>
     <ion-label> {{'ON-DUTY' | translate}}:</ion-label>
-    <ion-input value="biju"></ion-input>
+    <ion-input [(ngModel)]="onDuty"  ></ion-input>
   </ion-item>
   <ion-item>
     <ion-label> {{'NO-OF-BARS-SOLD' | translate}}</ion-label>
-    <ion-input type="Number"></ion-input>
+    <ion-input [(ngModel)]="noofbarsSold" type="Number" ></ion-input>
+   
   </ion-item>
   <ion-item>
     <label for="file">{{'LAST-PRODUCTION' | translate}}</label>
-    <ion-input value="300/150"></ion-input>
+    <ion-input [(ngModel)]="lastProduction"  type="string"></ion-input>
     <progress id="file" max="100" value="50"> </progress>
   </ion-item>
   <ion-item>
     <ion-label>{{'EXPENSE' | translate}} </ion-label>
-    <ion-input type="Number"></ion-input>
+    <ion-input [(ngModel)]="expense"  type="number"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label>{{'CREDIT' | translate}}</ion-label>
-    <ion-input type="Number"></ion-input>
+    <ion-input [(ngModel)]="credit"  type="number"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label>{{'TOTAL-SALE' | translate}}</ion-label>
-    <ion-input type="Number"></ion-input>
+    <ion-input [(ngModel)]="totalSale"  type="number"></ion-input>
   </ion-item>
+  <ion-button color="success"(click)="savechanges()">{{'SAVE' | translate}}</ion-button>
+</ion-content>
  
