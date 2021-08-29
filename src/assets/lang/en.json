@@ -1,9 +1,9 @@
 _{
     "CUSTOMER":"Customer",
-    "NEW_SALE":"New Sale",
+    "NEW-SALE":"New Sale",
     "SALE":"Sale",
-   "WORKER":"worker",
-   "DATE":"date",
-   "TIME":"time",
-   "NO_OF_ICE_PRODUCED":"ice produced"
+    "WORKER":"worker",
+    "DATE":"date",
+    "TIME":"time",
+    "NO-OF-ICE-PRODUCED":"ice produced"
 }
