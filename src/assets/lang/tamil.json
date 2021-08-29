@@ -11,8 +11,11 @@
     "VEHICLE EXPENSE":"வாகனச் செலவு",
     "ELECTRICAL EXPENSE":"மின்சார செலவு",
     "MEDICAl EXPENSE":"மருத்துவ செலவு",
-    "OTHER EXPENSE":"மற்ற செலவு"
-
-    
-    
+    "OTHER EXPENSE":"மற்ற செலவு",
+    "ON-DUTY":"கடமையில்",
+    "OWNER":"உரிமையாளர்",
+    "NO-OF-BARS-SOLD":"விற்கப்பட்ட பார்களின் எண்ணிக்கை",
+   "LAST-PRODUCTION":"கடைசி உற்பத்தி",
+   "CREDIT":"கடன்",
+    "TOTAL-SALE":"மொத்த விற்பனை"
 }
