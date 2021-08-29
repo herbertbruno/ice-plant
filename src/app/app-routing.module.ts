@@ -60,6 +60,10 @@ const routes: Routes = [
     path: 'expense',
     loadChildren: () => import('./expense/expense.module').then( m => m.ExpensePageModule)
   },
+  {
+    path: 'manager-pg',
+    loadChildren: () => import('./manager-pg/manager-pg.module').then( m => m.ManagerPgPageModule)
+  },
   
 
 ];
