@@ -76,6 +76,10 @@ const routes: Routes = [
     path: 'list-worker',
     loadChildren: () => import('./list-worker/list-worker.module').then(m => m.ListWorkerPageModule)
   },
+  {
+    path: 'list-customer',
+    loadChildren: () => import('./list-customer/list-customer.module').then(m => m.ListCustomerPageModule)
+  },
 
 
 ];
