@@ -68,6 +68,10 @@ const routes: Routes = [
     path: 'list-payment',
     loadChildren: () => import('./list-payment/list-payment.module').then(m => m.ListPaymentPageModule)
   },
+  {
+    path: 'list-expense',
+    loadChildren: () => import('./list-expense/list-expense.module').then(m => m.ListExpensePageModule)
+  },
 
 
 ];
