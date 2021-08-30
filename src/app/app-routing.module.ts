@@ -58,13 +58,17 @@ const routes: Routes = [
   },
   {
     path: 'expense',
-    loadChildren: () => import('./expense/expense.module').then( m => m.ExpensePageModule)
+    loadChildren: () => import('./expense/expense.module').then(m => m.ExpensePageModule)
   },
   {
     path: 'record-payment',
-    loadChildren: () => import('./record-payment/record-payment.module').then( m => m.RecordPaymentPageModule)
+    loadChildren: () => import('./record-payment/record-payment.module').then(m => m.RecordPaymentPageModule)
   },
-  
+  {
+    path: 'list-payment',
+    loadChildren: () => import('./list-payment/list-payment.module').then(m => m.ListPaymentPageModule)
+  },
+
 
 ];
 
