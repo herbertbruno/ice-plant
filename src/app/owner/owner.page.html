@@ -3,28 +3,47 @@
     <ion-title>{{'OWNER' | translate}}</ion-title>
   </ion-toolbar>
 </ion-header>
+
 <div class="warning">
- 
-  <ion-progress-bar value="0.5"></ion-progress-bar>
+
 <br>
 <br>
 <br>
 </div>
 <ion-content>
+  <div class="layer">
   <ion-item>
     <ion-label> {{'DATE' |  translate}}</ion-label>
     <ion-datetime [(ngModel)]="Date" displayFormat="DD-MM-YYYY" placeholder="Select Date"> 
     </ion-datetime>
   </ion-item>
+
   <ion-item>
-    <ion-label> {{'ON-DUTY' | translate}}:</ion-label>
-    <ion-input [(ngModel)]="onDuty"  ></ion-input>
+    <ion-input class="item item-input">
+      <i class="icon ion-person"></i>
+      <ion-label>On Duty</ion-label>
+      <input type="text">
+    </ion-input>
   </ion-item>
+<div class="duty">
   <ion-item>
-    <ion-label> {{'NO-OF-BARS-SOLD' | translate}}</ion-label>
-    <ion-input [(ngModel)]="noofbarsSold" type="Number" ></ion-input>
-   
+  
+    <ion-input class="item item-input">
+      <i class="icon ion-person"></i>
+      <ion-label>No Of Bars Sold</ion-label>
+      <input type="text">
+    </ion-input>
   </ion-item>
+</div>
+<div class="sale">
+
+  <ion-card class="item item-input">
+    <i class="icon ion-person"></i>
+    <ion-label>Total Sale</ion-label>
+
+  </ion-card>
+
+</div>
   <ion-item>
     <label for="file">{{'LAST-PRODUCTION' | translate}}</label>
     <ion-input [(ngModel)]="lastProduction"  type="string"></ion-input>
@@ -36,12 +55,9 @@
   </ion-item>
   <ion-item>
     <ion-label>{{'CREDIT' | translate}}</ion-label>
-    <ion-input [(ngModel)]="credit"  type="number"></ion-input>
+    <ion-input [(ngModel)]="credit" value="222" type="number"></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-label>{{'TOTAL-SALE' | translate}}</ion-label>
-    <ion-input [(ngModel)]="totalSale"  type="number"></ion-input>
-  </ion-item>
-  <ion-button color="success"(click)="savechanges()">{{'SAVE' | translate}}</ion-button>
+  
+  
+</div>
 </ion-content>
- 
