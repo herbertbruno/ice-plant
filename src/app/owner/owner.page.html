@@ -1,63 +1,43 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>{{'OWNER' | translate}}</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<div class="warning">
-
-<br>
-<br>
-<br>
-</div>
 <ion-content>
-  <div class="layer">
-  <ion-item>
-    <ion-label> {{'DATE' |  translate}}</ion-label>
-    <ion-datetime [(ngModel)]="Date" displayFormat="DD-MM-YYYY" placeholder="Select Date"> 
-    </ion-datetime>
-  </ion-item>
-
-  <ion-item>
-    <ion-input class="item item-input">
-      <i class="icon ion-person"></i>
-      <ion-label>On Duty</ion-label>
-      <input type="text">
-    </ion-input>
-  </ion-item>
-<div class="duty">
-  <ion-item>
-  
-    <ion-input class="item item-input">
-      <i class="icon ion-person"></i>
-      <ion-label>No Of Bars Sold</ion-label>
-      <input type="text">
-    </ion-input>
-  </ion-item>
-</div>
-<div class="sale">
-
-  <ion-card class="item item-input">
-    <i class="icon ion-person"></i>
-    <ion-label>Total Sale</ion-label>
-
+  <!-- *********************** OnDuty ******************* -->
+  <ion-card>
+    <ion-item lines="none">
+      <ion-icon color="success" name="person" slot="start"></ion-icon>
+      <ion-label>
+        <h2>Mahesh</h2>
+        <p>On Duty</p></ion-label
+      >
+      <ion-label>
+        <h2>10.10 Am</h2>
+        <p>Last checkin</p></ion-label
+      >
+      <ion-icon color="danger" name="power" slot="end"></ion-icon>
+    </ion-item>
   </ion-card>
-
-</div>
-  <ion-item>
-    <label for="file">{{'LAST-PRODUCTION' | translate}}</label>
-    <ion-input [(ngModel)]="lastProduction"  type="string"></ion-input>
-    <progress id="file" max="100" value="50"> </progress>
-  </ion-item>
-  <ion-item>
-    <ion-label>{{'EXPENSE' | translate}} </ion-label>
-    <ion-input [(ngModel)]="expense"  type="number"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>{{'CREDIT' | translate}}</ion-label>
-    <ion-input [(ngModel)]="credit" value="222" type="number"></ion-input>
-  </ion-item>
-  
-  
-</div>
+  <!-- *********************** SALES ******************* -->
+  <h2 class="ion-padding sideHeading">Sale</h2>
+  <ion-card class="saleBox">
+    <ion-row>
+      <ion-col>
+        <ion-icon color="danger" name="power"></ion-icon>
+        <h1>80</h1>
+        <p>No of sale</p>
+      </ion-col>
+      <ion-col>
+        <ion-icon color="danger" name="power"></ion-icon>
+        <h1>80</h1>
+        <p>Total sale</p> </ion-col
+      ><ion-col>
+        <ion-icon color="danger" name="power"></ion-icon>
+        <h1>80</h1>
+        <p>Amount</p>
+      </ion-col>
+    </ion-row>
+  </ion-card>
 </ion-content>
