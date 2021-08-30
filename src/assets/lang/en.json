@@ -13,6 +13,9 @@
     "MEDICAl EXPENSE":"MEDICAl EXPENSE",
    "OTHER EXPENSE":"OTHER EXPENSE",
    "MANAGER_PAGE":"MANAGER PAGE",
-   "Daily_Activity":"Daily Activity"
-
+   "Daily_Activity":"Daily Activity",
+   "No.of.Sale":"No.of.Sale",
+   "No.of.assigned bars":"No.of.assigned bars",
+   "NO.of.sold bars":"NO.of.sold bars",
+   "Expense":"Expense"
 }
