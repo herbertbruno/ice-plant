@@ -72,6 +72,10 @@ const routes: Routes = [
     path: 'list-expense',
     loadChildren: () => import('./list-expense/list-expense.module').then(m => m.ListExpensePageModule)
   },
+  {
+    path: 'list-worker',
+    loadChildren: () => import('./list-worker/list-worker.module').then(m => m.ListWorkerPageModule)
+  },
 
 
 ];
