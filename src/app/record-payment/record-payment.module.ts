@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { WorkerPageRoutingModule } from './worker-routing.module';
+import { RecordPaymentPageRoutingModule } from './record-payment-routing.module';
 
-import { WorkerPage } from './worker.page';
+import { RecordPaymentPage } from './record-payment.page';
 import { TranslateModule } from '@ngx-translate/core';
+
+
 
 @NgModule({
   imports: [
@@ -15,8 +17,8 @@ import { TranslateModule } from '@ngx-translate/core';
     FormsModule,
     IonicModule,
     TranslateModule.forChild(),
-    WorkerPageRoutingModule
+    RecordPaymentPageRoutingModule
   ],
-  declarations: [WorkerPage]
+  declarations: [RecordPaymentPage]
 })
-export class WorkerPageModule {}
+export class RecordPaymentPageModule {}

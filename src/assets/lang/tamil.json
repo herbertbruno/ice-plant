@@ -11,8 +11,11 @@
     "VEHICLE EXPENSE":"வாகனச் செலவு",
     "ELECTRICAL EXPENSE":"மின்சார செலவு",
     "MEDICAl EXPENSE":"மருத்துவ செலவு",
-    "OTHER EXPENSE":"மற்ற செலவு"
-
+    "OTHER EXPENSE":"மற்ற செலவு",
+    "RECORD-PAYMENT":"பதிவு கட்டணம்",
+    "WORKER":"தொழிலாளி",
+    "CUSTOMER-NAME":"வாடிக்கையாளர் பெயர்",
+    "PAYMENT-TYPE":"கட்டணம்"
     
     
 }
