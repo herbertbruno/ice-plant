@@ -6,9 +6,10 @@ import { CurrencyPipe } from '@angular/common';
 })
 export class CurPipe implements PipeTransform {
 
-  user: any;
+
   constructor(private currencyPipe: CurrencyPipe) {
   }
+
   transform(amount: string | number, ...args) {
 
     if (!amount) {
