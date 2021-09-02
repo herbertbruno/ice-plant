@@ -13,9 +13,24 @@
     "MEDICAl EXPENSE":"மருத்துவ செலவு",
     "OTHER EXPENSE":"மற்ற செலவு",
     "RECORD-PAYMENT":"பதிவு கட்டணம்",
+    "PAYMENT-TYPE":"கட்டணம்",  
+    "ON-DUTY":"கடமையில்",
+    "OWNER":"உரிமையாளர்",
+    "NO-OF-BARS-SOLD":"விற்கப்பட்ட பார்கள்",
+   "LAST-PRODUCTION":"கடைசி உற்பத்தி",
+   "CREDIT":"கடன்",
+    "TOTAL-SALE":"மொத்த விற்பனை",
+    "INBOX":"உட்பெட்டி",
+    "NO-OF-ICE-PRODUCED":"பனி உற்பத்தி",
     "WORKER":"தொழிலாளி",
+    "SAVE":"சேமிக்க",
     "CUSTOMER-NAME":"வாடிக்கையாளர் பெயர்",
-    "PAYMENT-TYPE":"கட்டணம்"
-    
-    
+    "MOBILE-NUMBER":"கைபேசி எண்",
+    "EMAIL-ID":"மின்னஞ்சல் முகவரி",
+    "VECHICLE-TYPE":"வாகன வகை",
+    "TWO-WHEELER":"இரு சக்கர வாகனம்",
+    "AUTO":"ஆட்டோ",
+    "TEMPO":"டெம்போ",
+    "TRUCK":"லாரி",
+    "NEED-RECEIPT":"ரசீது தேவை"
 }

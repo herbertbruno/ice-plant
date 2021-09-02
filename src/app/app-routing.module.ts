@@ -23,10 +23,7 @@ const routes: Routes = [
     path: 'sale',
     loadChildren: () => import('./sale/sale.module').then(m => m.SalePageModule)
   },
-  {
-    path: 'lang',
-    loadChildren: () => import('./lang/lang.module').then(m => m.LangPageModule)
-  },
+
   {
     path: 'language',
     loadChildren: () => import('./language/language.module').then(m => m.LanguagePageModule)
@@ -48,10 +45,7 @@ const routes: Routes = [
     path: 'lang',
     loadChildren: () => import('./lang/lang.module').then(m => m.LangPageModule)
   },
-  {
-    path: 'language',
-    loadChildren: () => import('./language/language.module').then(m => m.LanguagePageModule)
-  },
+
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
@@ -60,6 +54,11 @@ const routes: Routes = [
     path: 'expense',
     loadChildren: () => import('./expense/expense.module').then(m => m.ExpensePageModule)
   },
+  {
+    path: 'owner',
+    loadChildren: () => import('./owner/owner.module').then(m => m.OwnerPageModule)
+  },
+
   {
     path: 'record-payment',
     loadChildren: () => import('./record-payment/record-payment.module').then(m => m.RecordPaymentPageModule)
@@ -79,12 +78,10 @@ const routes: Routes = [
   {
     path: 'list-customer',
     loadChildren: () => import('./list-customer/list-customer.module').then(m => m.ListCustomerPageModule)
-  },
+  }
 
 
 ];
-
-
 
 @NgModule({
   imports: [

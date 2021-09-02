@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CustomerProfilePageRoutingModule } from './customer-profile-routing.module';
+import { OwnerPageRoutingModule } from './owner-routing.module';
 
-import { CustomerProfilePage } from './customer-profile.page';
+import { OwnerPage } from './owner.page';
 import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
@@ -15,8 +15,8 @@ import { TranslateModule } from '@ngx-translate/core';
     FormsModule,
     IonicModule,
     TranslateModule.forChild(),
-    CustomerProfilePageRoutingModule
+    OwnerPageRoutingModule
   ],
-  declarations: [CustomerProfilePage]
+  declarations: [OwnerPage]
 })
-export class CustomerProfilePageModule {}
+export class OwnerPageModule {}
