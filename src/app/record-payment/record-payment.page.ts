@@ -6,10 +6,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./record-payment.page.scss'],
 })
 export class RecordPaymentPage implements OnInit {
+  toni;
+  date;
+  time;
+  customername;
+  paymenttype;
+  amount;
 
   constructor() { }
 
+
   ngOnInit() {
+    this.toni = "The super Man";
+
+  }
+  showValues() {
+
+    let allValues = {
+      date: this.date,
+      time: this.time,
+      customer: this.customername,
+      payment: this.paymenttype,
+      money: this.amount
+    }
+    console.log(allValues)
+
   }
 
 }

@@ -5,9 +5,12 @@
 </ion-header>
 
 <ion-content>
+  <div>{{toni}}</div>
+  <br />
   <ion-item>
     <ion-label>{{'DATE' | translate}}</ion-label>
     <ion-datetime
+      [(ngModel)]="date"
       displayFormat="DD-MM-YYYY"
       placeholder="Select Date"
     ></ion-datetime>
@@ -15,29 +18,32 @@
   <ion-item>
     <ion-label>{{'TIME' | translate}}</ion-label>
     <ion-datetime
+      [(ngModel)]="time"
       displayFormat="hh:mm A"
       placeholder="Select Time"
     ></ion-datetime>
   </ion-item>
   <ion-item>
     <ion-label>{{'CUSTOMER-NAME' | translate}}</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input [(ngModel)]="customername" type="text"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label>{{'PAYMENT-TYPE' | translate}}</ion-label>
-    <ion-select placeholder="Select One">
+    <ion-select placeholder="Select One" [(ngModel)]="paymenttype">
       <ion-select-option value="f">Cash</ion-select-option>
       <ion-select-option value="m">Cheque</ion-select-option>
     </ion-select>
   </ion-item>
   <ion-item>
     <ion-label>{{'AMOUNT' | translate}}</ion-label>
-    <ion-input type="number"></ion-input>
+    <ion-input [(ngModel)]="amount" type="number"></ion-input>
   </ion-item>
 
   <br />
   <br />
   <div class="ion-padding">
-    <ion-button expand="block" color="success">SAVE</ion-button>
+    <ion-button expand="block" (click)="showValues()" color="success"
+      >SAVE</ion-button
+    >
   </div>
 </ion-content>

@@ -15,7 +15,7 @@ export class LanguagePage implements OnInit {
   }
   setLanguage(lang: string = 'en') {
     this.translate.setLanguage(lang);
-    this.router.navigate(['/home']);
+    this.router.navigate(['/login']);
 
   }
 
