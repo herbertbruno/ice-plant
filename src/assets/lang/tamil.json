@@ -15,7 +15,15 @@
     "RECORD-PAYMENT":"பதிவு கட்டணம்",
     "WORKER":"தொழிலாளி",
     "CUSTOMER-NAME":"வாடிக்கையாளர் பெயர்",
-    "PAYMENT-TYPE":"கட்டணம்"
+    "PAYMENT-TYPE":"கட்டணம்",
+    "ADD-NEW-EMPLOYEE":"புதிய பணியாளரைச் சேர்க்கவும்",
+   "CREATE_NEW_EMPLOYEE":"புதிய பணியாளரை உருவாக்குங்கள்",
+   "NAME":"பெயர்",
+   "MOBILE-NUMBER":"கைபேசி எண்",
+   "ADDRESS":"முகவரி",
+   "POSITION":"நிலை",
+   "SAVE":"சேமி"
+   
     
     
 }

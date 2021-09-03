@@ -14,7 +14,15 @@
    "OTHER EXPENSE":"OTHER EXPENSE",
    "RECORD-PAYMENT":"RECORD PAYMENT",
    "WORKER":"WORKER",
-   "CUSTOMER_NAME":"CUSTOMER NAME",
-   "PAYMENT_TYPE":"PAYMENT TYPE"
+   "CUSTOMER_NAME":"Customer Name",
+   "PAYMENT_TYPE":"Payment Type",
+   "ADD-NEW-EMPLOYEE":"Add New Employee",
+   "CREATE_NEW_EMPLOYEE":"Create New Employee",
+   "NAME":"Name",
+   "MOBILE-NUMBER":"Mobile Number",
+   "ADDRESS":"Address",
+   "POSITION":"Position",
+   "SAVE":"Save"
+   
 
 }
