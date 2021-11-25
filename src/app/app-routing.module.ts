@@ -30,7 +30,11 @@ const routes: Routes = [
   {
     path: 'language',
     loadChildren: () => import('./language/language.module').then(m => m.LanguagePageModule)
+  },  {
+    path: 'town4',
+    loadChildren: () => import('./town4/town4.module').then( m => m.Town4PageModule)
   },
+
 
 ];
 
