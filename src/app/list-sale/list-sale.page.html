@@ -3,21 +3,26 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>LIST-EXPENSE</ion-title>
+    <ion-title>LIST-SALE</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item  *ngFor="let expense of expenses " >
+  <div class="set">
+  <ion-list >
+  
+    <ion-item  *ngFor="let sale of sales" >
       
-      {{ expense}}
+      {{ sale }}
      
-    </ion-item>  
-</ion-list>
+    </ion-item> 
+    
+  </ion-list>
   <ion-fab vertical="center" horizontal="end" slot="fixed">
-    <ion-fab-button routerLink="/expense">
-      <ion-icon name="add"></ion-icon> 
+    <ion-fab-button routerLink="/sale">
+      <ion-icon name="add"></ion-icon>  
     </ion-fab-button>
   </ion-fab>
+</div>
+
 </ion-content>

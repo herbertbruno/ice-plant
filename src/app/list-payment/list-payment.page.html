@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>list-payment</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -19,8 +22,8 @@
     
   </ion-list>
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button>
+  <ion-fab vertical="center" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/record-payment">
       <ion-icon name="add"></ion-icon>  
     </ion-fab-button>
   </ion-fab>
