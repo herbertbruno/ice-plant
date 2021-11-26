@@ -1,28 +1,32 @@
 <ion-content>
   <div class="outer">
     <h3>SIGN IN</h3>
-    <ion-item>
-      <div class="circle">
-        <ion-icon name="person-circle"></ion-icon>
-      </div>
-      <ion-label>User Name:</ion-label>
+    <ion-item lines="none">
+      <ion-icon slot="start" name="person-circle"></ion-icon>
+
+      <ion-label position="stacked">User Name:</ion-label>
       <ion-input></ion-input>
     </ion-item>
-    <ion-item>
-      <div class="lock">
-        <ion-icon name="lock-closed"></ion-icon>
-      </div>
-      <ion-label>Password:</ion-label>
-      <div class="eye">
+    <ion-item lines="none">
+      <ion-icon name="lock-closed" slot="start"></ion-icon>
+      <ion-label position="stacked"> Password:</ion-label>
+      <!-- <div class="eye">
         <ion-icon name="eye"></ion-icon>
-      </div>
-      <ion-input></ion-input>
+      </div> -->
+      <ion-input type="password"></ion-input>
     </ion-item>
-    <ion-button expand="full" color="success" (click)="navigatePage()"
+    <!-- <br />
+    <ion-item lines="none">
+      <ion-toggle slot="start"> </ion-toggle>
+      <ion-label> Remember me </ion-label>
+    </ion-item>
+    <br /> -->
+    <br />
+    <br />
+    <ion-button expand="block" color="success" (click)="navigatePage()"
       >SIGN IN
     </ion-button>
-    <ion-toggle color="danger"> </ion-toggle>
-    <ion-note color="danger">Remember me </ion-note>
-    <ion-button color="primary">Forgot password </ion-button>
-  </div></ion-content
->
+
+    <br />
+  </div>
+</ion-content>
