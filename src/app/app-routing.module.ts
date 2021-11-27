@@ -4,11 +4,11 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule)
   },
   {
     path: 'message/:id',
-    loadChildren: () => import('./view-message/view-message.module').then(m => m.ViewMessagePageModule)
+    loadChildren: () => import('./pages/view-message/view-message.module').then(m => m.ViewMessagePageModule)
   },
   {
     path: '',
@@ -17,71 +17,67 @@ const routes: Routes = [
   },
   {
     path: 'customer-profile',
-    loadChildren: () => import('./customer-profile/customer-profile.module').then(m => m.CustomerProfilePageModule)
+    loadChildren: () => import('./pages/customer-profile/customer-profile.module').then(m => m.CustomerProfilePageModule)
   },
   {
     path: 'sale',
-    loadChildren: () => import('./sale/sale.module').then(m => m.SalePageModule)
+    loadChildren: () => import('./pages/sale/sale.module').then(m => m.SalePageModule)
   },
 
   {
     path: 'language',
-    loadChildren: () => import('./language/language.module').then(m => m.LanguagePageModule)
+    loadChildren: () => import('./pages/language/language.module').then(m => m.LanguagePageModule)
   },
   {
     path: 'worker',
-    loadChildren: () => import('./worker/worker.module').then(m => m.WorkerPageModule)
+    loadChildren: () => import('./pages/worker/worker.module').then(m => m.WorkerPageModule)
   },
 
   {
     path: 'customer-profile',
-    loadChildren: () => import('./customer-profile/customer-profile.module').then(m => m.CustomerProfilePageModule)
+    loadChildren: () => import('./pages/customer-profile/customer-profile.module').then(m => m.CustomerProfilePageModule)
   },
   {
     path: 'sale',
-    loadChildren: () => import('./sale/sale.module').then(m => m.SalePageModule)
-  },
-  {
-    path: 'lang',
-    loadChildren: () => import('./lang/lang.module').then(m => m.LangPageModule)
+    loadChildren: () => import('./pages/sale/sale.module').then(m => m.SalePageModule)
   },
 
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'expense',
-    loadChildren: () => import('./expense/expense.module').then(m => m.ExpensePageModule)
+    loadChildren: () => import('./pages/expense/expense.module').then(m => m.ExpensePageModule)
   },
   {
     path: 'owner',
-    loadChildren: () => import('./owner/owner.module').then(m => m.OwnerPageModule)
+    loadChildren: () => import('./pages/owner/owner.module').then(m => m.OwnerPageModule)
   },
 
   {
     path: 'record-payment',
-    loadChildren: () => import('./record-payment/record-payment.module').then(m => m.RecordPaymentPageModule)
+    loadChildren: () => import('./pages/record-payment/record-payment.module').then(m => m.RecordPaymentPageModule)
   },
   {
     path: 'list-payment',
-    loadChildren: () => import('./list-payment/list-payment.module').then(m => m.ListPaymentPageModule)
+    loadChildren: () => import('./pages/list-payment/list-payment.module').then(m => m.ListPaymentPageModule)
   },
   {
     path: 'list-expense',
-    loadChildren: () => import('./list-expense/list-expense.module').then(m => m.ListExpensePageModule)
+    loadChildren: () => import('./pages/list-expense/list-expense.module').then(m => m.ListExpensePageModule)
   },
   {
     path: 'list-worker',
-    loadChildren: () => import('./list-worker/list-worker.module').then(m => m.ListWorkerPageModule)
+    loadChildren: () => import('./pages/list-worker/list-worker.module').then(m => m.ListWorkerPageModule)
   },
   {
     path: 'list-customer',
-    loadChildren: () => import('./list-customer/list-customer.module').then(m => m.ListCustomerPageModule)
+    loadChildren: () => import('./pages/list-customer/list-customer.module').then(m => m.ListCustomerPageModule)
   },
   {
     path: 'list-sale',
-    loadChildren: () => import('./list-sale/list-sale.module').then( m => m.ListSalePageModule)
+    loadChildren: () => import('./pages/list-sale/list-sale.module').then(m => m.ListSalePageModule)
   }
 
 

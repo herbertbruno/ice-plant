@@ -1,0 +1,25 @@
+<ion-content>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="outer">
+      <h3>SIGN IN</h3>
+      <ion-item lines="none">
+        <ion-icon slot="start" name="person-circle"></ion-icon>
+        <ion-label position="stacked">User Name:</ion-label>
+        <ion-input formControlName="userName"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon name="lock-closed" slot="start"></ion-icon>
+        <ion-label position="stacked"> Password:</ion-label>
+        <ion-input formControlName="password" type="password"></ion-input>
+      </ion-item>
+      <br />
+      <br />
+      <ion-button expand="block" color="success" type="submit"
+        >SIGN IN
+      </ion-button>
+
+      <br />
+    </div>
+  </form>
+</ion-content>

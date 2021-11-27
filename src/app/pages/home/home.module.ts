@@ -7,7 +7,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { MessageComponentModule } from '../message/message.module';
 import { TranslateModule } from '@ngx-translate/core';
-import { PipesModule } from '../pipe/pipe.module';
+import { PipesModule } from '../../pipe/pipe.module';
 
 @NgModule({
   imports: [
