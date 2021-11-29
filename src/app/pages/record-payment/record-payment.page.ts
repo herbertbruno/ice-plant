@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+//import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-record-payment',
@@ -6,31 +10,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./record-payment.page.scss'],
 })
 export class RecordPaymentPage implements OnInit {
-  toni;
-  date;
-  time;
-  customername;
-  paymenttype;
-  amount;
+  RecordPaymentForm: FormGroup;
 
-  constructor() { }
+  constructor(private router: Router, private auth: AuthService, public formBuilder: FormBuilder) { }
 
 
   ngOnInit() {
-    this.toni = "The super Man";
+    this.RecordPaymentForm = this.formBuilder.group({
+      date:[], 
+      time:[] ,
+      customerName: [],
+      paymenttype: [],
+      amount:[],
+     
+    
+    })
 
   }
-  showValues() {
-
-    let allValues = {
-      date: this.date,
-      time: this.time,
-      customer: this.customername,
-      payment: this.paymenttype,
-      money: this.amount
-    }
-    console.log(allValues)
-
+  RecordPayment () {
+if (this.RecordPaymentForm.valid){
+  console.log(this.RecordPaymentForm.value);
+  this.router.navigate(['/home']);
+}else {
+  alert("not valid")
+}
   }
-
 }
