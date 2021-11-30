@@ -9,16 +9,16 @@
 
 <ion-content >
   <div class="outer">
-    <form [formGroup]="SaleForm" (ngSubmit)="save()">
+    <form [formGroup]="saleForm" (ngSubmit)="save()">
     <ion-item>
       <ion-label> Date</ion-label>
-      <ion-datetime formControlName="Date" displayFormat="DD-MM-YYYY" placeholder="Select Date"> </ion-datetime>
+      <ion-datetime formControlName="date" displayFormat="DD-MM-YYYY" placeholder="Select Date"> </ion-datetime>
 
 
     </ion-item>
     <ion-item>
       <ion-label>Time</ion-label>
-      <ion-datetime id="Time" formControlName="Time" displayFormat="HH:mm"></ion-datetime>
+      <ion-datetime id="Time" formControlName="time" displayFormat="HH:mm"></ion-datetime>
     </ion-item>
 
     <ion-item>

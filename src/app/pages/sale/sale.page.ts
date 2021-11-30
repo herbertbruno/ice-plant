@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./sale.page.scss'],
 })
 export class SalePage implements OnInit {
-  SaleForm: FormGroup;
+  saleForm: FormGroup;
 
   constructor(private router: Router, private auth: AuthService, public formBuilder: FormBuilder) { }
   ratePerItem: number = 0;
@@ -17,9 +17,9 @@ export class SalePage implements OnInit {
   total: number = 0;
   
   ngOnInit() {
-    this.SaleForm = this.formBuilder.group({
-      Date: [],
-      Time: [],
+    this.saleForm = this.formBuilder.group({
+      date: [],
+      time: [],
       vechicleType:[],
       ratePerItem:[],
       numberOfItems:[],
@@ -29,8 +29,8 @@ export class SalePage implements OnInit {
 
   }
   save() {
-    if (this.SaleForm.valid) {
-      console.log(this.SaleForm.value);
+    if (this.saleForm.valid) {
+      console.log(this.saleForm.value);
       //this.router.navigate(['/home']);
     } else {
       alert("not valid")
