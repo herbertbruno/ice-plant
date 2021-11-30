@@ -10,21 +10,23 @@
 </ion-header>
 <ion-content>
   <div class="outer">
+    
+     <form [formGroup]="customerprofileForm" (ngSubmit)="save()">
     <ion-item>
       <ion-label>{{'CUSTOMER-NAME' | translate}}</ion-label>
-      <ion-input [(ngModel)]="name"></ion-input>
+      <ion-input  formControlName="name"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>{{'MOBILE-NUMBER'| translate}}</ion-label>
-      <ion-input type="tel" [(ngModel)]="mobile"></ion-input>
+      <ion-input type="tel" formControlName="mobile"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>{{'EMAIL-ID' | translate}}</ion-label>
-      <ion-input type="email" [(ngModel)]="email"></ion-input>
+      <ion-input type="email" formControlName="email"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>{{'VECHICLE-TYPE' | translate}}</ion-label>
-      <ion-select [(ngModel)]="vechicleType">
+      <ion-select formControlName="vechicleType">
         <ion-select-option value="Two Wheeler">{{'TWO-WHEELER' | translate}}</ion-select-option>
         <ion-select-option value="Auto">{{'AUTO' | translate}}</ion-select-option>
         <ion-select-option value="Tembo">{{'TEMPO' | translate}}</ion-select-option>
@@ -33,11 +35,14 @@
     </ion-item>
     <ion-item>
       <ion-label>{{'NEED-RECEIPT' | translate}}</ion-label>
-      <ion-toggle [(ngModel)]="needRecipt" color="success"></ion-toggle>
+      <ion-toggle formControlName="needRecipt" color="success"></ion-toggle>
     </ion-item>
     <br />
     <div class="ion-padding">
-      <ion-button color="success" expand="block">{{'SAVE' | translate}}</ion-button>
+      <ion-button color="success" type="submit" expand="block">{{'SAVE' | translate}}</ion-button>
     </div>
+  </form> 
+
   </div>
+
 </ion-content>

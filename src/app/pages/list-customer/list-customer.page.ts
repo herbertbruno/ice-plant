@@ -12,7 +12,6 @@ export class ListCustomerPage implements OnInit {
 
   ngOnInit() {
     this. customers= ['customer 1', 'customer 2', 'customer 3', 'customer4', 'customer 5', 'customer 6'];
-
   }
 
 }
