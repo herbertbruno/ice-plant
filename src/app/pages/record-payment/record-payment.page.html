@@ -8,34 +8,30 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="RECORD-PAYMENTForm" (ngSubmit)="RECORD-PAYMENT()">
- <div class="=toni">
+  <form [formGroup]="RecordPaymentForm" (ngSubmit)=" RecordPayment()">
     <ion-item>
     <ion-label>{{'DATE' | translate}}</ion-label>
     <ion-datetime
-      [(ngModel)]="date"
+    formControlName="date"
       displayFormat="DD-MM-YYYY"
       placeholder="Select Date"
     ></ion-datetime>
-    <ion-input formControlName="date" type="date"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label>{{'TIME' | translate}}</ion-label>
     <ion-datetime
-      [(ngModel)]="time"
+    formControlName="time"
       displayFormat="hh:mm A"
       placeholder="Select Time"
     ></ion-datetime>
-    <ion-input formControlName="time" type="time"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label>{{'CUSTOMER-NAME' | translate}}</ion-label>
-    <ion-input [(ngModel)]="customername" type="text"></ion-input>
-    <ion-input formControlName="customerName"></ion-input>
+    <ion-input formControlName="customerName" type="text"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label>{{'PAYMENT-TYPE' | translate}}</ion-label>
-    <ion-select placeholder="Select One" [(ngModel)]="paymenttype">
+    <ion-select placeholder="Select One" formControlName="paymenttype">
       <ion-select-option value="f">Cash</ion-select-option>
       <ion-select-option value="m">Cheque</ion-select-option>
     </ion-select>
@@ -43,14 +39,12 @@
   </ion-item>
   <ion-item>
     <ion-label>{{'AMOUNT' | translate}}</ion-label>
-    <ion-input [(ngModel)]="amount" type="number"></ion-input>
-    <ion-input formControlName="amount"></ion-input>
+    <ion-input formControlName="amount" type="number"></ion-input>
   </ion-item>
-  <br />
-  <br />
   <div class="ion-padding">
-    <ion-button expand="block" (click)="showValues()" color="success"
+    <ion-button expand="block" color="success" type="submit"
       >SAVE</ion-button
     >
   </div>
+  </form>
 </ion-content>

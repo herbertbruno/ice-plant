@@ -30,7 +30,6 @@ export class RecordPaymentPage implements OnInit {
   RecordPayment () {
 if (this.RecordPaymentForm.valid){
   console.log(this.RecordPaymentForm.value);
-  this.router.navigate(['/home']);
 }else {
   alert("not valid")
 }
