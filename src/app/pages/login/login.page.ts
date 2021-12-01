@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginPage implements OnInit {
   loginForm: FormGroup;
+  submited: boolean = false;
 
   constructor(private router: Router, private auth: AuthService, public formBuilder: FormBuilder) { }
 
@@ -22,16 +23,21 @@ export class LoginPage implements OnInit {
     })
 
   }
-  login() {
-    if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
-      this.router.navigate(['/home']);
-    } else {
-      alert("not valid")
-    }
-    // console.log("Valid ", );
 
+  login() {
+    console.log("submit called");
+    this.submited = true;
+    console.log(this.submited)
+
+    // if (this.loginForm.valid) {
+    //   console.log(this.loginForm.value);
+    //   this.auth.signIn(this.loginForm.value.userName, this.loginForm.value.password)
+    //   //this.router.navigate(['/home']);
+    // } else {
+    //   alert("not valid")
+    // }
   }
+
   navigatePage() {
     this.router.navigate(['/home']);
   }

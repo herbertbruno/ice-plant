@@ -2,6 +2,21 @@
   <form [formGroup]="loginForm" (ngSubmit)="login()">
     <div class="outer">
       <h3>SIGN IN</h3>
+
+      <ion-text
+        color="danger ion-padding"
+        *ngIf="submited && loginForm.controls.userName.errors?.required"
+      >
+        User name should not be empty.
+      </ion-text>
+
+      <ion-text
+        color="danger"
+        *ngIf="submited && loginForm.controls.userName.errors?.pattern"
+      >
+        Please enter a valid email address.
+      </ion-text>
+
       <ion-item lines="none">
         <ion-icon slot="start" name="person-circle"></ion-icon>
         <ion-label position="stacked">User Name:</ion-label>
@@ -15,8 +30,9 @@
       </ion-item>
       <br />
       <br />
+
       <ion-button expand="block" color="success" type="submit"
-        >SIGN IN
+        >SIGN IN Tony
       </ion-button>
 
       <br />
