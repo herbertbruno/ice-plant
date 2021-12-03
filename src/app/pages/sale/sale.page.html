@@ -7,22 +7,23 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding brunog">
+<ion-content >
   <div class="outer">
+    <form [formGroup]="saleForm" (ngSubmit)="save()">
     <ion-item>
       <ion-label> Date</ion-label>
-      <ion-datetime [(ngModel)]="Date" displayFormat="DD-MM-YYYY" placeholder="Select Date"> </ion-datetime>
+      <ion-datetime formControlName="date" displayFormat="DD-MM-YYYY" placeholder="Select Date"> </ion-datetime>
 
 
     </ion-item>
     <ion-item>
       <ion-label>Time</ion-label>
-      <ion-datetime id="Time" [(ngModel)]="Time" displayFormat="HH:mm"></ion-datetime>
+      <ion-datetime id="Time" formControlName="time" displayFormat="HH:mm"></ion-datetime>
     </ion-item>
 
     <ion-item>
       <ion-label>Vechicle Type</ion-label>
-      <ion-select [(ngModel)]="vechicleType">
+      <ion-select formControlName="vechicleType">
         <ion-select-option value="Two Wheeler"> Two Wheeler</ion-select-option>
         <ion-select-option value="Auto">Auto</ion-select-option>
         <ion-select-option value="Tembo">Tembo</ion-select-option>
@@ -32,18 +33,18 @@
 
     <ion-item>
       <ion-label> Rate Per Ice : </ion-label>
-      <ion-input type="number" [(ngModel)]="ratePerItem"></ion-input>
+      <ion-input type="number" formControlName="ratePerItem"></ion-input>
 
     </ion-item>
     <ion-item>
       <ion-label> No.of.Bars :</ion-label>
-      <ion-input type="number" [(ngModel)]="numberOfItems"></ion-input>
+      <ion-input type="number" formControlName="numberOfItems"></ion-input>
     </ion-item>
     <!-- <ion-item>Ice Type</ion-item> -->
     <ion-row>
       <ion-col>Ice Type</ion-col>
       <ion-col> 
-         <ion-segment [(ngModel)]="iceType"> 
+         <ion-segment formControlName="iceType"> 
        
         <ion-segment-button  value="full">
           <ion-label>Full</ion-label>
@@ -57,7 +58,7 @@
     </ion-row>
   
     <ion-item>
-      <ion-button color="dark">Customer</ion-button>(optional)
+      <ion-button color="success">Customer</ion-button>(optional)
       <ion-toolbar>
         <ion-searchbar></ion-searchbar>
       </ion-toolbar>
@@ -65,16 +66,9 @@
     <ion-item>
       <ion-label> TOTAL : </ion-label>
     </ion-item>
-    <ion-item>
-      <ion-button color="dark">COMPLETE SALE</ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-label>Date:{{Date}}</ion-label>
-      <ion-label>Time{{Time}}</ion-label>
-      <ion-label>Vechile Type:{{vechicleType}}</ion-label>
-      <ion-label>iceType:{{iceType}}</ion-label>
-      <ion-label>ratePerIce :</ion-label>
-      <ion-label>No.Of.Ice:</ion-label>
-    </ion-item>
+    
+      <ion-button color="success" type="submit" expand="block">COMPLETE SALE</ion-button>
+    
+  </form>
   </div>
 </ion-content>
