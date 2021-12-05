@@ -32,7 +32,7 @@ export class LoginPage implements OnInit {
     // if (this.loginForm.valid) {
     //   console.log(this.loginForm.value);
     //   this.auth.signIn(this.loginForm.value.userName, this.loginForm.value.password)
-    //   //this.router.navigate(['/home']);
+      this.router.navigate(['/home']);
     // } else {
     //   alert("not valid")
     // }
