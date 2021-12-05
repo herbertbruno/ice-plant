@@ -9,20 +9,15 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./customer-profile.page.scss'],
 })
 export class CustomerProfilePage implements OnInit {
- 
-  //customerForm: any;
   customerprofileForm: FormGroup;
-  
-
+  submited: boolean = false;
   constructor(private router: Router, private auth: AuthService, public formBuilder: FormBuilder) { }
 
   ngOnInit() {
 
-    
-
     this.customerprofileForm = this.formBuilder.group({
-      name: [],
-      mobile: [],
+      name: ['', [Validators.required]],
+      mobile: ['', [Validators.required]],
       email:['',[Validators.required,Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
       vechicleType:[],
       needRecipt:[] 
@@ -31,17 +26,12 @@ export class CustomerProfilePage implements OnInit {
 
   }
   save() {
-    if (this.customerprofileForm.valid) {
-      console.log(this.customerprofileForm.value);
-      //this.router.navigate(['/home']);
-    } else {
-      alert("not valid")
-    }
-     //console.log("Valid ", );
+    console.log("submit called");
+    this.submited = true;
+    console.log(this.submited)
+  console.log(this.customerprofileForm.value);
 
-  }
-  
-
+ }
 }
 
   
