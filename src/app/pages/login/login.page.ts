@@ -29,13 +29,13 @@ export class LoginPage implements OnInit {
     this.submited = true;
     console.log(this.submited)
 
-    // if (this.loginForm.valid) {
-    //   console.log(this.loginForm.value);
-    //   this.auth.signIn(this.loginForm.value.userName, this.loginForm.value.password)
-    //   //this.router.navigate(['/home']);
-    // } else {
-    //   alert("not valid")
-    // }
+   //  if (this.loginForm.valid) {
+   //    console.log(this.loginForm.value);
+  //   this.auth.signIn(this.loginForm.value.userName, this.loginForm.value.password)
+    this.router.navigate(['/home']);
+     //} else {
+ //    alert("not valid")
+  //  }
   }
 
   navigatePage() {

@@ -11,15 +11,14 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class RecordPaymentPage implements OnInit {
   RecordPaymentForm: FormGroup;
-
+  submited: boolean = false;
   constructor(private router: Router, private auth: AuthService, public formBuilder: FormBuilder) { }
-
 
   ngOnInit() {
     this.RecordPaymentForm = this.formBuilder.group({
       date:[], 
       time:[] ,
-      customerName: [],
+      customerName:['', [Validators.required]],
       paymenttype: [],
       amount:[],
      
@@ -27,11 +26,12 @@ export class RecordPaymentPage implements OnInit {
     })
 
   }
-  RecordPayment () {
-if (this.RecordPaymentForm.valid){
+ 
+  save() {
+    console.log("submit called");
+    this.submited = true;
+    console.log(this.submited)
   console.log(this.RecordPaymentForm.value);
-}else {
-  alert("not valid")
-}
-  }
+
+ }
 }
