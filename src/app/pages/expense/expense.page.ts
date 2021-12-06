@@ -8,7 +8,8 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./expense.page.scss'],
 })
 export class ExpensePage implements OnInit {
-  expenseForm: FormGroup
+  expenseForm: FormGroup;
+  submited: boolean = false;
 
   constructor(private router: Router, private auth: AuthService, public formBuilder: FormBuilder) { }
  
@@ -26,12 +27,10 @@ export class ExpensePage implements OnInit {
 
   }
   save() {
-    if (this.expenseForm.valid) {
-      console.log(this.expenseForm.value);
-     
-    } else {
-      alert("not valid")
-    }
+    console.log("submit called");
+    this.submited = true;
+    console.log(this.submited)
+    console.log(this.expenseForm.value);
     // console.log("Valid ", );
 
   }
