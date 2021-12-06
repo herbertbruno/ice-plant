@@ -1,77 +1,94 @@
 <ion-header>
-  <div class= "out">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title> {{'EXPENSE' | translate}}</ion-title>
-  </ion-toolbar>
-</div>
+  <div class="out">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title> {{'EXPENSE' | translate}}</ion-title>
+    </ion-toolbar>
+  </div>
 </ion-header>
 
 <ion-content>
   <form [formGroup]="expenseForm" (ngSubmit)="save()">
     <ion-text
       color="danger"
-        *ngIf="submited && expenseForm.controls.expensesType.errors?.required">
-     
-        Expenses Type should be Enter
-      </ion-text>
-<ion-item>
-  <ion-label>{{'EXPENSE_TYPE' | translate}} </ion-label>
-  <ion-select formControlName="expensesType">
-    <ion-select-option value="vehicleExpenses"> {{'VEHICLE EXPENSE' | translate}}</ion-select-option>
-    <ion-select-option value="electricalExpenses">{{'ELECTRICAL EXPENSE' | translate}} </ion-select-option>
-    <ion-select-option value="medicalExpenses">{{'MEDICAl EXPENSE' | translate}} </ion-select-option>
-    <ion-select-option value="otherlExpenses">{{'OTHER EXPENSE' | translate}}</ion-select-option>
-  </ion-select>
-</ion-item>
-<ion-text
+      class="ion-padding"
+      *ngIf="submited && expenseForm.controls.expensesType.errors?.required"
+    >
+      Expenses Type should be Enter
+    </ion-text>
+    <ion-item>
+      <ion-label>{{'EXPENSE_TYPE' | translate}} </ion-label>
+      <ion-select formControlName="expensesType">
+        <ion-select-option value="vehicleExpenses">
+          {{'VEHICLE EXPENSE' | translate}}</ion-select-option
+        >
+        <ion-select-option value="electricalExpenses"
+          >{{'ELECTRICAL EXPENSE' | translate}}
+        </ion-select-option>
+        <ion-select-option value="medicalExpenses"
+          >{{'MEDICAl EXPENSE' | translate}}
+        </ion-select-option>
+        <ion-select-option value="otherlExpenses"
+          >{{'OTHER EXPENSE' | translate}}</ion-select-option
+        >
+      </ion-select>
+    </ion-item>
+    <ion-text
       color="danger"
-        *ngIf="submited && expenseForm.controls.expenseNotes.errors?.required">
-     
-        Date should be Enter
-      </ion-text>
-<ion-item>
-  <ion-label>{{'EXPENSE_NOTE' |  translate}}</ion-label>
-  <ion-input formControlName="expenseNotes"  type="string"></ion-input>
-</ion-item>
-<ion-text
+      class="ion-padding"
+      *ngIf="submited && expenseForm.controls.expenseNotes.errors?.required"
+    >
+      Date should be Enter
+    </ion-text>
+    <ion-item>
+      <ion-label>{{'EXPENSE_NOTE' | translate}}</ion-label>
+      <ion-input formControlName="expenseNotes" type="string"></ion-input>
+    </ion-item>
+    <ion-text
       color="danger"
-        *ngIf="submited && expenseForm.controls.date.errors?.required">
-     
-        Date should be Enter
-      </ion-text>
-<ion-item>
-  <ion-label> {{'DATE' |  translate}}</ion-label>
-  <ion-datetime formControlName="date" displayFormat="DD-MM-YYYY" placeholder="Select Date"> 
-  </ion-datetime>
-</ion-item>
-<ion-text
+      class="ion-padding"
+      *ngIf="submited && expenseForm.controls.date.errors?.required"
+    >
+      Date should be Enter
+    </ion-text>
+    <ion-item>
+      <ion-label> {{'DATE' | translate}}</ion-label>
+      <ion-datetime
+        formControlName="date"
+        displayFormat="DD-MM-YYYY"
+        placeholder="Select Date"
+      >
+      </ion-datetime>
+    </ion-item>
+    <ion-text
       color="danger"
-        *ngIf="submited && expenseForm.controls.time.errors?.required">
-     
-        Time should be Enter
-      </ion-text>
-<ion-item>
-  <ion-label>{{'TIME' | translate}}</ion-label>
-  <ion-datetime id="time" formControlName="time" displayFormat="HH:mm"></ion-datetime>
-</ion-item>
-<ion-text
+      class="ion-padding"
+      *ngIf="submited && expenseForm.controls.time.errors?.required"
+    >
+      Time should be Enter
+    </ion-text>
+    <ion-item>
+      <ion-label>{{'TIME' | translate}}</ion-label>
+      <ion-datetime
+        id="time"
+        formControlName="time"
+        displayFormat="HH:mm"
+      ></ion-datetime>
+    </ion-item>
+    <ion-text
       color="danger"
-        *ngIf="submited && expenseForm.controls.amount.errors?.required">
-     
-        Amount should be Enter
-      </ion-text>
-<ion-item>
-  
-  <ion-label>{{'AMOUNT' | translate}}</ion-label>
-  <ion-input formControlName="amount"  type="number"></ion-input>
-</ion-item>
+      class="ion-padding"
+      *ngIf="submited && expenseForm.controls.amount.errors?.required"
+    >
+      Amount should be Enter
+    </ion-text>
+    <ion-item>
+      <ion-label>{{'AMOUNT' | translate}}</ion-label>
+      <ion-input formControlName="amount" type="number"></ion-input>
+    </ion-item>
 
- 
-  <ion-button size="medium" type="submit">Save</ion-button>
-  
- 
-</form>
+    <ion-button size="medium" type="submit">Save</ion-button>
+  </form>
 </ion-content>

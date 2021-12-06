@@ -13,18 +13,15 @@ export class SalePage implements OnInit {
   submited: boolean = false;
 
   constructor(private router: Router, private auth: AuthService, public formBuilder: FormBuilder) { }
-  //ratePerItem: number = 0;
-  //numberOfItems: number = 0;
-  //total: number = 0;
-  
+
   ngOnInit() {
     this.saleForm = this.formBuilder.group({
       date: ['', [Validators.required]],
       time: ['', [Validators.required]],
-      vechicleType:['', [Validators.required]],
-      ratePerItem:['', [Validators.required]],
-      numberOfItems:['', [Validators.required]],
-      iceType:['', [Validators.required]],
+      vechicleType: ['', [Validators.required]],
+      ratePerItem: ['', [Validators.required]],
+      numberOfItems: ['', [Validators.required]],
+      iceType: ['', [Validators.required]],
     })
 
 
@@ -35,12 +32,12 @@ export class SalePage implements OnInit {
     console.log(this.submited)
     console.log(this.saleForm.value);
     //if (this.saleForm.valid) {
-      //console.log(this.saleForm.value);
-      //this.router.navigate(['/home']);
+    //console.log(this.saleForm.value);
+    //this.router.navigate(['/home']);
     //} else {
-      //alert("not valid")
+    //alert("not valid")
     //}
-     //console.log("Valid ", );
+    //console.log("Valid ", );
 
   }
   // calculateTotal() {
