@@ -8,19 +8,36 @@
 </ion-header>
 
 <ion-content >
+  
   <div class="outer">
     <form [formGroup]="saleForm" (ngSubmit)="save()">
+      <ion-text
+      color="danger"
+        *ngIf="submited && saleForm.controls.date.errors?.required">
+     
+        Date should be Enter
+      </ion-text>
     <ion-item>
       <ion-label> Date</ion-label>
       <ion-datetime formControlName="date" displayFormat="DD-MM-YYYY" placeholder="Select Date"> </ion-datetime>
-
-
     </ion-item>
+      <ion-text
+      color="danger"
+        *ngIf="submited && saleForm.controls.time.errors?.required">
+     
+        Time should be Enter
+      </ion-text>
+    
     <ion-item>
       <ion-label>Time</ion-label>
       <ion-datetime id="Time" formControlName="time" displayFormat="HH:mm"></ion-datetime>
     </ion-item>
-
+    <ion-text
+      color="danger"
+        *ngIf="submited && saleForm.controls.vechicleType.errors?.required">
+     
+        Vechicle Type should be Enter
+      </ion-text>
     <ion-item>
       <ion-label>Vechicle Type</ion-label>
       <ion-select formControlName="vechicleType">
@@ -30,17 +47,35 @@
         <ion-select-option value="Truck">Truck</ion-select-option>
       </ion-select>
     </ion-item>
-
+    <ion-text
+      color="danger"
+        *ngIf="submited && saleForm.controls.ratePerItem.errors?.required">
+     
+        Rate should be Enter
+      </ion-text>
     <ion-item>
+      
       <ion-label> Rate Per Ice : </ion-label>
       <ion-input type="number" formControlName="ratePerItem"></ion-input>
 
     </ion-item>
+    <ion-text
+      color="danger"
+        *ngIf="submited && saleForm.controls.numberOfItems.errors?.required">
+     
+        No.of.Bars should be Enter
+      </ion-text>
     <ion-item>
       <ion-label> No.of.Bars :</ion-label>
       <ion-input type="number" formControlName="numberOfItems"></ion-input>
     </ion-item>
     <!-- <ion-item>Ice Type</ion-item> -->
+    <ion-text
+      color="danger"
+        *ngIf="submited && saleForm.controls.iceType.errors?.required">
+     
+        Ice Type should be Enter
+      </ion-text>
     <ion-row>
       <ion-col>Ice Type</ion-col>
       <ion-col> 

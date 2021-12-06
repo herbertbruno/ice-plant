@@ -10,10 +10,10 @@
 </ion-header>
 
 <ion-content>
-
+  <form [formGroup]="expenseForm" (ngSubmit)="save()">
 <ion-item>
   <ion-label>{{'EXPENSE_TYPE' | translate}} </ion-label>
-  <ion-select [(ngModel)]="expensesType">
+  <ion-select formControlName="expensesType">
     <ion-select-option value="vehicleExpenses"> {{'VEHICLE EXPENSE' | translate}}</ion-select-option>
     <ion-select-option value="electricalExpenses">{{'ELECTRICAL EXPENSE' | translate}} </ion-select-option>
     <ion-select-option value="medicalExpenses">{{'MEDICAl EXPENSE' | translate}} </ion-select-option>
@@ -23,29 +23,29 @@
 
 <ion-item>
   <ion-label>{{'EXPENSE_NOTE' |  translate}}</ion-label>
-  <ion-input [(ngModel)]="expenseNotes"  type="string"></ion-input>
+  <ion-input formControlName="expenseNotes"  type="string"></ion-input>
 </ion-item>
 
 <ion-item>
   <ion-label> {{'DATE' |  translate}}</ion-label>
-  <ion-datetime [(ngModel)]="Date" displayFormat="DD-MM-YYYY" placeholder="Select Date"> 
+  <ion-datetime formControlName="date" displayFormat="DD-MM-YYYY" placeholder="Select Date"> 
   </ion-datetime>
 </ion-item>
 
 <ion-item>
   <ion-label>{{'TIME' | translate}}</ion-label>
-  <ion-datetime id="Time" [(ngModel)]="Time" displayFormat="HH:mm"></ion-datetime>
+  <ion-datetime id="time" formControlName="time" displayFormat="HH:mm"></ion-datetime>
 </ion-item>
 
 <ion-item>
   
   <ion-label>{{'AMOUNT' | translate}}</ion-label>
-  <ion-input [(ngModel)]="Amount"  type="number"></ion-input>
+  <ion-input formControlName="amount"  type="number"></ion-input>
 </ion-item>
 
  
-  <ion-button size="medium" (click)="saveExpense()">Save</ion-button>
+  <ion-button size="medium" type="submit">Save</ion-button>
   
  
-
+</form>
 </ion-content>
