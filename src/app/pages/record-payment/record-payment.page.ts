@@ -17,17 +17,14 @@ export class RecordPaymentPage implements OnInit {
 
   ngOnInit() {
     this.recordPaymentForm = this.formBuilder.group({
-      date:['', [Validators.required]], 
-      time:['', [Validators.required]],
-      customerName:['', [Validators.required]],
-      paymenttype:['', [Validators.required]],
-      amount:['', [Validators.required]],
-     
-    
+      date: ['', [Validators.required]],
+      time: ['', [Validators.required]],
+      customerName: ['', [Validators.required]],
+      paymenttype: ['', [Validators.required]],
+      amount: ['', [Validators.required]],
     })
-
   }
-  recordPayment () {
+  recordPayment() {
     console.log("submit called");
     this.submited = true;
     console.log(this.submited)
