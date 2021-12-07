@@ -14,30 +14,34 @@
       <ion-text color="danger ion-padding" *ngIf="submited && customerProfileForm.controls.name.errors?.required">
         customer name should be entered.
       </ion-text>
+      <div  class="ion-padding">
       <ion-item>
         <ion-label>{{'CUSTOMER-NAME' | translate}}</ion-label>
         <ion-input formControlName="name"></ion-input>
-      </ion-item>
+      </ion-item></div>
       <ion-text color="danger ion-padding" *ngIf="submited && customerProfileForm.controls.mobile.errors?.required">
         mobile number should be entered.
       </ion-text>
       <ion-text color="danger" *ngIf="submited && customerProfileForm.controls.mobile.errors?.pattern">
         Please enter a valid mobile number.
       </ion-text>
+      <div  class="ion-padding">
       <ion-item>
         <ion-label>{{'MOBILE_NUMBER'| translate}}</ion-label>
         <ion-input type="tel" formControlName="mobile"></ion-input>
-      </ion-item>
+      </ion-item></div>
       <ion-text color="danger" *ngIf="submited && customerProfileForm.controls.email.errors?.required">
         email should be entered
       </ion-text>
+      <div  class="ion-padding">
       <ion-item>
         <ion-label>{{'EMAIL-ID' | translate}}</ion-label>
         <ion-input type="email" formControlName="email"></ion-input>
-      </ion-item>
+      </ion-item></div>
       <ion-text color="danger" *ngIf="submited && customerProfileForm.controls.vechicleType.errors?.required">
         Vechicle Type should be selected
       </ion-text>
+      <div  class="ion-padding">
       <ion-item>
         <ion-label>Vechicle Type</ion-label>
         <ion-select formControlName="vechicleType">
@@ -46,14 +50,15 @@
           <ion-select-option value="Tembo">Tembo</ion-select-option>
           <ion-select-option value="Truck">Truck</ion-select-option>
         </ion-select>
-      </ion-item>
+      </ion-item></div>
       <ion-text color="danger" *ngIf="submited && customerProfileForm.controls.needRecipt.errors?.required">
         needRecipt should be selected
       </ion-text>
+      <div  class="ion-padding">
       <ion-item>
         <ion-label>{{'NEED-RECEIPT' | translate}}</ion-label>
         <ion-toggle formControlName="needRecipt" color="success"></ion-toggle>
-      </ion-item>
+      </ion-item></div>
       <br />
       <div class="ion-padding">
         <ion-button color="success" type="submit" expand="block">{{'SAVE' | translate}}</ion-button>
