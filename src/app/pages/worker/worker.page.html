@@ -7,29 +7,47 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-item>
+ 
+    <form [formGroup]="workerForm" (ngSubmit)="save()">
+  <ion-text
+  color="danger"
+  *ngIf="submited && workerForm.controls.date.errors?.required">
+  Date should be Entered.
+</ion-text>
+      <ion-item>
     <ion-label>{{'DATE' | translate}} </ion-label>
     <ion-datetime
-      [(ngModel)]="Date"
+    formControlName="date"
       displayFormat="DD-MM-YYYY"
       placeholder="Select Date"
     >
     </ion-datetime>
   </ion-item>
+  <ion-text
+  color="danger"
+    *ngIf="submited && workerForm.controls.time.errors?.required">
+    Time should be Entered
+  </ion-text>
   <ion-item>
     <ion-label>{{'TIME' | translate}}</ion-label>
     <ion-datetime
       id="Time"
-      [(ngModel)]="Time"
-      displayFormat="bb:rr"
+      formControlName="time"
+      displayFormat="HH:mm"
       placeholder="Select time"
     ></ion-datetime>
   </ion-item>
+  <ion-text
+  color="danger"
+    *ngIf="submited &&  workerForm.controls.iceproduced.errors?.required">
+ 
+    iceproduced should be Entered
+  </ion-text>
   <ion-item>
     <ion-label> {{'NO-OF-ICE-PRODUCED' | translate}} : </ion-label>
-    <ion-input type="number" [(ngModel)]="iceproduced"></ion-input>
+    <ion-input type="number" formControlName="iceproduced"></ion-input>
   </ion-item>
-  <div class="ion-padding">
-    <ion-button color="success" expand="block">Save</ion-button>
-  </div>
+    <ion-button color="success" type="submit" expand="block">Save</ion-button>
+  </form>
+
 </ion-content>
