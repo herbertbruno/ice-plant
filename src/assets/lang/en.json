@@ -26,7 +26,7 @@
   "WORKER": "Worker",
   "SAVE": "Save",
   "CUSTOMER-NAME": "Customer Name",
-  "MOBILE-NUMBER": "Mobile Number",
+  "MOBILE_NUMBER": "Mobile Number",
   "EMAIL-ID": "Email ID",
   "VECHICLE-TYPE": "Vechicle Type",
   "TWO-WHEELER": "Two Wheeler",
