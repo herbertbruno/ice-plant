@@ -11,27 +11,31 @@
     <ion-text color="danger" *ngIf="submited && recordPaymentForm.controls.date.errors?.required">
       Date should be Entered
     </ion-text>
+    <div class="ion-padding">
     <ion-item>
       <ion-label>{{'DATE' | translate}}</ion-label>
       <ion-datetime formControlName="date" displayFormat="DD-MM-YYYY" placeholder="Select Date"></ion-datetime>
-    </ion-item>
+    </ion-item></div>
     <ion-text color="danger" *ngIf="submited && recordPaymentForm.controls.time.errors?.required">
       time should be Entered
     </ion-text>
+    <div class="ion-padding">
     <ion-item>
       <ion-label>{{'TIME' | translate}}</ion-label>
       <ion-datetime formControlName="time" displayFormat="hh:mm A" placeholder="Select Time"></ion-datetime>
-    </ion-item>
+    </ion-item></div>
     <ion-text color="danger" *ngIf="submited && recordPaymentForm.controls.customerName.errors?.required">
       customerName should be Entered
     </ion-text>
+    <div class="ion-padding">
     <ion-item>
       <ion-label>{{'CUSTOMER-NAME' | translate}}</ion-label>
       <ion-input formControlName="customerName" type="text"></ion-input>
-    </ion-item>
+    </ion-item></div>
     <ion-text color="danger" *ngIf="submited && recordPaymentForm.controls.paymenttype.errors?.required">
       paymenttype should be selected.
     </ion-text>
+    <div class="ion-padding">
     <ion-item>
       <ion-label>{{'PAYMENT-TYPE' | translate}}</ion-label>
       <ion-select placeholder="Select One" formControlName="paymenttype">
@@ -39,14 +43,15 @@
         <ion-select-option value="m">Cheque</ion-select-option>
       </ion-select>
       <ion-input formControlName="paymenttype" type="payment"></ion-input>
-    </ion-item>
+    </ion-item></div>
     <ion-text color="danger" *ngIf="submited && recordPaymentForm.controls.amount.errors?.required">
       amount should be Entered.
     </ion-text>
+    <div class="ion-padding">
     <ion-item>
       <ion-label>{{'AMOUNT' | translate}}</ion-label>
       <ion-input formControlName="amount" type="number"></ion-input>
-    </ion-item>
+    </ion-item></div>
     <div class="ion-padding">
       <ion-button expand="block" color="success" type="submit">SAVE</ion-button>
     </div>
