@@ -12,59 +12,62 @@
   <div class="outer">
     <form [formGroup]="customerProfileForm" (ngSubmit)="save()">
       <ion-text color="danger ion-padding" *ngIf="submited && customerProfileForm.controls.name.errors?.required">
-        customer name should be entered.
+        {{'NAME'| translate}}
       </ion-text>
-      <div  class="ion-padding">
-      <ion-item>
-        <ion-label>{{'CUSTOMER-NAME' | translate}}</ion-label>
-        <ion-input formControlName="name"></ion-input>
-      </ion-item></div>
+      <div class="ion-padding">
+        <ion-item>
+          <ion-label>{{'CUSTOMER-NAME' | translate}}</ion-label>
+          <ion-input formControlName="name"></ion-input>
+        </ion-item>
+      </div>
       <ion-text color="danger ion-padding" *ngIf="submited && customerProfileForm.controls.mobile.errors?.required">
-        mobile number should be entered.
+        {{'NUMBER'| translate}}
       </ion-text>
       <ion-text color="danger" *ngIf="submited && customerProfileForm.controls.mobile.errors?.pattern">
-        Please enter a valid mobile number.
+        {{'VALID_NUMBER'| translate}}
       </ion-text>
-      <div  class="ion-padding">
-      <ion-item>
-        <ion-label>{{'MOBILE_NUMBER'| translate}}</ion-label>
-        <ion-input type="tel" formControlName="mobile"></ion-input>
-      </ion-item></div>
+      <div class="ion-padding">
+        <ion-item>
+          <ion-label>{{'MOBILE_NUMBER'| translate}}</ion-label>
+          <ion-input type="tel" formControlName="mobile"></ion-input>
+        </ion-item>
+      </div>
       <ion-text color="danger" *ngIf="submited && customerProfileForm.controls.email.errors?.required">
-        email should be entered
+        {{'EMAIL'| translate}}
       </ion-text>
-      <div  class="ion-padding">
-      <ion-item>
-        <ion-label>{{'EMAIL-ID' | translate}}</ion-label>
-        <ion-input type="email" formControlName="email"></ion-input>
-      </ion-item></div>
+      <div class="ion-padding">
+        <ion-item>
+          <ion-label>{{'EMAIL-ID' | translate}}</ion-label>
+          <ion-input type="email" formControlName="email"></ion-input>
+        </ion-item>
+      </div>
       <ion-text color="danger" *ngIf="submited && customerProfileForm.controls.vechicleType.errors?.required">
-        Vechicle Type should be selected
+        {{'VECHICLE'| translate}}
       </ion-text>
-      <div  class="ion-padding">
-      <ion-item>
-        <ion-label>Vechicle Type</ion-label>
-        <ion-select formControlName="vechicleType">
-          <ion-select-option value="Two Wheeler"> Two Wheeler</ion-select-option>
-          <ion-select-option value="Auto">Auto</ion-select-option>
-          <ion-select-option value="Tembo">Tembo</ion-select-option>
-          <ion-select-option value="Truck">Truck</ion-select-option>
-        </ion-select>
-      </ion-item></div>
+      <div class="ion-padding">
+        <ion-item>
+          <ion-label>{{'VECHICLE-TYPE' | translate}}</ion-label>
+          <ion-select formControlName="vechicleType">
+            <ion-select-option value="Two Wheeler"> Two Wheeler</ion-select-option>
+            <ion-select-option value="Auto">Auto</ion-select-option>
+            <ion-select-option value="Tembo">Tembo</ion-select-option>
+            <ion-select-option value="Truck">Truck</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
       <ion-text color="danger" *ngIf="submited && customerProfileForm.controls.needRecipt.errors?.required">
-        needRecipt should be selected
+        {{'RECEIPT' | translate}}
       </ion-text>
-      <div  class="ion-padding">
-      <ion-item>
-        <ion-label>{{'NEED-RECEIPT' | translate}}</ion-label>
-        <ion-toggle formControlName="needRecipt" color="success"></ion-toggle>
-      </ion-item></div>
+      <div class="ion-padding">
+        <ion-item>
+          <ion-label>{{'NEED-RECEIPT' | translate}}</ion-label>
+          <ion-toggle formControlName="needRecipt" color="success"></ion-toggle>
+        </ion-item>
+      </div>
       <br />
       <div class="ion-padding">
         <ion-button color="success" type="submit" expand="block">{{'SAVE' | translate}}</ion-button>
       </div>
     </form>
-
   </div>
-
 </ion-content>
