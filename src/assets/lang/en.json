@@ -33,5 +33,6 @@
   "AUTO": "Auto",
   "TEMPO": "Tempo",
   "TRUCK": "Truck",
-  "NEED-RECEIPT": "Need Receipt"
+  "NEED-RECEIPT": "Need Receipt",
+  "ENTER_ICEPRODUCED":" iceproduced should be Entered"
 }

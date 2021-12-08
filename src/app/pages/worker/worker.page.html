@@ -12,7 +12,7 @@
   <ion-text
   color="danger"
   *ngIf="submited && workerForm.controls.date.errors?.required">
-  Date should be Entered.
+  {{'ENTER_DATE' | translate}}
 </ion-text>
       <ion-item>
     <ion-label>{{'DATE' | translate}} </ion-label>
@@ -26,7 +26,7 @@
   <ion-text
   color="danger"
     *ngIf="submited && workerForm.controls.time.errors?.required">
-    Time should be Entered
+    {{'ENTER_TIME' | translate}}
   </ion-text>
   <ion-item>
     <ion-label>{{'TIME' | translate}}</ion-label>
@@ -40,8 +40,7 @@
   <ion-text
   color="danger"
     *ngIf="submited &&  workerForm.controls.iceproduced.errors?.required">
- 
-    iceproduced should be Entered
+    {{'ENTER_ICEPRODUCED' | translate}}
   </ion-text>
   <ion-item>
     <ion-label> {{'NO-OF-ICE-PRODUCED' | translate}} : </ion-label>
