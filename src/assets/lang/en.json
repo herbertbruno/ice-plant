@@ -33,5 +33,10 @@
   "AUTO": "Auto",
   "TEMPO": "Tempo",
   "TRUCK": "Truck",
-  "NEED-RECEIPT": "Need Receipt"
+  "NEED-RECEIPT": "Need Receipt",
+  "ENTER_DATE":" Date should be Entered",
+  "ENTER_TIME":"  time should be Entered",
+  "ENTER_CUSTOMER":" customerName should be Entered",
+  "ENTER_PAYMENT":"paymenttype should be selected.",
+  "ENTER_AMOUNT":"amount should be Entered."
 }

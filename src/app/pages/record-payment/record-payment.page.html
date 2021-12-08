@@ -9,7 +9,7 @@
 <ion-content>
   <form [formGroup]="recordPaymentForm" (ngSubmit)=" recordPayment()">
     <ion-text color="danger" *ngIf="submited && recordPaymentForm.controls.date.errors?.required">
-      Date should be Entered
+      {{'ENTER_DATE' | translate }}
     </ion-text>
     <div class="ion-padding">
     <ion-item>
@@ -17,7 +17,7 @@
       <ion-datetime formControlName="date" displayFormat="DD-MM-YYYY" placeholder="Select Date"></ion-datetime>
     </ion-item></div>
     <ion-text color="danger" *ngIf="submited && recordPaymentForm.controls.time.errors?.required">
-      time should be Entered
+      {{'ENTER_TIME' | translate }}
     </ion-text>
     <div class="ion-padding">
     <ion-item>
@@ -25,7 +25,7 @@
       <ion-datetime formControlName="time" displayFormat="hh:mm A" placeholder="Select Time"></ion-datetime>
     </ion-item></div>
     <ion-text color="danger" *ngIf="submited && recordPaymentForm.controls.customerName.errors?.required">
-      customerName should be Entered
+      {{'ENTER_CUSTOMER' | translate }}
     </ion-text>
     <div class="ion-padding">
     <ion-item>
@@ -33,7 +33,7 @@
       <ion-input formControlName="customerName" type="text"></ion-input>
     </ion-item></div>
     <ion-text color="danger" *ngIf="submited && recordPaymentForm.controls.paymenttype.errors?.required">
-      paymenttype should be selected.
+      {{'ENTER_PAYMENT' | translate }}
     </ion-text>
     <div class="ion-padding">
     <ion-item>
@@ -45,7 +45,7 @@
       <ion-input formControlName="paymenttype" type="payment"></ion-input>
     </ion-item></div>
     <ion-text color="danger" *ngIf="submited && recordPaymentForm.controls.amount.errors?.required">
-      amount should be Entered.
+      {{'ENTER_AMOUNT' | translate }}
     </ion-text>
     <div class="ion-padding">
     <ion-item>
