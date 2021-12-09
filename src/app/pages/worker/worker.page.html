@@ -27,7 +27,7 @@
         <ion-datetime id="Time" formControlName="time" displayFormat="HH:mm" placeholder="Select time"></ion-datetime>
       </ion-item>
     </div>
-    <ion-text color="danger" *ngIf="submited &&  workerForm.controls.iceProduced.errors?.required">
+    <ion-text color="danger" *ngIf="submited && workerForm.controls.iceProduced.errors?.required">
       {{'ENTER_ICEPRODUCED' | translate}}
     </ion-text>
     <div class="ion-padding">
