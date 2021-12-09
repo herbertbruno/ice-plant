@@ -13,7 +13,7 @@
     "MEDICAl EXPENSE":"மருத்துவ செலவு",
     "OTHER EXPENSE":"மற்ற செலவு",
     "RECORD-PAYMENT":"பதிவு கட்டணம்",
-    "PAYMENT-TYPE":"கட்டணம்",  
+    "PAYMENT_TYPE":"கட்டணம்",  
     "ON-DUTY":"கடமையில்",
     "OWNER":"உரிமையாளர்",
     "NO-OF-BARS-SOLD":"விற்கப்பட்ட பார்கள்",
