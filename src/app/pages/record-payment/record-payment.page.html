@@ -12,45 +12,50 @@
       {{'ENTER_DATE' | translate }}
     </ion-text>
     <div class="ion-padding">
-    <ion-item>
-      <ion-label>{{'DATE' | translate}}</ion-label>
-      <ion-datetime formControlName="date" displayFormat="DD-MM-YYYY" placeholder="Select Date"></ion-datetime>
-    </ion-item></div>
+      <ion-item>
+        <ion-label>{{'DATE' | translate}}</ion-label>
+        <ion-datetime formControlName="date" displayFormat="DD-MM-YYYY" placeholder="Select Date"></ion-datetime>
+      </ion-item>
+    </div>
     <ion-text color="danger" *ngIf="submited && recordPaymentForm.controls.time.errors?.required">
       {{'ENTER_TIME' | translate }}
     </ion-text>
     <div class="ion-padding">
-    <ion-item>
-      <ion-label>{{'TIME' | translate}}</ion-label>
-      <ion-datetime formControlName="time" displayFormat="hh:mm A" placeholder="Select Time"></ion-datetime>
-    </ion-item></div>
+      <ion-item>
+        <ion-label>{{'TIME' | translate}}</ion-label>
+        <ion-datetime formControlName="time" displayFormat="hh:mm A" placeholder="Select Time"></ion-datetime>
+      </ion-item>
+    </div>
     <ion-text color="danger" *ngIf="submited && recordPaymentForm.controls.customerName.errors?.required">
       {{'ENTER_CUSTOMER' | translate }}
     </ion-text>
     <div class="ion-padding">
-    <ion-item>
-      <ion-label>{{'CUSTOMER-NAME' | translate}}</ion-label>
-      <ion-input formControlName="customerName" type="text"></ion-input>
-    </ion-item></div>
+      <ion-item>
+        <ion-label>{{'CUSTOMER-NAME' | translate}}</ion-label>
+        <ion-input formControlName="customerName" type="text"></ion-input>
+      </ion-item>
+    </div>
     <ion-text color="danger" *ngIf="submited && recordPaymentForm.controls.paymenttype.errors?.required">
       {{'ENTER_PAYMENT' | translate }}
     </ion-text>
     <div class="ion-padding">
-    <ion-item>
-      <ion-label>{{'PAYMENT_TYPE' | translate}}</ion-label>
-      <ion-select placeholder="Select One" formControlName="paymenttype">
-        <ion-select-option value="f">Cash</ion-select-option>
-        <ion-select-option value="m">Cheque</ion-select-option>
-      </ion-select>
-    </ion-item></div>
+      <ion-item>
+        <ion-label>{{'PAYMENT_TYPE' | translate}}</ion-label>
+        <ion-select placeholder="Select One" formControlName="paymenttype">
+          <ion-select-option value="f">Cash</ion-select-option>
+          <ion-select-option value="m">Cheque</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
     <ion-text color="danger" *ngIf="submited && recordPaymentForm.controls.amount.errors?.required">
       {{'ENTER_AMOUNT' | translate }}
     </ion-text>
     <div class="ion-padding">
-    <ion-item>
-      <ion-label>{{'AMOUNT' | translate}}</ion-label>
-      <ion-input formControlName="amount" type="number"></ion-input>
-    </ion-item></div>
+      <ion-item>
+        <ion-label>{{'AMOUNT' | translate}}</ion-label>
+        <ion-input formControlName="amount" type="number"></ion-input>
+      </ion-item>
+    </div>
     <div class="ion-padding">
       <ion-button expand="block" color="success" type="submit">SAVE</ion-button>
     </div>
