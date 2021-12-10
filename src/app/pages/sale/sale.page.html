@@ -3,107 +3,109 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>SALE </ion-title>
+    <ion-title>{{'SALE' | translate}} </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
-  
-  <div class="outer">
-    <form [formGroup]="saleForm" (ngSubmit)="save()">
-      <ion-text
-      color="danger"
-        *ngIf="submited && saleForm.controls.date.errors?.required">
-     
-        Date should be Enter
-      </ion-text>
-    <ion-item>
-      <ion-label> Date</ion-label>
-      <ion-datetime formControlName="date" displayFormat="DD-MM-YYYY" placeholder="Select Date"> </ion-datetime>
-    </ion-item>
-      <ion-text
-      color="danger"
-        *ngIf="submited && saleForm.controls.time.errors?.required">
-     
-        Time should be Enter
-      </ion-text>
-    
-    <ion-item>
-      <ion-label>Time</ion-label>
-      <ion-datetime id="Time" formControlName="time" displayFormat="HH:mm"></ion-datetime>
-    </ion-item>
-    <ion-text
-      color="danger"
-        *ngIf="submited && saleForm.controls.vechicleType.errors?.required">
-     
-        Vechicle Type should be Enter
-      </ion-text>
-    <ion-item>
-      <ion-label>Vechicle Type</ion-label>
-      <ion-select formControlName="vechicleType">
-        <ion-select-option value="Two Wheeler"> Two Wheeler</ion-select-option>
-        <ion-select-option value="Auto">Auto</ion-select-option>
-        <ion-select-option value="Tembo">Tembo</ion-select-option>
-        <ion-select-option value="Truck">Truck</ion-select-option>
-      </ion-select>
-    </ion-item>
-    <ion-text
-      color="danger"
-        *ngIf="submited && saleForm.controls.ratePerItem.errors?.required">
-     
-        Rate should be Enter
-      </ion-text>
-    <ion-item>
-      
-      <ion-label> Rate Per Ice : </ion-label>
-      <ion-input type="number" formControlName="ratePerItem"></ion-input>
+<ion-content>
 
-    </ion-item>
-    <ion-text
-      color="danger"
-        *ngIf="submited && saleForm.controls.numberOfItems.errors?.required">
-     
-        No.of.Bars should be Enter
-      </ion-text>
-    <ion-item>
-      <ion-label> No.of.Bars :</ion-label>
-      <ion-input type="number" formControlName="numberOfItems"></ion-input>
-    </ion-item>
-    <!-- <ion-item>Ice Type</ion-item> -->
-    <ion-text
-      color="danger"
-        *ngIf="submited && saleForm.controls.iceType.errors?.required">
-     
-        Ice Type should be Enter
-      </ion-text>
-    <ion-row>
-      <ion-col>Ice Type</ion-col>
-      <ion-col> 
-         <ion-segment formControlName="iceType"> 
-       
-        <ion-segment-button  value="full">
-          <ion-label>Full</ion-label>
-        </ion-segment-button>
-     
-        <ion-segment-button value="smashed">
-          <ion-label>Smashed</ion-label>
-        </ion-segment-button>
-      
-    </ion-segment></ion-col>
-    </ion-row>
-  
-    <ion-item>
-      <ion-button color="success">Customer</ion-button>(optional)
-      <ion-toolbar>
-        <ion-searchbar></ion-searchbar>
-      </ion-toolbar>
-    </ion-item>
-    <ion-item>
-      <ion-label> TOTAL : </ion-label>
-    </ion-item>
-    
+  <div class="outer">
+
+    <form [formGroup]="saleForm" (ngSubmit)="save()">
+      <div class="ion-padding">
+        <ion-text color="danger" *ngIf="submited && saleForm.controls.date.errors?.required">
+
+          {{'DATE_SHOULD_BE_ENTERD' | translate}}
+        </ion-text>
+      </div>
+      <ion-item>
+        <ion-label>{{'DATE' | translate}} </ion-label>
+        <ion-datetime formControlName="date" displayFormat="DD-MM-YYYY" placeholder="Select Date"> </ion-datetime>
+      </ion-item>
+      <div class="ion-padding">
+        <ion-text color="danger" *ngIf="submited && saleForm.controls.time.errors?.required">
+
+          {{'TIME_SHOULD_BE_ENTERD' | translate}}
+        </ion-text>
+      </div>
+
+      <ion-item>
+        <ion-label>{{'TIME' | translate}}</ion-label>
+        <ion-datetime id="Time" formControlName="time" displayFormat="HH:mm"></ion-datetime>
+      </ion-item>
+      <div class="ion-padding">
+        <ion-text color="danger" *ngIf="submited && saleForm.controls.vechicleType.errors?.required">
+
+          {{'VECHICLE_TYPE_SHOULD_BE_ENTERD' | translate }}
+        </ion-text>
+      </div>
+      <ion-item>
+        <ion-label>{{'VECHICLE_TYPE' | translate}}</ion-label>
+        <ion-select formControlName="vechicleType">
+          <ion-select-option value="Two Wheeler"> {{'TWO_WHEELER' | translate}}</ion-select-option>
+          <ion-select-option value="Auto">{{'AUTO' | translate}}</ion-select-option>
+          <ion-select-option value="Tembo">{{'TEMPO' | translate}}</ion-select-option>
+          <ion-select-option value="Truck">{{'TRUCK' |translate}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div class="ion-padding">
+        <ion-text color="danger" *ngIf="submited && saleForm.controls.ratePerItem.errors?.required">
+
+          {{'RATE_PER_ICE_SHOULD_BE_ENTERD' | translate}}
+        </ion-text>
+      </div>
+      <ion-item>
+
+        <ion-label> {{'RATE_PER_ICE' | translate}} </ion-label>
+        <ion-input type="number" formControlName="ratePerItem"></ion-input>
+
+      </ion-item>
+      <div class="ion-padding">
+        <ion-text color="danger" *ngIf="submited && saleForm.controls.numberOfItems.errors?.required">
+
+          {{'NO_OF_ITEMS_SHOULD_BE_ENTERD' | translate}}
+        </ion-text>
+      </div>
+      <ion-item>
+        <ion-label> {{'NO_OF_BARS' | translate}}</ion-label>
+        <ion-input type="number" formControlName="numberOfItems"></ion-input>
+      </ion-item>
+      <!-- <ion-item>Ice Type</ion-item> -->
+      <div class="ion-padding">
+        <ion-text color="danger" *ngIf="submited && saleForm.controls.iceType.errors?.required">
+
+          {{'ICE_TYPE_SHOULD_BE_ENTERD'| translate}}
+        </ion-text>
+      </div>
+      <ion-row>
+        <ion-col>{{'ICE_TYPE' |translate}}</ion-col>
+        <ion-col>
+          <ion-segment formControlName="iceType">
+
+            <ion-segment-button value="full">
+              <ion-label>{{'FULL' | translate}}</ion-label>
+            </ion-segment-button>
+
+            <ion-segment-button value="smashed">
+              <ion-label>{{'SMASHED' | translate}}</ion-label>
+            </ion-segment-button>
+
+          </ion-segment>
+        </ion-col>
+      </ion-row>
+
+      <ion-item>
+        <ion-button color="success">{{'CUSTOMER' | translate}}</ion-button>(optional)
+        <ion-toolbar>
+          <ion-searchbar></ion-searchbar>
+        </ion-toolbar>
+      </ion-item>
+      <ion-item>
+        <ion-label> {{'TOTAL' | translate}} </ion-label>
+      </ion-item>
+
       <ion-button color="success" type="submit" expand="block">COMPLETE SALE</ion-button>
-    
-  </form>
+
+    </form>
   </div>
 </ion-content>
