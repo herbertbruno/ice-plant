@@ -11,59 +11,59 @@
 <ion-content>
   <div class="outer">
     <form [formGroup]="customerProfileForm" (ngSubmit)="save()">
-      <ion-text color="danger ion-padding" *ngIf="submited && customerProfileForm.controls.name.errors?.required">
-        {{'NAME'| translate}}
-      </ion-text>
       <div class="ion-padding">
-        <ion-item>
-          <ion-label>{{'CUSTOMER-NAME' | translate}}</ion-label>
-          <ion-input formControlName="name"></ion-input>
-        </ion-item>
+        <ion-text color="danger ion-padding" *ngIf="submited && customerProfileForm.controls.name.errors?.required">
+          {{'NAME'| translate}}
+        </ion-text>
       </div>
-      <ion-text color="danger ion-padding" *ngIf="submited && customerProfileForm.controls.mobile.errors?.required">
-        {{'NUMBER'| translate}}
-      </ion-text>
-      <ion-text color="danger" *ngIf="submited && customerProfileForm.controls.mobile.errors?.pattern">
-        {{'VALID_NUMBER'| translate}}
-      </ion-text>
+      <ion-item>
+        <ion-label>{{'CUSTOMER-NAME' | translate}}</ion-label>
+        <ion-input formControlName="name"></ion-input>
+      </ion-item>
       <div class="ion-padding">
-        <ion-item>
-          <ion-label>{{'MOBILE_NUMBER'| translate}}</ion-label>
-          <ion-input type="tel" formControlName="mobile"></ion-input>
-        </ion-item>
+        <ion-text color="danger ion-padding" *ngIf="submited && customerProfileForm.controls.mobile.errors?.required">
+          {{'NUMBER'| translate}}
+        </ion-text>
+        <ion-text color="danger" *ngIf="submited && customerProfileForm.controls.mobile.errors?.pattern">
+          {{'VALID_NUMBER'| translate}}
+        </ion-text>
       </div>
-      <ion-text color="danger" *ngIf="submited && customerProfileForm.controls.email.errors?.required">
-        {{'EMAIL'| translate}}
-      </ion-text>
+      <ion-item>
+        <ion-label>{{'MOBILE_NUMBER'| translate}}</ion-label>
+        <ion-input type="tel" formControlName="mobile"></ion-input>
+      </ion-item>
       <div class="ion-padding">
-        <ion-item>
-          <ion-label>{{'EMAIL-ID' | translate}}</ion-label>
-          <ion-input type="email" formControlName="email"></ion-input>
-        </ion-item>
+        <ion-text color="danger" *ngIf="submited && customerProfileForm.controls.email.errors?.required">
+          {{'EMAIL'| translate}}
+        </ion-text>
       </div>
-      <ion-text color="danger" *ngIf="submited && customerProfileForm.controls.vechicleType.errors?.required">
-        {{'VECHICLE'| translate}}
-      </ion-text>
+      <ion-item>
+        <ion-label>{{'EMAIL-ID' | translate}}</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
       <div class="ion-padding">
-        <ion-item>
-          <ion-label>{{'VECHICLE-TYPE' | translate}}</ion-label>
-          <ion-select formControlName="vechicleType">
-            <ion-select-option value="Two Wheeler"> Two Wheeler</ion-select-option>
-            <ion-select-option value="Auto">Auto</ion-select-option>
-            <ion-select-option value="Tembo">Tembo</ion-select-option>
-            <ion-select-option value="Truck">Truck</ion-select-option>
-          </ion-select>
-        </ion-item>
+        <ion-text color="danger" *ngIf="submited && customerProfileForm.controls.vechicleType.errors?.required">
+          {{'VECHICLE'| translate}}
+        </ion-text>
       </div>
-      <ion-text color="danger" *ngIf="submited && customerProfileForm.controls.needRecipt.errors?.required">
-        {{'RECEIPT' | translate}}
-      </ion-text>
+      <ion-item>
+        <ion-label>{{'VECHICLE-TYPE' | translate}}</ion-label>
+        <ion-select formControlName="vechicleType">
+          <ion-select-option value="Two Wheeler"> Two Wheeler</ion-select-option>
+          <ion-select-option value="Auto">Auto</ion-select-option>
+          <ion-select-option value="Tembo">Tembo</ion-select-option>
+          <ion-select-option value="Truck">Truck</ion-select-option>
+        </ion-select>
+      </ion-item>
       <div class="ion-padding">
-        <ion-item>
-          <ion-label>{{'NEED-RECEIPT' | translate}}</ion-label>
-          <ion-toggle formControlName="needRecipt" color="success"></ion-toggle>
-        </ion-item>
+        <ion-text color="danger" *ngIf="submited && customerProfileForm.controls.needRecipt.errors?.required">
+          {{'RECEIPT' | translate}}
+        </ion-text>
       </div>
+      <ion-item>
+        <ion-label>{{'NEED-RECEIPT' | translate}}</ion-label>
+        <ion-toggle formControlName="needRecipt" color="success"></ion-toggle>
+      </ion-item>
       <br />
       <div class="ion-padding">
         <ion-button color="success" type="submit" expand="block">{{'SAVE' | translate}}</ion-button>
