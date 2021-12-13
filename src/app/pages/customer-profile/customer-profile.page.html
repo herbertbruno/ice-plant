@@ -12,7 +12,7 @@
   <div class="outer">
     <form [formGroup]="customerProfileForm" (ngSubmit)="save()">
       <div class="ion-padding">
-        <ion-text color="danger ion-padding" *ngIf="submited && customerProfileForm.controls.name.errors?.required">
+        <ion-text color="danger" *ngIf="submited && customerProfileForm.controls.name.errors?.required">
           {{'NAME'| translate}}
         </ion-text>
       </div>
@@ -21,7 +21,7 @@
         <ion-input formControlName="name"></ion-input>
       </ion-item>
       <div class="ion-padding">
-        <ion-text color="danger ion-padding" *ngIf="submited && customerProfileForm.controls.mobile.errors?.required">
+        <ion-text color="danger " *ngIf="submited && customerProfileForm.controls.mobile.errors?.required">
           {{'NUMBER'| translate}}
         </ion-text>
         <ion-text color="danger" *ngIf="submited && customerProfileForm.controls.mobile.errors?.pattern">
