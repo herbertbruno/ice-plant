@@ -26,12 +26,18 @@
   "WORKER": "Worker",
   "SAVE": "Save",
   "CUSTOMER-NAME": "Customer Name",
-  "MOBILE-NUMBER": "Mobile Number",
+  "MOBILE_NUMBER": "Mobile Number",
   "EMAIL-ID": "Email ID",
   "VECHICLE-TYPE": "Vechicle Type",
   "TWO-WHEELER": "Two Wheeler",
   "AUTO": "Auto",
   "TEMPO": "Tempo",
   "TRUCK": "Truck",
-  "NEED-RECEIPT": "Need Receipt"
+  "NEED-RECEIPT": "Need Receipt",
+  "NAME":"  customer name should be entered",
+  "NUMBER":" mobile number should be entered",
+  "VALID_NUMBER":"please enter a valid mobile number",
+  "EMAIL":"email should be entered",
+  "VECHICLE":" Vechicle Type should be selected",
+  "RECEIPT" :"needRecipt should be selected"
 }
