@@ -12,9 +12,9 @@
     "ELECTRICAL EXPENSE":"ELECTRICAL EXPENSE",
     "MEDICAl EXPENSE":"MEDICAl EXPENSE",
    "OTHER EXPENSE":"OTHER EXPENSE",
-   "RECORD-PAYMENT":"RECORD PAYMENT",
+   "RECORD_PAYMENT":"Record Payment",
    "CUSTOMER_NAME":"CUSTOMER NAME",
-   "PAYMENT_TYPE":"PAYMENT TYPE", 
+   "PAYMENT_TYPE":"Payment Type", 
   "ON-DUTY": "ON Duty",
   "OWNER": "Owner",
   "NO-OF-BARS-SOLD": "No Of Bars Sold",
@@ -34,9 +34,9 @@
   "TEMPO": "Tempo",
   "TRUCK": "Truck",
   "NEED-RECEIPT": "Need Receipt",
-  "ENTER_DATE":" Date should be Entered",
-  "ENTER_TIME":"  time should be Entered",
-  "ENTER_CUSTOMER":" customerName should be Entered",
-  "ENTER_PAYMENT":"paymenttype should be selected.",
-  "ENTER_AMOUNT":"amount should be Entered."
+  "ENTER_DATE":" Date Should be Entered",
+  "ENTER_TIME":"  Time Should be Entered",
+  "ENTER_CUSTOMER":" Customer Name Should be Entered",
+  "ENTER_PAYMENT":"Payment Type Should be Selected.",
+  "ENTER_AMOUNT":"Amount Should be Entered."
 }
