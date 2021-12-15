@@ -38,5 +38,10 @@
   "VALID_NUMBER":"Please enter a valid mobile number",
   "EMAIL":"Email should be entered",
   "VECHICLE":" Vechicle Type Should be selected",
-  "RECEIPT" :"NeedRecipt Should be Selected"
+  "RECEIPT" :"NeedRecipt Should be Selected",
+  "EXPENSE_TYPE_SHOULD_BE_ENTERD":"Expense type should be enterd",
+  "DATE_SHOULD_BE_ENTERD":"Date should be enterd",
+  "EXPENSE_NOTE_SHOULD_BE_ENTERD":"Expense should be enterd",
+  "AMOUNT_SHOULD_BE_ENTERD":"Amount should be enterd",
+  "TIME_SHOULD_BE_ENTERD":"Time should be enterd"
 }
