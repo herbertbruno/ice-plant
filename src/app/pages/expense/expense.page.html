@@ -12,11 +12,11 @@
 <ion-content>
   <form [formGroup]="expenseForm" (ngSubmit)="save()">
     <ion-text
-      color="danger"
       class="ion-padding"
+      color="danger"
       *ngIf="submited && expenseForm.controls.expensesType.errors?.required"
     >
-      Expenses Type should be Enter
+      {{'EXPENSE_TYPE_SHOULD_BE_ENTERD' | translate}}
     </ion-text>
     <ion-item>
       <ion-label>{{'EXPENSE_TYPE' | translate}} </ion-label>
@@ -36,22 +36,22 @@
       </ion-select>
     </ion-item>
     <ion-text
-      color="danger"
       class="ion-padding"
+      color="danger"
       *ngIf="submited && expenseForm.controls.expenseNotes.errors?.required"
     >
-      Date should be Enter
+      {{'EXPENSE_NOTE_SHOULD_BE_ENTERD' | translate}}
     </ion-text>
     <ion-item>
       <ion-label>{{'EXPENSE_NOTE' | translate}}</ion-label>
       <ion-input formControlName="expenseNotes" type="string"></ion-input>
     </ion-item>
     <ion-text
-      color="danger"
       class="ion-padding"
+      color="danger"
       *ngIf="submited && expenseForm.controls.date.errors?.required"
     >
-      Date should be Enter
+      {{'DATE_SHOULD_BE_ENTERD' | translate}}
     </ion-text>
     <ion-item>
       <ion-label> {{'DATE' | translate}}</ion-label>
@@ -63,11 +63,11 @@
       </ion-datetime>
     </ion-item>
     <ion-text
-      color="danger"
       class="ion-padding"
+      color="danger"
       *ngIf="submited && expenseForm.controls.time.errors?.required"
     >
-      Time should be Enter
+      {{'TIME_SHOULD_BE_ENTERD' | translate}}
     </ion-text>
     <ion-item>
       <ion-label>{{'TIME' | translate}}</ion-label>
@@ -78,11 +78,11 @@
       ></ion-datetime>
     </ion-item>
     <ion-text
-      color="danger"
       class="ion-padding"
+      color="danger"
       *ngIf="submited && expenseForm.controls.amount.errors?.required"
     >
-      Amount should be Enter
+      {{'AMOUNT_SHOULD_BE_ENTERD' | translate}}
     </ion-text>
     <ion-item>
       <ion-label>{{'AMOUNT' | translate}}</ion-label>

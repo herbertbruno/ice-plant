@@ -11,7 +11,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateConfigService } from './services/translate-config.service';
 import { CurPipe } from './pipe/cur.pipe';
-import { CurrencyPipe } from '@angular/common';
+// import { CurrencyPipe } from '@angular/common';
 
 
 import { AngularFireModule } from '@angular/fire/compat';
@@ -20,7 +20,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
 
-CurrencyPipe
+
 export function LanguageLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/lang/', '.json');
 }
@@ -39,7 +39,7 @@ export function LanguageLoader(http: HttpClient) {
         deps: [HttpClient]
       }
     }), AppRoutingModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, TranslateConfigService, CurrencyPipe],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, TranslateConfigService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

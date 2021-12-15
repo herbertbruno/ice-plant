@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
-import { CurPipe } from './cur.pipe';
+//import { CurPipe } from './cur.pipe';
 
 @NgModule({
     declarations: [
-        CurPipe,
+        //CurPipe,
 
     ],
     imports: [],
     exports: [
-        CurPipe,
+        // CurPipe,
     ]
 })
 export class PipesModule { }

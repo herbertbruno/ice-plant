@@ -9,21 +9,12 @@
 <ion-content>
   <ion-item>
     <ion-label>{{'DATE' | translate}} </ion-label>
-    <ion-datetime
-      [(ngModel)]="Date"
-      displayFormat="DD-MM-YYYY"
-      placeholder="Select Date"
-    >
+    <ion-datetime [(ngModel)]="Date" displayFormat="DD-MM-YYYY" placeholder="Select Date">
     </ion-datetime>
   </ion-item>
   <ion-item>
     <ion-label>{{'TIME' | translate}}</ion-label>
-    <ion-datetime
-      id="Time"
-      [(ngModel)]="Time"
-      displayFormat="bb:rr"
-      placeholder="Select time"
-    ></ion-datetime>
+    <ion-datetime id="Time" [(ngModel)]="Time" displayFormat="hh:mm" placeholder="Select time"></ion-datetime>
   </ion-item>
   <ion-item>
     <ion-label> {{'NO-OF-ICE-PRODUCED' | translate}} : </ion-label>
