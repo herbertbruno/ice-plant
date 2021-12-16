@@ -20,7 +20,7 @@ export class RecordPaymentPage implements OnInit {
       date: ['', [Validators.required]],
       time: ['', [Validators.required]],
       customerName: ['', [Validators.required]],
-      paymenttype: ['', [Validators.required]],
+      paymentType: ['', [Validators.required]],
       amount: ['', [Validators.required]],
     })
   }
