@@ -8,6 +8,9 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { MessageComponentModule } from '../message/message.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { PipesModule } from '../../pipe/pipe.module';
+import { ComponentsModule } from 'src/app/components/components.module';
+
+
 
 @NgModule({
   imports: [
@@ -15,10 +18,12 @@ import { PipesModule } from '../../pipe/pipe.module';
     FormsModule,
     IonicModule,
     PipesModule,
+    ComponentsModule,
     TranslateModule.forChild(),
     MessageComponentModule,
     HomePageRoutingModule
   ],
+  // entryComponents: [PlantFooterComponent],
   declarations: [HomePage]
 })
 export class HomePageModule { }
