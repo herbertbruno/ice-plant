@@ -22,7 +22,7 @@
   "CREDIT": "CREDIT",
   "TOTAL-SALE": "Total sale",
   "INBOX": "Inbox",
-  "NO-OF-ICE-PRODUCED": "No Of Ice Produced",
+  "NO_OF_ICE_PRODUCED": "No Of Ice Produced",
   "WORKER": "Worker",
   "SAVE": "Save",
   "MOBILE_NUMBER": "Mobile Number",
@@ -43,5 +43,6 @@
   "DATE_SHOULD_BE_ENTERD":"Date should be enterd",
   "EXPENSE_NOTE_SHOULD_BE_ENTERD":"Expense should be enterd",
   "AMOUNT_SHOULD_BE_ENTERD":"Amount should be enterd",
-  "TIME_SHOULD_BE_ENTERD":"Time should be enterd"
+  "TIME_SHOULD_BE_ENTERD":"Time should be enterd",
+  "ENTER_ICEPRODUCED":" Ice Produced should be Entered"
 }

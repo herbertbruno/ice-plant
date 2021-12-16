@@ -21,7 +21,7 @@
    "CREDIT":"கடன்",
     "TOTAL-SALE":"மொத்த விற்பனை",
     "INBOX":"உட்பெட்டி",
-    "NO-OF-ICE-PRODUCED":"பனி உற்பத்தி",
+    "NO_OF_ICE_PRODUCED":"பனி உற்பத்தி",
     "WORKER":"தொழிலாளி",
     "SAVE":"சேமிக்க",
     "CUSTOMER_NAME":"வாடிக்கையாளர் பெயர்",
@@ -43,5 +43,6 @@
     "DATE_SHOULD_BE_ENTERD":"தேதியை உள்ளிட வேண்டும்",
     "EXPENSE_NOTE_SHOULD_BE_ENTERD":"செலவுக் குறிப்பை உள்ளிட வேண்டும்",
     "AMOUNT_SHOULD_BE_ENTERD":"தொகையை உள்ளிட வேண்டும்",
-    "TIME_SHOULD_BE_ENTERD":"நேரம் உள்ளிட வேண்டும்"
+    "TIME_SHOULD_BE_ENTERD":"நேரம் உள்ளிட வேண்டும்",  
+    "ENTER_ICEPRODUCED":"உற்பத்தி செய்யப்படும் பனியை உள்ளிட வேண்டும்"
 }
