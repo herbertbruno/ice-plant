@@ -10,27 +10,24 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./record-payment.page.scss'],
 })
 export class RecordPaymentPage implements OnInit {
-  RecordPaymentForm: FormGroup;
-  submited: boolean = false;
-  constructor(private router: Router, private auth: AuthService, public formBuilder: FormBuilder) { }
+  recordPaymentForm: FormGroup;
 
+  constructor(private router: Router, private auth: AuthService, public formBuilder: FormBuilder) { }
+  submited: boolean = false;
 
   ngOnInit() {
-    this.RecordPaymentForm = this.formBuilder.group({
+    this.recordPaymentForm = this.formBuilder.group({
       date: ['', [Validators.required]],
       time: ['', [Validators.required]],
       customerName: ['', [Validators.required]],
-      paymenttype:  ['', [Validators.required]],
+      paymentType: ['', [Validators.required]],
       amount: ['', [Validators.required]],
-     
-    
     })
-
   }
-  save() {
+  recordPayment() {
     console.log("submit called");
     this.submited = true;
     console.log(this.submited)
-    console.log(this.RecordPaymentForm.value);
+    console.log(this.recordPaymentForm.value);
   }
 }

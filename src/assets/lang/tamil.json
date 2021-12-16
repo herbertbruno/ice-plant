@@ -12,8 +12,8 @@
     "ELECTRICAL EXPENSE":"மின்சார செலவு",
     "MEDICAl EXPENSE":"மருத்துவ செலவு",
     "OTHER EXPENSE":"மற்ற செலவு",
-    "RECORD-PAYMENT":"பதிவு கட்டணம்",
-    "PAYMENT-TYPE":"கட்டணம்",  
+    "RECORD_PAYMENT":"பதிவு கட்டணம்",
+    "PAYMENT_TYPE":"கட்டணம்",  
     "ON-DUTY":"கடமையில்",
     "OWNER":"உரிமையாளர்",
     "NO-OF-BARS-SOLD":"விற்கப்பட்ட பார்கள்",
@@ -44,5 +44,11 @@
     "EXPENSE_NOTE_SHOULD_BE_ENTERD":"செலவுக் குறிப்பை உள்ளிட வேண்டும்",
     "AMOUNT_SHOULD_BE_ENTERD":"தொகையை உள்ளிட வேண்டும்",
     "TIME_SHOULD_BE_ENTERD":"நேரம் உள்ளிட வேண்டும்",  
-    "ENTER_ICEPRODUCED":"உற்பத்தி செய்யப்படும் பனியை உள்ளிட வேண்டும்"
+    "ENTER_ICEPRODUCED":"உற்பத்தி செய்யப்படும் பனியை உள்ளிட வேண்டும்",
+    "NEED-RECEIPT":"ரசீது தேவை",
+    "ENTER_DATE":"தேதியை உள்ளிட வேண்டும்",
+    "ENTER_TIME":"நேரத்தை உள்ளிட வேண்டும்",
+    "ENTER_CUSTOMER":"வாடிக்கையாளர் பெயரை உள்ளிட வேண்டும்",
+    "ENTER_PAYMENT":"கட்டண வகை தேர்ந்தெடுக்கப்பட வேண்டும்.",
+    "ENTER_AMOUNT":"தொகையை உள்ளிட வேண்டும்."
 }
