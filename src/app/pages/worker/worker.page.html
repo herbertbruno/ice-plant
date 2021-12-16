@@ -8,31 +8,43 @@
 </ion-header>
 <ion-content>
   <form [formGroup]="workerForm" (ngSubmit)="save()">
-    <ion-text 
-    class="ion-padding"
-     color="danger"
-      *ngIf="submited && workerForm.controls.date.errors?.required">
+    <ion-text
+      class="ion-padding"
+      color="danger"
+      *ngIf="submited && workerForm.controls.date.errors?.required"
+    >
       {{'ENTER_DATE' | translate}}
     </ion-text>
     <ion-item>
       <ion-label>{{'DATE' | translate}} </ion-label>
-      <ion-datetime formControlName="date" displayFormat="DD-MM-YYYY" placeholder="Select Date">
+      <ion-datetime
+        formControlName="date"
+        displayFormat="DD-MM-YYYY"
+        placeholder="Select Date"
+      >
       </ion-datetime>
     </ion-item>
-    <ion-text  
-    class="ion-padding" 
-    color="danger"
-     *ngIf="submited && workerForm.controls.time.errors?.required">
+    <ion-text
+      class="ion-padding"
+      color="danger"
+      *ngIf="submited && workerForm.controls.time.errors?.required"
+    >
       {{'ENTER_TIME' | translate}}
     </ion-text>
     <ion-item>
       <ion-label>{{'TIME' | translate}}</ion-label>
-      <ion-datetime id="Time" formControlName="time" displayFormat="HH:mm" placeholder="Select time"></ion-datetime>
+      <ion-datetime
+        id="Time"
+        formControlName="time"
+        displayFormat="HH:mm"
+        placeholder="Select time"
+      ></ion-datetime>
     </ion-item>
-    <ion-text 
-     class="ion-padding"
-     color="danger" 
-     *ngIf="submited && workerForm.controls.iceProduced.errors?.required">
+    <ion-text
+      class="ion-padding"
+      color="danger"
+      *ngIf="submited && workerForm.controls.iceProduced.errors?.required"
+    >
       {{'ENTER_ICEPRODUCED' | translate}}
     </ion-text>
     <ion-item>
@@ -40,7 +52,9 @@
       <ion-input type="number" formControlName="iceProduced"></ion-input>
     </ion-item>
     <div class="ion-padding">
-      <ion-button expand="block" color="success" type="submit">SAVE</ion-button>
+      <ion-button expand="block" color="success" type="submit"
+        >{{'SAVE' | translate}}
+      </ion-button>
     </div>
   </form>
 </ion-content>
