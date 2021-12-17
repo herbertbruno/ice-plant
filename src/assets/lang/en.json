@@ -14,7 +14,8 @@
    "OTHER EXPENSE":"OTHER EXPENSE",
    "RECORD_PAYMENT":"Record Payment",
    "CUSTOMER_NAME":"Customer name",
-   "PAYMENT_TYPE":"Payment Type", 
+   "PAYMENT_TYPE":"Payment Type",   
+  "RECORD-PAYMENT": "RECORD PAYMENT", 
   "ON-DUTY": "ON Duty",
   "OWNER": "Owner",
   "NO-OF-BARS-SOLD": "No Of Bars Sold",
@@ -54,5 +55,15 @@
   "ENTER_TIME":"  Time Should be Entered",
   "ENTER_CUSTOMER":" Customer Name Should be Entered",
   "ENTER_PAYMENT":"Payment Type Should be Selected.",
-  "ENTER_AMOUNT":"Amount Should be Entered."
+  "ENTER_AMOUNT":"Amount Should be Entered.",  
+  "RATE_PER_ICE": "Rate Per Ice",
+  "NO_OF_BARS": "No of Bars",
+  "ICE_TYPE": "Ice Type",
+  "FULL": "Full",
+  "SMASHED": "Smashed",
+  "TOTAL": "Total", 
+  "VECHICLE_TYPE_SHOULD_BE_ENTERD": "Vechicle type should be enterd",
+  "RATE_PER_ICE_SHOULD_BE_ENTERD": "Rate per ice should be enterd",
+  "NO_OF_ITEMS_SHOULD_BE_ENTERD": "No of item should be enterd",
+  "ICE_TYPE_SHOULD_BE_ENTERD": "Ice type should be enterd"
 }
