@@ -12,30 +12,37 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginPage implements OnInit {
   loginForm: FormGroup;
   submited: boolean = false;
-
   constructor(private router: Router, private auth: AuthService, public formBuilder: FormBuilder) { }
 
   ngOnInit() {
-
     this.loginForm = this.formBuilder.group({
       userName: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
       password: ['', [Validators.required]]
     })
-
   }
-
   login() {
-    console.log("submit called");
-    this.submited = true;
-    console.log(this.submited)
 
-    // if (this.loginForm.valid) {
-    //   console.log(this.loginForm.value);
-    //   this.auth.signIn(this.loginForm.value.userName, this.loginForm.value.password)
-      this.router.navigate(['/home']);
-    // } else {
-    //   alert("not valid")
-    // }
+    this.submited = true;
+    // local validation
+    if (this.loginForm.valid) {
+
+      let userName = this.loginForm.value.userName;
+      let password = this.loginForm.value.password;
+      // server call 
+      this.auth.signIn(userName, password)
+        .then(userData => { // Server response
+          // userData is the server response
+
+          if (userData.user != null) { // validating user data 
+            this.router.navigate(['/home']);
+          } else {
+            alert("Some server error")
+          }
+        })
+    } else {
+      alert("error");
+    }
+
   }
 
   navigatePage() {
