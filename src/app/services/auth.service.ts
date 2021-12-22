@@ -1,7 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 //import { AngularFireAuth } from '@angular/fire/compat/auth/auth';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFirestore, DocumentData, QuerySnapshot } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -25,8 +25,9 @@ export class AuthService {
     })
   }
 
-  signIn(email: string, password: string) {
+  async signIn(email: string, password: string) {
     return this.ngFireAuth.signInWithEmailAndPassword(email, password)
+
   }
 
   // Sign-out 

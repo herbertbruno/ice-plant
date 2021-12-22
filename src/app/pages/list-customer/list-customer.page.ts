@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ICustomer } from 'src/app/interfaces/customer';
+import { CustomerService } from 'src/app/services/api/customer.service';
 
 @Component({
   selector: 'app-list-customer',
@@ -6,12 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-customer.page.scss'],
 })
 export class ListCustomerPage implements OnInit {
-  customers=[];
+  customers: ICustomer[];
 
-  constructor() { }
+  constructor(private customerService: CustomerService) { }
 
   ngOnInit() {
-    this. customers= ['customer 1', 'customer 2', 'customer 3', 'customer4', 'customer 5', 'customer 6'];
+    this.customerService.getCustomerList().then(cloudCustomersData => {
+      this.customers = cloudCustomersData;
+    })
   }
 
 }
