@@ -29,8 +29,15 @@ export class CustomerService {
     return customers;
 
   }
-  createNewCustomer(customer: ICustomer) {
+  async createNewCustomer(customer: ICustomer) {
+    console.log(customer);
+    // db.collection('users').doc(user_id).set({foo:'bar'}, {merge: true})//
     //send to firebase
+
+    const snapshot = await this.afStore.collection('customer').doc().set(customer, { merge: true });
+
+    console.log();
+
   }
   editCustomer() {
   }
