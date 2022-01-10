@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ICustomer } from 'src/app/interfaces/customer';
+import { CustomerService } from 'src/app/services/api/customer.service';
 @Component({
   selector: 'app-list-expense',
   templateUrl: './list-expense.page.html',
   styleUrls: ['./list-expense.page.scss'],
 })
 export class ListExpensePage implements OnInit {
-  expenses=[];
-  constructor() { }
+  customers: ICustomer[];
+
+  constructor(private customerService: CustomerService) { }
 
   ngOnInit() {
-    this.expenses = ['expense 1', 'expense 2', 'expense 3', 'expense 4', 'expense 5', 'expense 6'];
-    
+    this.customerService.getCustomerList().then(cloudCustomersData => {
+      this.customers = cloudCustomersData;
+    })
+  }
   }
 
-
-}
