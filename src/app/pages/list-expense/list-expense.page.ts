@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IExpense } from 'src/app/expense';
-import { ExpenseService } from 'src/app/expense.service';
+import { ExpenseService } from 'src/app/services/api/expense.service';
 @Component({
   selector: 'app-list-expense',
   templateUrl: './list-expense.page.html',
@@ -13,6 +13,7 @@ export class ListExpensePage implements OnInit {
   ngOnInit() {
     this.expenseService.getExpenseList().then(cloudCustomersData => {
       this.expenses = cloudCustomersData;
+     console.log(this.expenses)
     })
   }
 

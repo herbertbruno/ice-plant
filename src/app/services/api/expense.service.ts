@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 //import { AngularFireAuth } from '@angular/fire/compat/auth/auth';
 import { AngularFirestore, DocumentData, QuerySnapshot } from '@angular/fire/compat/firestore';
-import { IExpense } from './expense';
+import { IExpense } from '../../expense';
 
 
 @Injectable({

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IExpense } from 'src/app/expense';
+import { ExpenseService } from 'src/app/services/api/expense.service';
 import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-expense',
@@ -11,11 +12,11 @@ import { AuthService } from 'src/app/services/auth.service';
 export class ExpensePage implements OnInit {
   expenseForm: FormGroup;
   submited: boolean = false;
-  customerProfileForm: any;
-  customerService: any;
-  expenseService: any;
 
-  constructor(private router: Router, private auth: AuthService, public formBuilder: FormBuilder) { }
+
+ 
+
+  constructor(private expenseService :  ExpenseService , public formBuilder: FormBuilder) { }
  
 
 
