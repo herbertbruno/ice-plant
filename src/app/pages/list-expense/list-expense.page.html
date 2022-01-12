@@ -8,16 +8,23 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item  *ngFor="let expense of expenses " >
-      
-      {{ expense}}
-     
-    </ion-item>  
+  <div class="loading" *ngIf="waitingFlag == true">
+    <ion-spinner ></ion-spinner>
+  </div>
+  
+  <ion-list *ngIf="waitingFlag != true">
+    <ion-card class="ion-padding" *ngFor="let expense of expenses">
+      {{expense.name }}
+      <p>{{ expense.expensesType }}</p>
+      <p>{{ expense.expenseNotes }}</p>
+      <p>{{ expense.time }}</p>
+      <p>{{ expense.amount }}</p>
+    </ion-card>  
+  
 </ion-list>
-  <ion-fab vertical="center" horizontal="end" slot="fixed">
-    <ion-fab-button routerLink="/expense">
-      <ion-icon name="add"></ion-icon> 
-    </ion-fab-button>
-  </ion-fab>
+<ion-fab vertical="center" horizontal="end" slot="fixed">
+  <ion-fab-button routerLink="/expense">
+    <ion-icon name="add"></ion-icon> 
+  </ion-fab-button>
+</ion-fab>
 </ion-content>
