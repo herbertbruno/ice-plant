@@ -9,15 +9,18 @@
 
 <ion-content>
   <ion-list>
-    <ion-item  *ngFor="let expense of expenses " >
-      
-      {{ expense}}
-     
-    </ion-item>  
-</ion-list>
+    <ion-card class="ion-padding" *ngFor="let customer of customers">
+      {{expense.name }}
+      <p>{{ expense.expensesType }}</p>
+      <p>{{ expense.expenseNotes }}</p>
+      <p>{{ expense.time }}</p>
+      <p>{{ expense.amount }}</p>
+    </ion-card> 
+
   <ion-fab vertical="center" horizontal="end" slot="fixed">
     <ion-fab-button routerLink="/expense">
       <ion-icon name="add"></ion-icon> 
     </ion-fab-button>
   </ion-fab>
+</ion-list>
 </ion-content>
