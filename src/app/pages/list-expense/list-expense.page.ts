@@ -8,12 +8,15 @@ import { ExpenseService } from 'src/app/services/api/expense.service';
 })
 export class ListExpensePage implements OnInit {
   expenses: IExpense[];
+  waitingFlag: boolean;
+
   constructor(private expenseService: ExpenseService) { }
 
   ngOnInit() {
-    this.expenseService.getExpenseList().then(cloudCustomersData => {
+    this.waitingFlag= true;
+    this.expenseService.getExpenseList().then(cloudCustomersData => { 
       this.expenses = cloudCustomersData;
-     console.log(this.expenses)
+      this.waitingFlag = false;
     })
   }
 
