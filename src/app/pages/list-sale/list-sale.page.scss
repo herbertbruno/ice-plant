@@ -1,3 +1,9 @@
-.set{
-    margin:auto;
+.loading{
+    text-align:center;
+    padding:100px;
+    ion-spinner{
+        padding:200px;
+        margin:0 auto;
+    }
+
 }

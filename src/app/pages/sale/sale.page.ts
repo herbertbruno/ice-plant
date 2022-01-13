@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ISale } from 'src/app/interfaces/sale';
+import { SaleService } from 'src/app/services/api/sale.service';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -12,7 +14,7 @@ export class SalePage implements OnInit {
   saleForm: FormGroup;
   submited: boolean = false;
 
-  constructor(private router: Router, private auth: AuthService, public formBuilder: FormBuilder) { }
+  constructor(private saleService: SaleService, public formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.saleForm = this.formBuilder.group({
@@ -27,20 +29,12 @@ export class SalePage implements OnInit {
 
   }
   save() {
-    console.log("submit called");
     this.submited = true;
-    console.log(this.submited)
-    console.log(this.saleForm.value);
-    //if (this.saleForm.valid) {
-    //console.log(this.saleForm.value);
-    //this.router.navigate(['/home']);
-    //} else {
-    //alert("not valid")
-    //}
-    //console.log("Valid ", );
 
+    console.log(this.saleForm.valid);
+    if (this.saleForm.valid) {
+      let sale: ISale = this.saleForm.value;
+      this.saleService.createNewSale(sale);
+    }
   }
-  // calculateTotal() {
-  //   this.total = this.ratePerItem * this.numberOfItems;
-  // }
 }
