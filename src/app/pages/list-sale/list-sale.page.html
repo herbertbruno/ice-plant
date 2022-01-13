@@ -8,6 +8,9 @@
 </ion-header>
 
 <ion-content>
+  <div class="loading"*ngIf="waitingFlag == true">
+    <ion-spinner></ion-spinner>
+  </div>
   <ion-card class="ion-padding" *ngFor="let sale of sales">
     {{ sale.date }}
     <p>{{ sale.time }}</p>

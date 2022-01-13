@@ -9,13 +9,16 @@ import { SaleService } from 'src/app/services/api/sale.service';
 })
 export class ListSalePage implements OnInit {
   sales: ISale[];
+  waitingFlag: boolean;
 
 
   constructor(private saleService: SaleService) { }
 
   ngOnInit() {
+    this.waitingFlag=true;
     this.saleService.getSaleList().then(cloudSalesData => {
       this.sales = cloudSalesData;
+      this.waitingFlag= false;
     })
     // this.sales = ['Sale 1', 'Sale 2', 'Sale 3', 'Sale 4', 'Sale 5', 'Sale 6'];
 
