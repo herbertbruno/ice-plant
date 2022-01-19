@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IWorker } from 'src/app/interfaces/worker';
+import { WorkerService } from 'src/app/services/api/worker.service';
 
 @Component({
   selector: 'app-list-worker',
@@ -6,12 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-worker.page.scss'],
 })
 export class ListWorkerPage implements OnInit {
-  workers=[];
-  constructor() { }
+  workers:IWorker[];
+  waitingFlag: boolean;
+
+  constructor(private workerService: WorkerService) { }
 
   ngOnInit() {
-    this. workers= ['worker 1', 'worker 2', 'worker 3', 'worker4', 'worker 5', 'worker 6'];
+    this.waitingFlag= true;
+    this.workerService.getWorkerList().then(cloudCustomersData => { 
+      this.workers = cloudCustomersData;
+      console.log(this.workers)
+      this.waitingFlag = false;
+    })
 
-  }
-
+}
 }

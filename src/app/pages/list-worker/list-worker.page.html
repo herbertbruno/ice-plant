@@ -8,17 +8,22 @@
 </ion-header>
 
 <ion-content>
-  <ion-list >
+  <div class="loading" *ngIf="waitingFlag == true">
+    <ion-spinner ></ion-spinner>
+  </div>
+ 
+      <ion-list *ngIf="waitingFlag != true">
+        <ion-card  *ngFor="let worker of workers">
+          {{worker.date }}
+          <p>{{ worker.time }}</p>
+          <p>{{ worker.iceProduced }}</p>
+    
+    </ion-card>  
   
-    <ion-item  *ngFor="let worker of workers" >
-      
-      {{ worker }}
-     
-    </ion-item> 
+</ion-list>
     <ion-fab vertical="center" horizontal="end" slot="fixed">
       <ion-fab-button routerLink="/worker">
         <ion-icon name="add"></ion-icon>  
       </ion-fab-button>
     </ion-fab>
-  </ion-list>
 </ion-content>
