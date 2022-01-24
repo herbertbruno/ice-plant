@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 //import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
+import { IPayment } from 'src/app/interfaces/payment';
+import { PaymentService } from 'src/app/services/api/payment.service';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -11,9 +14,14 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class RecordPaymentPage implements OnInit {
   recordPaymentForm: FormGroup;
-
-  constructor(private router: Router, private auth: AuthService, public formBuilder: FormBuilder) { }
   submited: boolean = false;
+  
+  
+ 
+  
+
+  constructor(private navCtrl: NavController,private router: Router, private auth: AuthService, public formBuilder: FormBuilder,private paymentService:PaymentService) { }
+
 
   ngOnInit() {
     this.recordPaymentForm = this.formBuilder.group({
@@ -25,9 +33,18 @@ export class RecordPaymentPage implements OnInit {
     })
   }
   recordPayment() {
-    console.log("submit called");
     this.submited = true;
-    console.log(this.submited)
-    console.log(this.recordPaymentForm.value);
+
+    console.log(this.recordPaymentForm.valid);
+    if (this.recordPaymentForm.valid) {
+      let payment: IPayment = this.recordPaymentForm.value;
+      this.paymentService.createNewpayment(payment).then(()=>{
+        this.navCtrl.navigateBack("/list-payment");
+      })
+    }
+    // console.log("submit called");
+    // this.submited = true;
+    // console.log(this.submited)
+    // console.log(this.recordPaymentForm.value);
   }
 }

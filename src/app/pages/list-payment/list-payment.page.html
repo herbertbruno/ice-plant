@@ -8,7 +8,21 @@
 </ion-header>
 
 <ion-content>
-  <ion-list >
+  <div class="loading" *ngIf="waitingFlag == true">
+    <ion-spinner></ion-spinner>
+  </div>
+
+  <ion-list *ngIf="waitingFlag == false">
+    <ion-card class="ion-padding" *ngFor="let payment of payments">
+      {{ payment.date }}
+      <p>{{ payment.time }}</p>
+      <p>{{ payment.customerName }}</p>
+      <p>{{ payment.paymentType }}</p>
+      <p>{{ payment.amount }}</p>
+    </ion-card>
+  </ion-list>
+ 
+  <!-- <ion-list >
   
     <ion-item  *ngFor="let payment of payments" >
       
@@ -20,7 +34,7 @@
     </ion-item> 
    
     
-  </ion-list>
+  </ion-list> -->
 
   <ion-fab vertical="center" horizontal="end" slot="fixed">
     <ion-fab-button routerLink="/record-payment">
