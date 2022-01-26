@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ISale } from 'src/app/interfaces/sale';
+import { SaleService } from 'src/app/services/api/sale.service';
 
 @Component({
   selector: 'app-owner',
@@ -8,29 +10,35 @@ import { Component, OnInit } from '@angular/core';
 export class OwnerPage implements OnInit {
 
   
-constructor() { }
-expense: string;
-onDuty:string;
-Date:number;
-noofbarsSold:number;
-lastProduction:number;
-credit:number;
-totalSale:number;
+constructor(private saleService: SaleService) { }
+sales: ISale[];
+waitingFlag: boolean;
+
+totalSaleAmount = 0;
+
 ngOnInit() {
-}
-savechanges(){
-let  changeValues = {
+  this.waitingFlag=true;
+  this.saleService.getSaleList().then(cloudSalesData => {
+    this.sales = cloudSalesData;
 
-  expense:this.expense,
-  onDuty:this.onDuty,
-  noofbarsSold:this.noofbarsSold,
-  Date:this.Date,
-  lastProduction:this.lastProduction,
-  credit:this.credit,
-  totalSale:this.totalSale
+  //  let sales = ["rego","stalin","bruno"];
+  //  sales[0]
+  //  sales[1]
+  //  sales[2]
 
+//    sales.forEach(name=>{
+// console.log(name)
+//    })
+ setTimeout(()=>{
+   alert("sdf")
+   console.log("test data",cloudSalesData)
+  for(let i in cloudSalesData){
+    console.log(cloudSalesData[i],"sadfdas");
+  } 
+ },2000) 
+    this.waitingFlag= false;
+  })
 }
-  console.log(changeValues);
-}
+ 
 
 }
