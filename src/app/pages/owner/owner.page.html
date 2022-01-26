@@ -8,77 +8,82 @@
 </ion-header>
 
 <ion-content>
-  <!-- *********************** OnDuty ******************* -->
-  <ion-card>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button></ion-back-button> </ion-buttons
-    ></ion-toolbar>
-    <ion-item lines="none">
-      <ion-icon color="success" name="person" slot="start"></ion-icon>
-      <ion-label>
-        <h2>Biju</h2>
-        <p>On Duty</p></ion-label
-      >
-      <ion-label>
-        <h2>10.10 Am</h2>
-        <p>Last checkin</p></ion-label
-      >
-      <ion-icon color="danger" name="power" slot="end"></ion-icon>
-    </ion-item>
-  </ion-card>
-  <!-- *********************** SALES ******************* -->
-  <h2 class="ion-padding sideHeading">Sale</h2>
-  <ion-card class="saleBox">
-    <ion-row>
-      <ion-col>
-        <ion-icon color="danger" name="power"></ion-icon>
-        <h1>80</h1>
-        <p>No of sale</p>
-      </ion-col>
-      <ion-col>
-        <ion-icon color="danger" name="power"></ion-icon>
-        <h1>80</h1>
-        <p>Total Ice sold</p> </ion-col
-      ><ion-col>
-        <ion-icon color="danger" name="power"></ion-icon>
-        <h1>{{ totalSaleAmount }} </h1>
-        <p>Amount</p>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-  <!-- *********************** EXPENSE ******************* -->
-  <h2 class="ion-padding sideHeading">Expense</h2>
-  <ion-card class="expense">
-    <ion-row>
-      <ion-col>
-        <ion-icon color="primary" name="logo-euro"></ion-icon>
-        <h1>300</h1>
-        <p>Expense</p>
-      </ion-col>
-      <ion-col>
-        <ion-icon color="secondary" name="card"></ion-icon>
-        <h1>600</h1>
-        <p>Credit</p>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-  <!-- *********************** PRODUCTION ******************* -->
-  <h2 class="ion-padding sideHeading">Production</h2>
-  <ion-card class="letter">
-    <ion-row>
-      <ion-col>
-        <h1>380</h1>
-        <p>Last Production</p>
-      </ion-col>
-      <ion-col>
-        <h1>100</h1>
-        <p>previous balance Production</p>
-      </ion-col>
-      <ion-col>
-        <h1>480</h1>
-        <p>Total</p>
-      </ion-col>
-    </ion-row>
-  </ion-card>
+  <div *ngIf="!waitingFlag">
+    <!-- *********************** OnDuty ******************* -->
+    <ion-card>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button></ion-back-button> </ion-buttons
+      ></ion-toolbar>
+      <ion-item lines="none">
+        <ion-icon color="success" name="person" slot="start"></ion-icon>
+        <ion-label>
+          <h2>Biju</h2>
+          <p>On Duty</p></ion-label
+        >
+        <ion-label>
+          <h2>10.10 Am</h2>
+          <p>Last checkin</p></ion-label
+        >
+        <ion-icon color="danger" name="power" slot="end"></ion-icon>
+      </ion-item>
+    </ion-card>
+    <!-- *********************** SALES ******************* -->
+    <h2 class="ion-padding sideHeading">Sale</h2>
+    <ion-card class="saleBox">
+      <ion-row>
+        <ion-col>
+          <ion-icon color="danger" name="power"></ion-icon>
+          <h1>80</h1>
+          <p>No of sale</p>
+        </ion-col>
+        <ion-col>
+          <ion-icon color="danger" name="power"></ion-icon>
+          <h1>80</h1>
+          <p>Total Ice sold</p> </ion-col
+        ><ion-col>
+          <ion-icon color="danger" name="power"></ion-icon>
+          <h1>{{ totalSaleAmount }}</h1>
+          <p>Amount</p>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+    <!-- *********************** EXPENSE ******************* -->
+    <h2 class="ion-padding sideHeading">Expense</h2>
+    <ion-card class="expense">
+      <ion-row>
+        <ion-col>
+          <ion-icon color="primary" name="logo-euro"></ion-icon>
+          <h1>300</h1>
+          <p>Expense</p>
+        </ion-col>
+        <ion-col>
+          <ion-icon color="secondary" name="card"></ion-icon>
+          <h1>600</h1>
+          <p>Credit</p>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+    <!-- *********************** PRODUCTION ******************* -->
+    <h2 class="ion-padding sideHeading">Production</h2>
+    <ion-card class="letter">
+      <ion-row>
+        <ion-col>
+          <h1>380</h1>
+          <p>Last Production</p>
+        </ion-col>
+        <ion-col>
+          <h1>100</h1>
+          <p>previous balance Production</p>
+        </ion-col>
+        <ion-col>
+          <h1>480</h1>
+          <p>Total</p>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
+  <div *ngIf="waitingFlag" class="ion-padding ion-margin">
+    <ion-spinner></ion-spinner>
+  </div>
 </ion-content>

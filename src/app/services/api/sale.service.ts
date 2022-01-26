@@ -16,18 +16,24 @@ export class SaleService {
     public ngFireAuth: AngularFireAuth,) { }
 
 
-  async getSaleList() {
-    let sale: ISale[] = [];
+  getSaleList(): Promise<ISale[]> {
 
-    const snapshot = await this.afStore.collection('sale').get()
-    snapshot.subscribe((querySnapshot: QuerySnapshot<DocumentData>) => {
-      let documentsArray = querySnapshot.docs;
+    return new Promise((resolve, reject) => {
+      let sales: ISale[] = [];
 
-      documentsArray.forEach((doc: any) => {
-        sale.push(doc.data())
+      const snapshot = this.afStore.collection('sale').get()
+      snapshot.subscribe((querySnapshot: QuerySnapshot<DocumentData>) => {
+        let documentsArray = querySnapshot.docs;
+
+        documentsArray.forEach((doc: any) => {
+          sales.push(doc.data())
+        })
+        resolve(sales);
       })
     })
-    return sale;
+
+
+
 
   }
   async createNewSale(sale: ISale) {

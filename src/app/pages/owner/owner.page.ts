@@ -9,36 +9,26 @@ import { SaleService } from 'src/app/services/api/sale.service';
 })
 export class OwnerPage implements OnInit {
 
-  
-constructor(private saleService: SaleService) { }
-sales: ISale[];
-waitingFlag: boolean;
 
-totalSaleAmount = 0;
+  constructor(private saleService: SaleService) { }
+  sales: ISale[] = [];
+  waitingFlag: boolean;
 
-ngOnInit() {
-  this.waitingFlag=true;
-  this.saleService.getSaleList().then(cloudSalesData => {
-    this.sales = cloudSalesData;
+  totalSaleAmount = 0;
 
-  //  let sales = ["rego","stalin","bruno"];
-  //  sales[0]
-  //  sales[1]
-  //  sales[2]
+  ngOnInit() {
+    this.waitingFlag = true;
 
-//    sales.forEach(name=>{
-// console.log(name)
-//    })
- setTimeout(()=>{
-   alert("sdf")
-   console.log("test data",cloudSalesData)
-  for(let i in cloudSalesData){
-    console.log(cloudSalesData[i],"sadfdas");
-  } 
- },2000) 
-    this.waitingFlag= false;
-  })
-}
- 
+    this.saleService.getSaleList().then(cloudSalesData => {
+      this.sales = cloudSalesData;
+      for (let i in this.sales) {
+        let sale = this.sales[i];
+        this.totalSaleAmount = this.totalSaleAmount + (sale.ratePerItem * sale.numberOfItems);
+        console.log(sale.ratePerItem + " * " + sale.ratePerItem * sale.numberOfItems)
+      }
+      this.waitingFlag = false;
+    })
+  }
+
 
 }
