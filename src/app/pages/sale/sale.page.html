@@ -77,7 +77,7 @@
           {{'ICE_TYPE_SHOULD_BE_ENTERD'| translate}}
         </ion-text>
      
-      <ion-row>
+      <ion-row class="ion-padding" >
         <ion-col>{{'ICE_TYPE' |translate}}</ion-col>
         <ion-col>
           <ion-segment formControlName="iceType">
@@ -100,11 +100,18 @@
           <ion-searchbar></ion-searchbar>
         </ion-toolbar>
       </ion-item>
-      <ion-item>
-        <ion-label> {{'TOTAL' | translate}} </ion-label>
-      </ion-item>
-
-      <ion-button color="success" type="submit" expand="block">COMPLETE SALE</ion-button>
+      <ion-card>
+         <ion-card-content>
+          {{'TOTAL' | translate}} :   {{saleForm.value.ratePerItem * saleForm.value.numberOfItems}}
+           </ion-card-content>
+        
+        
+      </ion-card>
+ 
+<div  class="ion-padding">
+  <ion-button color="success" type="submit" expand="block">COMPLETE SALE</ion-button>
+</div>
+       
 
     </form>
   

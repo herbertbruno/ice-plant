@@ -13,6 +13,8 @@ import { AuthService } from 'src/app/services/auth.service';
 export class SalePage implements OnInit {
   saleForm: FormGroup;
   submited: boolean = false;
+ 
+  
 
   constructor(private saleService: SaleService, public formBuilder: FormBuilder) { }
 
@@ -24,14 +26,19 @@ export class SalePage implements OnInit {
       ratePerItem: ['', [Validators.required]],
       numberOfItems: ['', [Validators.required]],
       iceType: ['', [Validators.required]],
+      
     })
 
 
   }
+  // calculatetotal(){
+  //    this.total= this.ratePerItem * this.numberOfItems;
+  // }
   save() {
     this.submited = true;
 
     console.log(this.saleForm.valid);
+    
     if (this.saleForm.valid) {
       let sale: ISale = this.saleForm.value;
       this.saleService.createNewSale(sale);
