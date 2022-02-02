@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ISale } from 'src/app/interfaces/sale';
+import { CommonService } from 'src/app/services/api/common.service';
 
 @Component({
   selector: 'app-owner',
@@ -7,30 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OwnerPage implements OnInit {
 
-  
-constructor() { }
-expense: string;
-onDuty:string;
-Date:number;
-noofbarsSold:number;
-lastProduction:number;
-credit:number;
-totalSale:number;
-ngOnInit() {
-}
-savechanges(){
-let  changeValues = {
 
-  expense:this.expense,
-  onDuty:this.onDuty,
-  noofbarsSold:this.noofbarsSold,
-  Date:this.Date,
-  lastProduction:this.lastProduction,
-  credit:this.credit,
-  totalSale:this.totalSale
+  constructor(private commonSer: CommonService) { }
+  sales: ISale[] = [];
+  waitingFlag: boolean;
 
-}
-  console.log(changeValues);
-}
+  totalSaleAmount = 0;
+  totalIceSold = 0;
+
+  ngOnInit() {
+    this.waitingFlag = true;
+
+    this.commonSer.getCollectionList('sale').then(cloudSalesData => {
+      this.sales = cloudSalesData;
+   
+      for (let key in this.sales) {
+
+        let sale = this.sales[key];
+        this.totalSaleAmount = this.totalSaleAmount +(sale.ratePerItem * sale.numberOfItems)
+ 
+        this.totalIceSold = this.totalIceSold + ( sale.numberOfItems);
+      
+      
+    console.log(sale.ratePerItem + " * " + sale.numberOfItems + " = " + sale.ratePerItem * sale.numberOfItems )
+      }
+      this.waitingFlag = false;
+    })
+  }
+
 
 }

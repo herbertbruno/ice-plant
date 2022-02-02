@@ -1,27 +1,23 @@
 import { Injectable } from '@angular/core';
-
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-
 import { AngularFirestore, DocumentData, QuerySnapshot } from '@angular/fire/compat/firestore';
-
 import { ISale } from 'src/app/interfaces/sale';
-
 
 @Injectable({
   providedIn: 'root'
 })
+export class CommonService {
 
-export class SaleService {
   constructor(public afStore: AngularFirestore,
     public ngFireAuth: AngularFireAuth,) { }
 
 
-  getSaleList(): Promise<ISale[]> {
+  getCollectionList(collectionName: string): Promise<ISale[]> {
 
     return new Promise((resolve, reject) => {
       let sales: ISale[] = [];
 
-      const snapshot = this.afStore.collection('sale').get()
+      const snapshot = this.afStore.collection(collectionName).get()
       snapshot.subscribe((querySnapshot: QuerySnapshot<DocumentData>) => {
         let documentsArray = querySnapshot.docs;
 
@@ -36,19 +32,4 @@ export class SaleService {
 
 
   }
-  async createNewSale(sale: ISale) {
-    console.log(sale);
-    // db.collection('users').doc(user_id).set({foo:'bar'}, {merge: true})//
-    //send to firebase
-
-    const snapshot = await this.afStore.collection('sale').doc().set(sale, { merge: true });
-
-    console.log();
-
-  }
-  editsale() {
-  }
-
-
 }
-
