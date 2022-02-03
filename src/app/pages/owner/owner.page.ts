@@ -15,15 +15,17 @@ export class OwnerPage implements OnInit {
   waitingFlag: boolean;
 
   totalSaleAmount = 0;
-
+  totalSale = 0;
   ngOnInit() {
     this.waitingFlag = true;
 
     this.saleService.getSaleList().then(cloudSalesData => {
       this.sales = cloudSalesData;
+
       for (let i in this.sales) {
         let sale = this.sales[i];
         this.totalSaleAmount = this.totalSaleAmount + (sale.ratePerItem * sale.numberOfItems);
+        this.totalSale = this.totalSale + 1;
         console.log(sale.ratePerItem + " * " + sale.ratePerItem * sale.numberOfItems)
       }
       this.waitingFlag = false;
