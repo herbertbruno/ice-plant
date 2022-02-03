@@ -12,26 +12,24 @@ export class OwnerPage implements OnInit {
 
   constructor(private commonSer: CommonService) { }
   sales: ISale[] = [];
-  waitingFlag: boolean;
-
-  totalSaleAmount = 0;
+  waitingFlag: boolean; 
+  totalSaleAmount = 0; 
+  totalSale = 0; 
   totalIceSold = 0;
 
+ 
   ngOnInit() {
     this.waitingFlag = true;
 
     this.commonSer.getCollectionList('sale').then(cloudSalesData => {
-      this.sales = cloudSalesData;
-   
-      for (let key in this.sales) {
+      this.sales = cloudSalesData; 
 
-        let sale = this.sales[key];
-        this.totalSaleAmount = this.totalSaleAmount +(sale.ratePerItem * sale.numberOfItems)
- 
-        this.totalIceSold = this.totalIceSold + ( sale.numberOfItems);
-      
-      
-    console.log(sale.ratePerItem + " * " + sale.numberOfItems + " = " + sale.ratePerItem * sale.numberOfItems )
+      for (let i in this.sales) {
+        let sale = this.sales[i];
+        this.totalSaleAmount = this.totalSaleAmount + (sale.ratePerItem * sale.numberOfItems);
+        this.totalSale = this.totalSale + 1;   
+        this.totalIceSold = this.totalIceSold + ( sale.numberOfItems);  
+        console.log(sale.ratePerItem + " * " + sale.numberOfItems + " = " + sale.ratePerItem * sale.numberOfItems ) 
       }
       this.waitingFlag = false;
     })
