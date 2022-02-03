@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ISale } from 'src/app/interfaces/sale';
-import { SaleService } from 'src/app/services/api/sale.service';
+import { CommonService } from 'src/app/services/api/common.service';
 
 @Component({
   selector: 'app-owner',
@@ -10,23 +10,26 @@ import { SaleService } from 'src/app/services/api/sale.service';
 export class OwnerPage implements OnInit {
 
 
-  constructor(private saleService: SaleService) { }
+  constructor(private commonSer: CommonService) { }
   sales: ISale[] = [];
-  waitingFlag: boolean;
+  waitingFlag: boolean; 
+  totalSaleAmount = 0; 
+  totalSale = 0; 
+  totalIceSold = 0;
 
-  totalSaleAmount = 0;
-  totalSale = 0;
+ 
   ngOnInit() {
     this.waitingFlag = true;
 
-    this.saleService.getSaleList().then(cloudSalesData => {
-      this.sales = cloudSalesData;
+    this.commonSer.getCollectionList('sale').then(cloudSalesData => {
+      this.sales = cloudSalesData; 
 
       for (let i in this.sales) {
         let sale = this.sales[i];
         this.totalSaleAmount = this.totalSaleAmount + (sale.ratePerItem * sale.numberOfItems);
-        this.totalSale = this.totalSale + 1;
-        console.log(sale.ratePerItem + " * " + sale.ratePerItem * sale.numberOfItems)
+        this.totalSale = this.totalSale + 1;   
+        this.totalIceSold = this.totalIceSold + ( sale.numberOfItems);  
+        console.log(sale.ratePerItem + " * " + sale.numberOfItems + " = " + sale.ratePerItem * sale.numberOfItems ) 
       }
       this.waitingFlag = false;
     })
