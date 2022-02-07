@@ -1,5 +1,5 @@
 export interface ISale {
-    iceProduced: number;
+    iceProduced:number;
     date:number;
     time: number;
     numberOfItems: number;

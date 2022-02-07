@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ISale } from 'src/app/interfaces/sale';
+import { IWorker } from 'src/app/interfaces/worker';
 import { CommonService } from 'src/app/services/api/common.service';
 
 @Component({
@@ -8,18 +9,18 @@ import { CommonService } from 'src/app/services/api/common.service';
   styleUrls: ['./owner.page.scss'],
 })
 export class OwnerPage implements OnInit {
-  workers: ISale[];
-  
-
+ 
+ 
   constructor(private commonSer: CommonService) { }
   sales: ISale[] = [];
   waitingFlag: boolean; 
   totalSaleAmount = 0; 
   totalSale = 0; 
   totalIceSold = 0;
+  workers: IWorker[] ;
   totalIceProduction= 0;
-
- 
+  previousIceProduction= 0;
+  lastProduction=0;
   ngOnInit() {
     this.waitingFlag = true;
 
@@ -35,18 +36,19 @@ export class OwnerPage implements OnInit {
       }
       this.waitingFlag = false;
     })
-
+{
     this.waitingFlag = true;
 
-    this.commonSer.getCollectionList('worker').then(cloudSalesData => {
-      this.workers = cloudSalesData; 
+    this.commonSer.getCollectionList('worker').then(cloudWorkersProductionData => {
+      this.workers = cloudWorkersProductionData; 
 
       for (let i in this.workers) {
         let worker = this.workers[i];
-        this.totalIceProduction = this.totalIceProduction + worker.iceProduced ;
+        this.lastProduction = this.lastProduction + worker.iceProduced ;
+        this.totalIceProduction = this.lastProduction + this.previousIceProduction ;
       }
       this.waitingFlag = false;
     })
   }
-
+  }
 }
