@@ -8,7 +8,8 @@ import { CommonService } from 'src/app/services/api/common.service';
   styleUrls: ['./owner.page.scss'],
 })
 export class OwnerPage implements OnInit {
-
+  workers: ISale[];
+  
 
   constructor(private commonSer: CommonService) { }
   sales: ISale[] = [];
@@ -16,6 +17,7 @@ export class OwnerPage implements OnInit {
   totalSaleAmount = 0; 
   totalSale = 0; 
   totalIceSold = 0;
+  totalIceProduction= 0;
 
  
   ngOnInit() {
@@ -33,7 +35,18 @@ export class OwnerPage implements OnInit {
       }
       this.waitingFlag = false;
     })
-  }
 
+    this.waitingFlag = true;
+
+    this.commonSer.getCollectionList('worker').then(cloudSalesData => {
+      this.workers = cloudSalesData; 
+
+      for (let i in this.workers) {
+        let worker = this.workers[i];
+        this.totalIceProduction = this.totalIceProduction + worker.iceProduced ;
+      }
+      this.waitingFlag = false;
+    })
+  }
 
 }
