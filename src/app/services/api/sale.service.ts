@@ -31,10 +31,6 @@ export class SaleService {
         resolve(sales);
       })
     })
-
-
-
-
   }
   async createNewSale(sale: ISale) {
     console.log(sale);
