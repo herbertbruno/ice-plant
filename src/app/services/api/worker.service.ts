@@ -10,18 +10,22 @@ export class WorkerService {
   constructor(public afStore: AngularFirestore,
     public ngFireAuth: AngularFireAuth,) { }
 
-    async getWorkerList() {
+     getWorkerList():Promise<IWorker[]> {
+
+      return new Promise((resolve, reject) => {
       let workers: IWorker[] = [];
 
-      const snapshot = await this.afStore.collection('worker').get()
+      const snapshot =  this.afStore.collection('worker').get()
       snapshot.subscribe((querySnapshot: QuerySnapshot<DocumentData>) => {
         let documentsArray = querySnapshot.docs;
   
         documentsArray.forEach((doc: any) => {
           workers.push(doc.data())
         })
+        resolve(workers) ;
       })
-      return workers;
+    
+    });
   
     }
     async createNewWorker(worker: IWorker) {
