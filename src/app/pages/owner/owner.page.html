@@ -8,6 +8,20 @@
 </ion-header>
 
 <ion-content>
+ 
+  <ion-card>
+  <ion-item>
+    <ion-label> {{'DATE' | translate}}</ion-label>
+    <ion-datetime 
+   
+    [(ngModel)]="selectedDate"
+      displayFormat="DD-MM-YYYY"
+      (ionChange)="dateChanged()"
+       >
+    </ion-datetime>
+  </ion-item>
+  </ion-card> 
+  
   <div *ngIf="!waitingFlag">
     <!-- *********************** OnDuty ******************* -->
     <ion-card>
@@ -15,6 +29,7 @@
         <ion-buttons slot="start">
           <ion-back-button></ion-back-button> </ion-buttons
       ></ion-toolbar>
+      
       <ion-item lines="none">
         <ion-icon color="success" name="person" slot="start"></ion-icon>
         <ion-label>
