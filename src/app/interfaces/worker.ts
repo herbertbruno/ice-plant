@@ -1,7 +1,5 @@
-import { Time } from "@angular/common";
-
 export interface IWorker {
-    date:Date;
-    time :Time;
+    date:number;
+    time :number;
     iceProduced:number;
 }

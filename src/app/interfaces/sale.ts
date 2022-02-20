@@ -1,4 +1,4 @@
-export interface ISale {
+export interface ISale { 
     date:number;
     time: number;
     numberOfItems: number;
