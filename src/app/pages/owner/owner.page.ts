@@ -5,6 +5,7 @@ import { CommonService } from 'src/app/services/api/common.service';
 import { ExpenseService } from 'src/app/services/api/expense.service';
 import { IWorker } from 'src/app/interfaces/worker';
 import { WorkerService } from 'src/app/services/api/worker.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-owner',
@@ -33,35 +34,52 @@ export class OwnerPage implements OnInit {
   previousIceProduction = 0;
   lastProduction = 0;
 
+
+  selectedDate: any= new Date();
+  date1: string = "2022-02-20";
+
   ngOnInit() { 
 
-     this.calculateSales();
+     this.getSales();
      this.calcualteWorker();
      this.calculateExpense();
 
   }
+  dateChanged(d){   
+    this.calculateSales();
+  }
+
+  formateDate(d:string){   
+   return moment(d); 
+  }
 
   // This function gets data from the firebase and calculates the total
-  calculateSales(){
+  getSales(){
     this.commonSer.getCollectionList('sale').then(cloudSalesData => {
-      this.sales = cloudSalesData;
-      console.log(this.sales)
-      for (let i in this.sales) {
+      this.sales = cloudSalesData;  
+    }); 
+  }
+
+  calculateSales(){
+  console.log(this.selectedDate,this.date1)
+   let filter = moment(this.selectedDate).isSame(moment(this.date1));
+   console.log(filter)
+    for (let i in this.sales) {
+      if(filter){
         let sale = this.sales[i];
         this.totalSaleAmount = this.totalSaleAmount + (sale.ratePerItem * sale.numberOfItems);
         this.totalSale = this.totalSale + 1;
         this.totalIceSold = this.totalIceSold + (sale.numberOfItems);
-        console.log(sale.ratePerItem + " * " + sale.numberOfItems + " = " + sale.ratePerItem * sale.numberOfItems)
-      }
-      this.waitingFlag = false;
-    }); 
+      }  
+    }
   }
+
 
 
   calcualteWorker(){
     this.workerService.getWorkerList().then(cloudWorkersProductionData => {
       this.workers = cloudWorkersProductionData;
-      console.log(this.workers);
+       
       for (let i in this.workers) {
         let worker = this.workers[i];
         this.lastProduction = this.lastProduction + worker.iceProduced;
@@ -74,12 +92,9 @@ export class OwnerPage implements OnInit {
 
   calculateExpense(){
     this.expenseSer.getExpenseList().then((cloudExpensesData: any) => {
-      this.expenses = cloudExpensesData;
-      console.log(this.expenses)
-
+      this.expenses = cloudExpensesData; 
       for (let i in this.expenses) {
-        let expense = this.expenses[i];
-        console.log(expense)
+        let expense = this.expenses[i]; 
         this.totalExpenseAmount = this.totalExpenseAmount + expense.amount;
  } 
     }) 

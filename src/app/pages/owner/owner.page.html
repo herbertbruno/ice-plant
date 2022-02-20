@@ -9,7 +9,7 @@
 
 <ion-content>
   <div *ngIf="!waitingFlag">
-    <!-- *********************** OnDuty ******************* -->
+    <!-- ******** OnDuty ******** -->
     <ion-card>
       <ion-toolbar>
         <ion-buttons slot="start">
@@ -28,7 +28,21 @@
         <ion-icon color="danger" name="power" slot="end"></ion-icon>
       </ion-item>
     </ion-card>
-    <!-- *********************** SALES ******************* -->
+
+    <ion-card>
+      <ion-item>
+        <ion-label> {{'DATE' | translate}}</ion-label>
+        <ion-datetime 
+       
+        [(ngModel)]="selectedDate"
+          displayFormat="DD-MM-YYYY"
+          (ionChange)="dateChanged($event)"
+           >
+        </ion-datetime>
+      </ion-item>
+      </ion-card> 
+
+    <!-- ******** SALES ******** -->
     <h2 class="ion-padding sideHeading">Sale</h2>
     <ion-card class="saleBox">
       <ion-row>
@@ -48,13 +62,13 @@
         </ion-col>
       </ion-row>
     </ion-card>
-    <!-- *********************** EXPENSE ******************* -->
+    <!-- ******** EXPENSE ******** -->
     <h2 class="ion-padding sideHeading">Expense</h2>
     <ion-card class="expense">
       <ion-row>
         <ion-col>
           <ion-icon color="primary" name="logo-euro"></ion-icon>
-          <h1>{{ totalExpenseAmount }}</h1>
+          <h1>300</h1>
           <p>Expense</p>
         </ion-col>
         <ion-col>
@@ -64,21 +78,21 @@
         </ion-col>
       </ion-row>
     </ion-card>
-    <!-- *********************** PRODUCTION ******************* -->
+    <!-- ******** PRODUCTION ******** -->
     <h2 class="ion-padding sideHeading">Production</h2>
     <ion-card class="letter">
       <ion-row>
         <ion-col>
-          <h1>{{lastProduction}}</h1>
+          <h1>380</h1>
           <p>Last Production</p>
         </ion-col>
         <ion-col>
-          <h1>{{previousIceProduction}}</h1>
+          <h1>100</h1>
           <p>previous balance Production</p>
         </ion-col>
         <ion-col>
-          <h1>{{ totalIceProduction }}</h1>
-          <p> total IceProduction </p>
+          <h1>480</h1>
+          <p>Total</p>
         </ion-col>
       </ion-row>
     </ion-card>
