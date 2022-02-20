@@ -1,5 +1,5 @@
 export interface ISale { 
-    date:number;
+    date:string;
     time: number;
     numberOfItems: number;
     vechicleType: string;

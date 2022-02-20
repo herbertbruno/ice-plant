@@ -45,12 +45,13 @@ export class OwnerPage implements OnInit {
      this.calculateExpense();
 
   }
-  dateChanged(d){   
+  dateChanged(d){  
+    //this.selectedDate =  this.formateDate(d); 
     this.calculateSales();
   }
 
   formateDate(d:string){   
-   return moment(d); 
+   return moment(d).format("DD-MM-YYYY"); 
   }
 
   // This function gets data from the firebase and calculates the total
@@ -60,20 +61,24 @@ export class OwnerPage implements OnInit {
     }); 
   }
 
-  calculateSales(){
-  console.log(this.selectedDate,this.date1)
+  calculateSales(){ 
  
+    this.totalSaleAmount = 0;
+    this.totalSale = 0;
+    this.totalIceSold = 0;
 
-  // using the moment.js framework comparing both dates are same
-   let filter = moment(this.selectedDate).isSame(moment(this.date1)); // true or false
-    
     for (let i in this.sales) {
-      if(filter ==  true){
-        let sale = this.sales[i];
+      let sale = this.sales[i];
+      // console.log("selectedDate : : : ",this.formateDate(this.selectedDate))
+      // console.log("sale.date : : : ",this.formateDate(sale.date))
+
+      if( this.formateDate(this.selectedDate) == this.formateDate(sale.date) ){
+       
         this.totalSaleAmount = this.totalSaleAmount + (sale.ratePerItem * sale.numberOfItems);
         this.totalSale = this.totalSale + 1;
         this.totalIceSold = this.totalIceSold + (sale.numberOfItems);
       }  
+
     }
   }
 
