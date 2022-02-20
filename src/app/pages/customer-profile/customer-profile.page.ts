@@ -30,11 +30,15 @@ export class CustomerProfilePage implements OnInit {
   save() {
 
     this.submited = true;
-
     console.log(this.customerProfileForm.valid);
+    console.log(this.customerProfileForm.value);
+
     if (this.customerProfileForm.valid) {
       let customer: ICustomer = this.customerProfileForm.value;
       this.customerService.createNewCustomer(customer);
+    }else{
+      alert("please check you have entered all the fields")
+       
     }
 
   }

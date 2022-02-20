@@ -14,6 +14,7 @@ export class ListCustomerPage implements OnInit {
 
   ngOnInit() {
     this.customerService.getCustomerList().then(cloudCustomersData => {
+      console.log(cloudCustomersData);
       this.customers = cloudCustomersData;
     })
   }

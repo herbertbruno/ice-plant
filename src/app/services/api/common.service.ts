@@ -17,7 +17,7 @@ export class CommonService {
     return new Promise((resolve, reject) => {
       let sales: ISale[] = [];
 
-      const snapshot = this.afStore.collection('collectionName').get()
+      const snapshot = this.afStore.collection(collectionName).get()
       snapshot.subscribe((querySnapshot: QuerySnapshot<DocumentData>) => {
         let documentsArray = querySnapshot.docs;
 
@@ -26,10 +26,6 @@ export class CommonService {
         })
         resolve(sales);
       })
-    })
-
-
-
-
+    }) 
   }
 }

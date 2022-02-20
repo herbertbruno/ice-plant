@@ -14,23 +14,38 @@ import { WorkerService } from 'src/app/services/api/worker.service';
 export class OwnerPage implements OnInit {
 
   constructor(private commonSer: CommonService, private expenseSer: ExpenseService, private workerService: WorkerService) { }
-
-  sales: ISale[] = [];
   waitingFlag: boolean;
+
+  // Sale variables
+  sales: ISale[] = []; 
   totalSaleAmount = 0;
-  totalSale = 0;
+  totalSale = 0; 
   totalIceSold = 0;
+
+  // Expenses variables
   expenses: IExpense[] = [];
   totalExpenseAmount = 0;
+
+
+  // Worker variables
   workers: IWorker[];
   totalIceProduction = 0;
   previousIceProduction = 0;
   lastProduction = 0;
 
-  ngOnInit() {
+  ngOnInit() { 
 
+     this.calculateSales();
+     this.calcualteWorker();
+     this.calculateExpense();
+
+  }
+
+  // This function gets data from the firebase and calculates the total
+  calculateSales(){
     this.commonSer.getCollectionList('sale').then(cloudSalesData => {
       this.sales = cloudSalesData;
+      console.log(this.sales)
       for (let i in this.sales) {
         let sale = this.sales[i];
         this.totalSaleAmount = this.totalSaleAmount + (sale.ratePerItem * sale.numberOfItems);
@@ -39,10 +54,11 @@ export class OwnerPage implements OnInit {
         console.log(sale.ratePerItem + " * " + sale.numberOfItems + " = " + sale.ratePerItem * sale.numberOfItems)
       }
       this.waitingFlag = false;
-    });
+    }); 
+  }
 
-    this.waitingFlag = true;
 
+  calcualteWorker(){
     this.workerService.getWorkerList().then(cloudWorkersProductionData => {
       this.workers = cloudWorkersProductionData;
       console.log(this.workers);
@@ -51,8 +67,21 @@ export class OwnerPage implements OnInit {
         this.lastProduction = this.lastProduction + worker.iceProduced;
         this.totalIceProduction = this.lastProduction + this.previousIceProduction;
       }
-      this.waitingFlag = false;
-    })
+      
+    }) 
+  }
 
+
+  calculateExpense(){
+    this.expenseSer.getExpenseList().then((cloudExpensesData: any) => {
+      this.expenses = cloudExpensesData;
+      console.log(this.expenses)
+
+      for (let i in this.expenses) {
+        let expense = this.expenses[i];
+        console.log(expense)
+        this.totalExpenseAmount = this.totalExpenseAmount + expense.amount;
+ } 
+    }) 
   }
 }

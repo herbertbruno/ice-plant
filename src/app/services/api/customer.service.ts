@@ -36,7 +36,7 @@ export class CustomerService {
 
     const snapshot = await this.afStore.collection('customer').doc().set(customer, { merge: true });
 
-    console.log();
+    console.log(snapshot);
 
   }
   editCustomer() {
