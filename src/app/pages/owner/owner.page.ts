@@ -62,10 +62,13 @@ export class OwnerPage implements OnInit {
 
   calculateSales(){
   console.log(this.selectedDate,this.date1)
-   let filter = moment(this.selectedDate).isSame(moment(this.date1));
-   console.log(filter)
+ 
+
+  // using the moment.js framework comparing both dates are same
+   let filter = moment(this.selectedDate).isSame(moment(this.date1)); // true or false
+    
     for (let i in this.sales) {
-      if(filter){
+      if(filter ==  true){
         let sale = this.sales[i];
         this.totalSaleAmount = this.totalSaleAmount + (sale.ratePerItem * sale.numberOfItems);
         this.totalSale = this.totalSale + 1;
