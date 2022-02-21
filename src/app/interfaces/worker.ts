@@ -1,5 +1,5 @@
 export interface IWorker {
-    date:number;
+    date:string;
     time :number;
     iceProduced:number;
 }
