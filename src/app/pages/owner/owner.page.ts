@@ -36,18 +36,23 @@ export class OwnerPage implements OnInit {
 
 
   selectedDate: any= new Date();
-  date1: string = "2022-02-20";
+  
 
   ngOnInit() { 
 
      this.getSales();
      this.calcualteWorker();
      this.calculateExpense();
+     this.getExpense();
+     
 
   }
   dateChanged(d){  
     //this.selectedDate =  this.formateDate(d); 
     this.calculateSales();
+    this.calculateExpense();
+    
+   
   }
 
   formateDate(d:string){   
@@ -69,8 +74,8 @@ export class OwnerPage implements OnInit {
 
     for (let i in this.sales) {
       let sale = this.sales[i];
-      // console.log("selectedDate : : : ",this.formateDate(this.selectedDate))
-      // console.log("sale.date : : : ",this.formateDate(sale.date))
+      //  console.log("selectedDate : : : ",this.formateDate(this.selectedDate))
+      //  console.log("sale.date : : : ",this.formateDate(sale.date))
 
       if( this.formateDate(this.selectedDate) == this.formateDate(sale.date) ){
        
@@ -97,14 +102,24 @@ export class OwnerPage implements OnInit {
     }) 
   }
 
+  
 
-  calculateExpense(){
+
+  getExpense(){
     this.expenseSer.getExpenseList().then((cloudExpensesData: any) => {
       this.expenses = cloudExpensesData; 
+    });
+  }
+
+
+  calculateExpense(){
+    this.totalExpenseAmount = 0;
       for (let i in this.expenses) {
         let expense = this.expenses[i]; 
+        if( this.formateDate(this.selectedDate) == this.formateDate(expense.date) ){
         this.totalExpenseAmount = this.totalExpenseAmount + expense.amount;
+         }
  } 
-    }) 
+    
   }
 }
