@@ -32,24 +32,24 @@ export class OwnerPage implements OnInit {
   workers: IWorker[];
   totalIceProduction = 0;
   previousIceProduction = 0;
-  lastProduction = 0;
+  lastProduction = 0; 
 
-
-  selectedDate: any = new Date();
-  date1: string = "2022-02-20";
+  selectedDate: any = new Date(); 
 
   ngOnInit() {
 
     this.getSales();
     this.getworker();
+    this.getExpense();
     this.calcualteWorker();
-    this.calculateExpense();
+    this.calculateExpense(); 
 
   }
   dateChanged(d) {
     //this.selectedDate =  this.formateDate(d); 
     this.calculateSales();
     this.calcualteWorker();
+    this.calculateExpense();
   }
 
   formateDate(d: string) {
@@ -71,8 +71,8 @@ export class OwnerPage implements OnInit {
 
     for (let i in this.sales) {
       let sale = this.sales[i];
-      // console.log("selectedDate : : : ",this.formateDate(this.selectedDate))
-      // console.log("sale.date : : : ",this.formateDate(sale.date))
+      //  console.log("selectedDate : : : ",this.formateDate(this.selectedDate))
+      //  console.log("sale.date : : : ",this.formateDate(sale.date))
 
       if (this.formateDate(this.selectedDate) == this.formateDate(sale.date)) {
 
@@ -92,7 +92,7 @@ export class OwnerPage implements OnInit {
 
   calcualteWorker() {
 
-   this. totalIceProduction = 0;
+    this.totalIceProduction = 0;
     this.previousIceProduction = 0;
     this.lastProduction = 0;
 
@@ -106,14 +106,21 @@ export class OwnerPage implements OnInit {
     }
   }
 
-
-  calculateExpense() {
+  getExpense() {
     this.expenseSer.getExpenseList().then((cloudExpensesData: any) => {
       this.expenses = cloudExpensesData;
-      for (let i in this.expenses) {
-        let expense = this.expenses[i];
+    });
+  }
+
+
+  calculateExpense() {
+    this.totalExpenseAmount = 0;
+    for (let i in this.expenses) {
+      let expense = this.expenses[i];
+      if (this.formateDate(this.selectedDate) == this.formateDate(expense.date)) {
         this.totalExpenseAmount = this.totalExpenseAmount + expense.amount;
       }
-    })
+    }
+
   }
 }
