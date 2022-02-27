@@ -1,24 +1,38 @@
 <ion-content [fullscreen]="true">
+ 
   <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
+  <div class="banner">
+    <img src="assets/img/home-banner.png"/>
+  </div>
+  
 
-  <ion-header collapse="condense">
+  <!-- <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large"> Ice Plant </ion-title>
     </ion-toolbar>
-  </ion-header>
+  </ion-header> -->
 
-  <ion-list>
-    <ion-item routerLink="/list-customer">
+  <ion-list class="home-list">
+    <ion-card>
+      <ion-item lines="none"  routerLink="/list-customer">
+      <ion-icon name="people-circle-outline" slot="start"></ion-icon>
       {{'CUSTOMER' | translate}}
     </ion-item>
-    <ion-item routerLink="/list-sale"> {{'SALE' | translate}} </ion-item>
-    <ion-item routerLink="/list-expense"> {{'EXPENSE' | translate}} </ion-item>
-    <ion-item routerLink="/list-payment">
-      {{'RECORD_PAYMENT' | translate}}
+  </ion-card>
+    
+    <ion-card>
+      <ion-item lines="none" routerLink="/list-sale"
+      ><ion-icon name="cube-outline" slot="start"></ion-icon> {{'SALE'
+      | translate}}
     </ion-item>
-    <ion-item routerLink="/list-worker"> {{'WORKER' | translate}} </ion-item>
-    <ion-item routerLink="/owner"> {{'OWNER' | translate}} </ion-item>
+  </ion-card>
+    <ion-card><ion-item lines="none" routerLink="/list-expense"> <ion-icon name="cash-outline" slot="start"></ion-icon>{{'EXPENSE' | translate}} </ion-item></ion-card>
+    <ion-card><ion-item lines="none" routerLink="/list-payment"><ion-icon name="card-outline" slot="start"></ion-icon>
+      {{'RECORD_PAYMENT' | translate}}
+    </ion-item></ion-card>
+    <ion-card> <ion-item lines="none" routerLink="/list-worker"><ion-icon name="accessibility-outline" slot="start"></ion-icon> {{'WORKER' | translate}} </ion-item></ion-card>
+      <ion-card> <ion-item lines="none" routerLink="/owner"><ion-icon name="person-outline" slot="start"></ion-icon> {{'OWNER' | translate}} </ion-item></ion-card>
   </ion-list>
 </ion-content>
