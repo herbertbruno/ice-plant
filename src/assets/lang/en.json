@@ -65,5 +65,6 @@
   "VECHICLE_TYPE_SHOULD_BE_ENTERD": "Vechicle type should be enterd",
   "RATE_PER_ICE_SHOULD_BE_ENTERD": "Rate per ice should be enterd",
   "NO_OF_ITEMS_SHOULD_BE_ENTERD": "No of item should be enterd",
-  "ICE_TYPE_SHOULD_BE_ENTERD": "Ice type should be enterd"
+  "ICE_TYPE_SHOULD_BE_ENTERD": "Ice type should be enterd",
+  "ADD_NEW_CUSTOMER":"Add New customer"
 }
