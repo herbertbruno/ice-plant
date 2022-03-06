@@ -19,8 +19,9 @@ export class CustomerProfilePage implements OnInit {
   submited: boolean = false;
   waitingFlag: boolean;
   
+  
 
-  constructor(private navCtrl: NavController,private router: Router, private auth: AuthService, private customerService: CustomerService, public formBuilder: FormBuilder) { }
+  constructor(private navCtrl: NavController,public toastController: ToastController,private router: Router, private auth: AuthService, private customerService: CustomerService, public formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.customerProfileForm = this.formBuilder.group({
@@ -44,7 +45,30 @@ export class CustomerProfilePage implements OnInit {
       this.customerService.createNewCustomer(customer)
       this.navCtrl.navigateBack("/list-customer");
     }
-
+   
   }
-}
-
+  displayToast() {
+    if (this.customerProfileForm.valid) {
+      let customer: ICustomer = this.customerProfileForm.value;
+      this.customerService.createNewCustomer(customer)
+      {
+    this.toastController.create({
+      header: 'successfully saved',
+      position:'bottom',
+      color:'success',
+      cssClass: 'toast-custom-class',
+      buttons: [
+         {
+          side: 'end',
+          text: 'Close',
+          role: 'cancel',
+          handler: () => {
+            console.log('');
+          }
+        }
+      ]
+    }).then((toast) => {
+      toast.present();
+    });
+  }}
+}}

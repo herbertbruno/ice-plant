@@ -66,8 +66,9 @@
       </ion-button></div>
       <br />
       <div class="ion-padding">
-        <ion-button   color="success" type="submit" expand="block">{{'SAVE' | translate}}</ion-button>
-      </div>
+      <div id="container">
+        <ion-button color="success"  type="submit" (click)="displayToast()" expand="block">{{'SAVE' | translate}}</ion-button>
+      </div></div>
     </form>
   </div>
 </ion-content>
