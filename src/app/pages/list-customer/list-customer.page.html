@@ -8,7 +8,10 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
+  <div class="load" *ngIf="waitingFlag == true">
+    <ion-spinner></ion-spinner>
+  </div>
+  <ion-list  *ngIf="waitingFlag == false">
     <ion-card class="ion-padding" *ngFor="let customer of customers">
       {{ customer.name }}
       <p>{{ customer.mobile }}</p>
