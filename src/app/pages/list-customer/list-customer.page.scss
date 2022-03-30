@@ -1,3 +1,43 @@
+.cust-list{
+    // max-width: 400px;
+    // margin:0 auto;
+   ion-icon{
+       color: #5b5b5c; 
+       
+   }
+   ion-card{
+    margin-top:25px;
+    box-shadow:0px 2px 10px #9b9999;
+    padding:8px;
+    border-left: 3px solid #f00a0a;
+    border-right:2px solid #da0101; 
+   
+}
+
+h6{
+    font-size: 19px !important;
+}
+p{
+    color:black;
+}
+
+}
+.cust{
+    color:rgb(1, 15, 41);
+    font-family: Serif;
+}
+.search{
+    margin:auto;
+    width:auto;
+    padding: 10px;
+}
+.button{
+    width:auto;
+    margin:auto;
+    
+
+}
+
 .load{ 
     text-align:center;
     padding:100px;
@@ -5,4 +45,4 @@
         padding:20px;
         margin:0 atuo ;
     }
-}
+}  

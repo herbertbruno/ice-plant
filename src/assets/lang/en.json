@@ -66,5 +66,9 @@
   "RATE_PER_ICE_SHOULD_BE_ENTERD": "Rate per ice should be enterd",
   "NO_OF_ITEMS_SHOULD_BE_ENTERD": "No of item should be enterd",
   "ICE_TYPE_SHOULD_BE_ENTERD": "Ice type should be enterd",
+  "LIST_CUSTOMER":"List Customer",
+  "CUSTOMER_MOBILE_NUMBER":"Customer Mobile Number",
+  "CUSTOMER_EMAIL":"Customer Email",
+  "SEARCH":"Search",
   "ADD_NEW_CUSTOMER":"Add New customer"
 }

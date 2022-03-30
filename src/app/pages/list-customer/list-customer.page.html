@@ -3,22 +3,50 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>list-customer</ion-title>
+    <ion-title class="cust">{{ 'LIST_CUSTOMER' | translate}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="load" *ngIf="waitingFlag == true">
-    <ion-spinner></ion-spinner>
-  </div>
-  <ion-list  *ngIf="waitingFlag == false">
-    <ion-card class="ion-padding" *ngFor="let customer of customers">
-      {{ customer.name }}
-      <p>{{ customer.mobile }}</p>
-      <p>{{ customer.email }}</p>
+
+  <ion-refresher slot="fixed"  (ionRefresh)="getCustomerList($event)">
+    <ion-refresher-content >
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-item>
+    <ion-button class="button" color="primary" slot="end" size="default">{{'SEARCH' | translate}}</ion-button>
+    <ion-searchbar placeholder="Search..." [(ngModel)]="filterTerm" animated="true"></ion-searchbar>
+  </ion-item>
+
+  <ion-list class="cust-list" >
+    <ion-card *ngFor="let customer of customers | filter:filterTerm" >
+      <ion-item lines="none">
+        <ion-icon name="people-circle-outline" slot="start"  ></ion-icon>
+        <ion-label>
+          <p>{{'CUSTOMER_NAME' | translate}}</p> 
+        <h6>{{ customer.name }}</h6>  
+        </ion-label> 
+    </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon name="call-outline" slot="start"></ion-icon>
+        <ion-label>
+        <p>{{'CUSTOMER_MOBILE_NUMBER' | translate}}</p>
+        <h6>{{ customer.mobile }}</h6>
+        </ion-label>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon name="mail-unread-outline" slot="start"></ion-icon>
+        <ion-label>
+        <p>{{'CUSTOMER_EMAIL' | translate }}</p>
+        <h6> {{ customer.email }}</h6>
+        </ion-label>
+      </ion-item>
+
     </ion-card>
 
- 
   </ion-list>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button routerLink="/customer-profile">
