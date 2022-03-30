@@ -1,4 +1,3 @@
-
 .cust-list{
     // max-width: 400px;
     // margin:0 auto;
@@ -39,6 +38,11 @@ p{
 
 }
 
-  
-  
-
+.load{ 
+    text-align:center;
+    padding:100px;
+     ion-spinner{
+        padding:20px;
+        margin:0 atuo ;
+    }
+}  

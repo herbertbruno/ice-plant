@@ -1,4 +1,6 @@
+ 
 import { Component, OnInit,EventEmitter,Output } from '@angular/core';
+
 import { ICustomer } from 'src/app/interfaces/customer';
 import { CustomerService } from 'src/app/services/api/customer.service';
 // import { EventEmitter } from 'stream';
@@ -10,15 +12,13 @@ import { CustomerService } from 'src/app/services/api/customer.service';
   templateUrl: './list-customer.page.html',
   styleUrls: ['./list-customer.page.scss'],
 })
-export class ListCustomerPage implements OnInit {
+export class ListCustomerPage {
   customers: ICustomer[];
-  filterTerm: string;
-  
-  
+ 
+  filterTerm: string;  
+  waitingFlag: boolean=false; 
 
-  constructor(private customerService: CustomerService) { 
-    
-
+  constructor(private customerService: CustomerService) {   
   }
  
 getCustomerList( event: any = false){
@@ -31,6 +31,15 @@ getCustomerList( event: any = false){
 }
   ngOnInit() {
     this.getCustomerList();
+ 
+  ionViewWillEnter() {
+    this.waitingFlag = true;
+    this.customerService.getCustomerList().then(cloudCustomersData => {
+      console.log(cloudCustomersData);
+      this.customers = cloudCustomersData;
+      this.waitingFlag = false;
+    })
+ 
   }
  
 }

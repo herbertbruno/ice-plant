@@ -69,7 +69,6 @@
   "LIST_CUSTOMER":"List Customer",
   "CUSTOMER_MOBILE_NUMBER":"Customer Mobile Number",
   "CUSTOMER_EMAIL":"Customer Email",
-  "SEARCH":"Search"
-  
-  
+  "SEARCH":"Search",
+  "ADD_NEW_CUSTOMER":"Add New customer"
 }

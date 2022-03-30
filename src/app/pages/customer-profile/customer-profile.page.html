@@ -4,7 +4,7 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <div class="head">
-      <ion-title>{{'ADD_NEW_CUSTOMER'| translate}} </ion-title>
+      <ion-title >{{'ADD_NEW_CUSTOMER'| translate}} </ion-title>
     </div>
   </ion-toolbar>
 </ion-header>
@@ -59,10 +59,16 @@
         <ion-label>{{'NEED_RECEIPT' | translate}}</ion-label>
         <ion-toggle formControlName="needRecipt" color="success"></ion-toggle>
       </ion-item>
+      <div class="clear">
+      <ion-button   color="medium">
+        <ion-icon size="small"   slot="start"  name="close-circle"></ion-icon>
+        clear all
+      </ion-button></div>
       <br />
       <div class="ion-padding">
-        <ion-button  routerLink="/list-customer" color="success" type="submit" expand="block">{{'SAVE' | translate}}</ion-button>
-      </div>
+      <div id="container">
+        <ion-button color="success"  type="submit" (click)="displayToast()" expand="block">{{'SAVE' | translate}}</ion-button>
+      </div></div>
     </form>
   </div>
 </ion-content>
