@@ -31,7 +31,7 @@ getCustomerList( event: any = false){
 }
   ngOnInit() {
     this.getCustomerList();
- 
+  }
   ionViewWillEnter() {
     this.waitingFlag = true;
     this.customerService.getCustomerList().then(cloudCustomersData => {
