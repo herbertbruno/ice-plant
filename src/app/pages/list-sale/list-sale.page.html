@@ -8,6 +8,18 @@
 </ion-header>
 
 <ion-content>
+  
+  <ion-card>
+    <ion-item>
+      <ion-label> DATE</ion-label>
+      <ion-datetime 
+     
+      [(ngModel)]="selectedDate" 
+        (ionChange)="dateChanged()"
+         >
+      </ion-datetime>
+    </ion-item>
+    </ion-card> 
   <div class="loading" *ngIf="waitingFlag == true">
     <ion-spinner></ion-spinner>
   </div>
@@ -20,11 +32,9 @@
     <p>{{ sale.iceType }}</p>
   </ion-card>
 
-  <ion-fab vertical="center" horizontal="end" slot="fixed">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button routerLink="/sale">
-      <ion-icon name="add"></ion-icon>
+      <ion-icon  name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-
-
 </ion-content>

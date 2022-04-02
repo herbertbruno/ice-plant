@@ -61,13 +61,17 @@
       </ion-item>
       <div class="clear">
       <ion-button   color="medium">
-        <ion-icon size="small"   slot="start"  name="close-circle"></ion-icon>
+        <ion-icon size="small"
+        (click)="clear()"
+        slot="start"  name="close-circle"></ion-icon>
         clear all
       </ion-button></div>
+      
       <br />
       <div class="ion-padding">
       <div id="container">
-        <ion-button color="success"  type="submit" (click)="displayToast()" expand="block">{{'SAVE' | translate}}</ion-button>
+        <ion-button color="success"  type="submit" (click)="save()" expand="block">{{'SAVE' | translate}}</ion-button>
+        
       </div></div>
     </form>
   </div>
