@@ -13,13 +13,13 @@ export class ToastService {
   displayToast() {
     this.toastController.create({
       header: 'customersuccessfully saved',
+      duration: 2000, 
       position: 'bottom',
       color: 'success',
       cssClass: 'toast-custom-class',
       buttons: [
         {
           side: 'end',
-          duration:'',
           text: 'Close',
           role: 'cancel',
          
