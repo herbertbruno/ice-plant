@@ -1,9 +1,47 @@
+.sale-list {
+    ion-icon {
+        color: #5b5b5c;
 
-.loading{ 
-    text-align:center;
-    padding:100px;
-     ion-spinner{
-        padding:20px;
-        margin:0 atuo ;
+    }
+
+    ion-card {
+        margin-top: 25px;
+        box-shadow: 0px 2px 10px #9b9999;
+        padding: 8px;
+        border-left: 3px solid #f00a0a;
+        border-right: 2px solid #da0101;
+
+    }
+
+    h6 {
+        font-size: 16px !important;
+        color: rgb(10, 6, 6);
+    }
+
+    p {
+        color: rgb(243, 30, 30);
+    }
+
+}
+
+.sale {
+    color: rgb(1, 15, 41);
+    font-family: Serif;
+}
+
+.button {
+    width: auto;
+    margin: auto;
+
+
+}
+
+.loading {
+    text-align: center;
+    padding: 100px;
+
+    ion-spinner {
+        padding: 20px;
+        margin: 0 atuo;
     }
 }
