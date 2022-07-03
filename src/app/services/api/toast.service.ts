@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { ToastController } from '@ionic/angular';
 import { ICustomer } from 'src/app/interfaces/customer';
 
@@ -9,7 +11,8 @@ import { ICustomer } from 'src/app/interfaces/customer';
 
 export class ToastService {
   
-  constructor(public toastController: ToastController) { }
+  constructor(public toastController: ToastController,public afStore: AngularFirestore,
+    public ngFireAuth: AngularFireAuth) { }
   displayToast() {
     this.toastController.create({
       header: 'customersuccessfully saved',
@@ -17,17 +20,6 @@ export class ToastService {
       position: 'bottom',
       color: 'success',
       cssClass: 'toast-custom-class',
-      buttons: [
-        {
-          side: 'end',
-          text: 'Close',
-          role: 'cancel',
-         
-          handler: () => {
-            console.log('');
-          }
-        }
-      ]
     }).then((toast) => {
       
       toast.present();
