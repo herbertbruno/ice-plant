@@ -10,13 +10,14 @@
 </ion-header>
 
 <ion-content>
+  <div class="cont">
   <form [formGroup]="expenseForm" (ngSubmit)="save()">
     <ion-text
       class="ion-padding"
       color="danger"
       *ngIf="submited && expenseForm.controls.expensesType.errors?.required"
     >
-      {{'EXPENSE_TYPE_SHOULD_BE_ENTERD' | translate}}
+      {{'EXPENSE_ENTERD' | translate}}
     </ion-text>
     <ion-item>
       <ion-label>{{'EXPENSE_TYPE' | translate}} </ion-label>
@@ -40,7 +41,7 @@
       color="danger"
       *ngIf="submited && expenseForm.controls.expenseNotes.errors?.required"
     >
-      {{'EXPENSE_NOTE_SHOULD_BE_ENTERD' | translate}}
+      {{'EXPENSE_NOTEN' | translate}}
     </ion-text>
     <ion-item>
       <ion-label>{{'EXPENSE_NOTE' | translate}}</ion-label>
@@ -51,7 +52,7 @@
       color="danger"
       *ngIf="submited && expenseForm.controls.date.errors?.required"
     >
-      {{'DATE_SHOULD_BE_ENTERD' | translate}}
+      {{'DATE_ENTERD' | translate}}
     </ion-text>
     <ion-item>
       <ion-label> {{'DATE' | translate}}</ion-label>
@@ -67,7 +68,7 @@
       color="danger"
       *ngIf="submited && expenseForm.controls.time.errors?.required"
     >
-      {{'TIME_SHOULD_BE_ENTERD' | translate}}
+      {{'TIME_ENTERD' | translate}}
     </ion-text>
     <ion-item>
       <ion-label>{{'TIME' | translate}}</ion-label>
@@ -82,13 +83,14 @@
       color="danger"
       *ngIf="submited && expenseForm.controls.amount.errors?.required"
     >
-      {{'AMOUNT_SHOULD_BE_ENTERD' | translate}}
+      {{'AMOUNT_ENTERD' | translate}}
     </ion-text>
     <ion-item>
       <ion-label>{{'AMOUNT' | translate}}</ion-label>
       <ion-input formControlName="amount" type="number"></ion-input>
     </ion-item>
 
-    <ion-button routerLink="/list-expense" size="medium" type="submit">Save</ion-button>
+    <ion-button  color="success"  type="submit"  expand="block">{{'SAVE' | translate}}</ion-button>
   </form>
+</div>
 </ion-content>
