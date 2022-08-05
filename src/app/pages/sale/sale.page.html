@@ -59,7 +59,7 @@
       <ion-item>
 
         <ion-label> {{'RATE_PER_ICE' | translate}} </ion-label>
-        <ion-input type="number" formControlName="ratePerItem"></ion-input>
+        <ion-input type="number"  (ionChange)="calculateTotal()" formControlName="ratePerItem"></ion-input>
 
       </ion-item>
       
@@ -70,7 +70,7 @@
       
       <ion-item>
         <ion-label> {{'NO_OF_BARS' | translate}}</ion-label>
-        <ion-input type="number" formControlName="numberOfItems"></ion-input>
+        <ion-input type="number"  (ionChange)="calculateTotal()"  formControlName="numberOfItems"></ion-input>
       </ion-item>
       <!-- <ion-item>Ice Type</ion-item> -->
       
@@ -104,7 +104,8 @@
       </ion-item>
       <ion-item>
         <ion-label > {{ 'TOTAL' | translate}} </ion-label>
-        <ion-input type="number" formControlName="total"></ion-input>
+       <div class="ion-padding"> {{total}}</div>
+        <!-- <ion-input type="number" formControlName="total"></ion-input> -->
 
       </ion-item>
 

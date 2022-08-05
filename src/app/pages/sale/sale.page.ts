@@ -16,10 +16,8 @@ import { NavController, ToastController } from '@ionic/angular';
 export class SalePage implements OnInit {
   saleForm: FormGroup;
   submited: boolean = false;
-  waitingFlag: boolean;
-  ratePerItem: any;
-  numberOfItems: any;
-  total: number;
+  waitingFlag: boolean; 
+  total: number = 0;
   
 
   constructor(private navCtrl: NavController,
@@ -29,8 +27,7 @@ export class SalePage implements OnInit {
     private saleService: SaleService,
     public formBuilder: FormBuilder) { }
     
-    
-
+     
 
   ngOnInit() {
    
@@ -47,8 +44,10 @@ export class SalePage implements OnInit {
     
   }
   
-  getTotal(){
-    this.total= this.ratePerItem * this.numberOfItems;
+  calculateTotal(){
+      
+    this.total = this.saleForm.value.ratePerItem * this.saleForm.value.numberOfItems;
+     
    
   }
   
@@ -58,12 +57,12 @@ export class SalePage implements OnInit {
    
     this.submited = true;
     console.log(this.saleForm.valid);
-    if (this.saleForm.valid) {
+    //if (this.saleForm.valid) {
       let sale: ISale = this.saleForm.value;
-      this.saleService.createNewSale(sale);
-      this.toastService.displayToast();
-      this.getTotal;
-      console.log(this.getTotal);
+      //this.saleService.createNewSale(sale);
+    //  this.toastService.displayToast();
+      
+      console.log(this.calculateTotal());
 
       // this.calculateTotal();
 
@@ -71,7 +70,7 @@ export class SalePage implements OnInit {
       //  this.navCtrl.navigateBack("/list-sale");
 
       
-    }
+   // }
     
   }
 }
