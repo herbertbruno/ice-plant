@@ -8,9 +8,11 @@
 </ion-header>
 
 <ion-content>
-
-
-
+  
+  <ion-refresher slot="fixed"  (ionRefresh)="save($event)">
+    <ion-refresher-content >
+    </ion-refresher-content>
+  </ion-refresher>
     <form [formGroup]="saleForm" (ngSubmit)="save()">
       
         <ion-text class="ion-padding" color="danger" *ngIf="submited && saleForm.controls.date.errors?.required">
@@ -57,7 +59,7 @@
       <ion-item>
 
         <ion-label> {{'RATE_PER_ICE' | translate}} </ion-label>
-        <ion-input type="number" formControlName="ratePerItem"></ion-input>
+        <ion-input type="number"  (ionChange)="calculateTotal()" formControlName="ratePerItem"></ion-input>
 
       </ion-item>
       
@@ -68,7 +70,7 @@
       
       <ion-item>
         <ion-label> {{'NO_OF_BARS' | translate}}</ion-label>
-        <ion-input type="number" formControlName="numberOfItems"></ion-input>
+        <ion-input type="number"  (ionChange)="calculateTotal()"  formControlName="numberOfItems"></ion-input>
       </ion-item>
       <!-- <ion-item>Ice Type</ion-item> -->
       
@@ -77,8 +79,8 @@
           {{'ICE_TYPE_SHOULD_BE_ENTERD'| translate}}
         </ion-text>
      
-      <ion-row>
-        <ion-col>{{'ICE_TYPE' |translate}}</ion-col>
+      <ion-row class="ion-padding">
+        <ion-col >{{'ICE_TYPE' |translate}}</ion-col>
         <ion-col>
           <ion-segment formControlName="iceType">
 
@@ -101,11 +103,16 @@
         </ion-toolbar>
       </ion-item>
       <ion-item>
-        <ion-label> {{'TOTAL' | translate}} </ion-label>
+        <ion-label > {{ 'TOTAL' | translate}} </ion-label>
+       <div class="ion-padding"> {{total}}</div>
+        <!-- <ion-input type="number" formControlName="total"></ion-input> -->
+
       </ion-item>
 
-      <ion-button color="success" type="submit" expand="block">COMPLETE SALE</ion-button>
-
+      <div class="ion-padding">
+      <ion-button  color="success" type="submit" expand="block">COMPLETE SALE</ion-button>
+    </div>
+    
     </form>
   
 </ion-content>
