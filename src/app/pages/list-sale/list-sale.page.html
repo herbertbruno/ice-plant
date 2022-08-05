@@ -21,6 +21,7 @@
     </ion-card> 
   <ion-list class ="sale-list">
   <ion-card class="ion-padding" *ngFor="let sale of sales">
+ 
     <ion-button >{{'EDIT_SALE' | translate }}
     <ion-icon  name="create-outline"></ion-icon></ion-button>
     <ion-item  lines="none"> 
@@ -65,6 +66,7 @@
     <h6>{{ sale.iceType }}</h6>
   </ion-label>
 </ion-item>
+ 
   </ion-card>
 </ion-list>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
