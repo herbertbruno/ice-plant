@@ -27,14 +27,14 @@
       <ion-icon slot="start" name="calendar"></ion-icon>
       <ion-label>
     <p>{{ 'DATE' | translate}}</p> 
-  <h6> {{ sale.date }}</h6>
+  <h6> {{formateDate(sale.date)  }}</h6>
 </ion-label>
 </ion-item>
     <ion-item lines="none">
     <ion-icon  slot="start" name="alarm"></ion-icon>
     <ion-label>
     <p>{{ 'TIME' | translate}}</p>
-   <h6> {{sale.time }}</h6>
+   <h6> {{formateTime(sale.time) }}</h6>
   </ion-label>
 </ion-item>
    <ion-item lines="none">

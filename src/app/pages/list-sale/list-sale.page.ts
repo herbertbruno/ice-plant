@@ -35,6 +35,9 @@ export class ListSalePage implements OnInit {
   formateDate(d: string) {
     return moment(d).format("DD-MM-YYYY");
   }
+  formateTime(d: string) {
+    return moment(d).format("HH:mm");
+  }
   getSales() {
     this.commonSer.getCollectionList('sale').then(cloudSalesData => {
       this.sales = cloudSalesData;
