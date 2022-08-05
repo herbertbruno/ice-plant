@@ -1,33 +1,67 @@
 import { Component, OnInit } from '@angular/core';
 import { ISale } from 'src/app/interfaces/sale';
 import { SaleService } from 'src/app/services/api/sale.service';
-
+import { CommonService } from 'src/app/services/api/common.service';
+import * as moment from 'moment';
 @Component({
   selector: 'app-list-sale',
   templateUrl: './list-sale.page.html',
   styleUrls: ['./list-sale.page.scss'],
 })
 export class ListSalePage implements OnInit {
-  sales: any =[];
+  sales: any = [];
   waitingFlag: boolean;
+  selectedDate: any = new Date();
 
+  constructor(private saleService: SaleService, private commonSer: CommonService,) { }
 
-  constructor(private saleService: SaleService) { }
-
-  ngOnInit() {
-    this.waitingFlag = true;
+  getSaleList(event: any = false) {
     this.saleService.getSaleList().then(cloudSalesData => {
       this.sales = cloudSalesData;
-      console.log(cloudSalesData);
-      this.waitingFlag = false;
+      if (event) {// pull down to refresh call
+        event.detail.complete();// stop loading
+      }
     })
-    // this.sales = ['Sale 1', 'Sale 2', 'Sale 3', 'Sale 4', 'Sale 5', 'Sale 6'];
-
-    // for (var sale of this.sales) {
-    //    console.log(sale);
-    // }
-
 
   }
+  ngOnInit() {
+    this.getSaleList();
+    this.getSales();
+  }
+  dateChanged(d) {
+    //this.selectedDate =  this.formateDate(d); 
+    this.calculateSales();
+  }
+  formateDate(d: string) {
+    return moment(d).format("DD-MM-YYYY");
+  }
+  getSales() {
+    this.commonSer.getCollectionList('sale').then(cloudSalesData => {
+      this.sales = cloudSalesData;
+    });
+  }
 
+  calculateSales() {
+    for (let i in this.sales) {
+      let sale = this.sales[i];
+      //  console.log("selectedDate : : : ",this.formateDate(this.selectedDate))
+      //  console.log("sale.date : : : ",this.formateDate(sale.date))
+
+      if (this.formateDate(this.selectedDate) == this.formateDate(sale.date)) {
+        this.saleService.getSaleList().then(cloudSalesData => {
+          console.log(cloudSalesData);
+          this.sales = cloudSalesData;
+
+        })
+      }
+    }
+  }
+  ionViewWillEnter() {
+    this.waitingFlag = true;
+    this.saleService.getSaleList().then(cloudSalesData => {
+      console.log(cloudSalesData);
+      this.sales = cloudSalesData;
+      this.waitingFlag = false;
+    })
+  }
 }
