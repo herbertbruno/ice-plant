@@ -3,28 +3,73 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>LIST-SALE</ion-title>
+    <ion-title class="sale">LIST-SALE</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="loading" *ngIf="waitingFlag == true">
-    <ion-spinner></ion-spinner>
-  </div>
+  <ion-refresher slot="fixed"  (ionRefresh)="getSaleList($event)">
+    <ion-refresher-content >
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-card>
+    <ion-item>
+      <ion-label> {{'DATE' | translate}}</ion-label>
+      <ion-datetime [(ngModel)]="selectedDate" 
+      (ionChange)="dateChanged()"> </ion-datetime>
+    </ion-item>
+    </ion-card> 
+  <ion-list class ="sale-list">
   <ion-card class="ion-padding" *ngFor="let sale of sales">
-    {{ sale.date }}
-    <p>{{ sale.time }}</p>
-    <p>{{ sale.vechicleType }}</p>
-    <p>{{ sale.ratePerItem }}</p>
-    <p>{{ sale.numberOfItems }}</p>
-    <p>{{ sale.iceType }}</p>
+    <ion-button >{{'EDIT_SALE' | translate }}
+    <ion-icon  name="create-outline"></ion-icon></ion-button>
+    <ion-item  lines="none"> 
+      <ion-icon slot="start" name="calendar"></ion-icon>
+      <ion-label>
+    <p>{{ 'DATE' | translate}}</p> 
+  <h6> {{ sale.date }}</h6>
+</ion-label>
+</ion-item>
+    <ion-item lines="none">
+    <ion-icon  slot="start" name="alarm"></ion-icon>
+    <ion-label>
+    <p>{{ 'TIME' | translate}}</p>
+   <h6> {{sale.time }}</h6>
+  </ion-label>
+</ion-item>
+   <ion-item lines="none">
+   <ion-icon name="car-sport" slot="start"></ion-icon>
+   <ion-label>
+   <p>{{ 'VECHICLETYPE' | translate}}</p>
+    <h6>{{ sale.vechicleType }}</h6>
+  </ion-label>
+  </ion-item>
+    <ion-item  lines="none">
+    <ion-icon name="logo-usd" slot="start"></ion-icon>
+    <ion-label>
+    <p>{{ 'SALE_RATE' | translate}} </p>
+    <h6>{{ sale.ratePerItem }}</h6>
+  </ion-label>
+  </ion-item>
+    <ion-item  lines="none">
+    <ion-icon name="calendar-number"slot="start"></ion-icon>
+    <ion-label>
+    <p>{{ 'NO_ITEMS' | translate}}</p>
+    <h6>{{ sale.numberOfItems }}</h6>
+  </ion-label>
+  </ion-item>
+    <ion-item  lines="none">
+    <ion-icon name="cube" slot="start"></ion-icon>
+    <ion-label>
+    <p>{{ 'ICETYPE' | translate}}</p>
+    <h6>{{ sale.iceType }}</h6>
+  </ion-label>
+</ion-item>
   </ion-card>
-
-  <ion-fab vertical="center" horizontal="end" slot="fixed">
+</ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button routerLink="/sale">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-
-
 </ion-content>

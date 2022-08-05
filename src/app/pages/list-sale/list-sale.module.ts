@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ListSalePageRoutingModule } from './list-sale-routing.module';
 
 import { ListSalePage } from './list-sale.page';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ListSalePageRoutingModule
+    ListSalePageRoutingModule,
+    TranslateModule.forChild()
   ],
   declarations: [ListSalePage]
 })

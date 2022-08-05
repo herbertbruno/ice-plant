@@ -70,5 +70,12 @@
   "CUSTOMER_MOBILE_NUMBER":"Customer Mobile Number",
   "CUSTOMER_EMAIL":"Customer Email",
   "SEARCH":"Search",
-  "ADD_NEW_CUSTOMER":"Add New customer"
+  "ADD_NEW_CUSTOMER":"Add New customer",
+  "CUSTOMER_TIME":"customer time",
+    "LIST_SALE":"List sale",
+    "VECHICLETYPE":"Vechicle Type",
+    "SALE_RATE":"Sale Rate:",
+   "NO_ITEMS":"No of Items:",
+    "ICETYPE":"Ice type:",
+    "EDIT_SALE":"Edit Sale"
 }
