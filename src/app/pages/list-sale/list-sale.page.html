@@ -8,6 +8,7 @@
 </ion-header>
 
 <ion-content>
+  
   <ion-refresher slot="fixed"  (ionRefresh)="getSaleList($event)">
     <ion-refresher-content >
     </ion-refresher-content>
@@ -19,11 +20,15 @@
       (ionChange)="dateChanged()"> </ion-datetime>
     </ion-item>
     </ion-card> 
+    <div class="loading" *ngIf="waitingFlag == true">
+    <ion-spinner></ion-spinner>
+  </div>
   <ion-list class ="sale-list">
   <ion-card class="ion-padding" *ngFor="let sale of sales">
- 
+    <div class="edit">
     <ion-button >{{'EDIT_SALE' | translate }}
-    <ion-icon  name="create-outline"></ion-icon></ion-button>
+    <ion-icon name="create-outline"></ion-icon></ion-button>
+  </div>
     <ion-item  lines="none"> 
       <ion-icon slot="start" name="calendar"></ion-icon>
       <ion-label>
