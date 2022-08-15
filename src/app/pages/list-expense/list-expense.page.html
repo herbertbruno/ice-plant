@@ -3,28 +3,72 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>LIST-EXPENSE</ion-title>
+    <ion-title >{{'LIST_EXPENSE' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-refresher slot="fixed"  (ionRefresh)="getExpenseList($event)">
+    <ion-refresher-content >
+    </ion-refresher-content>
+  </ion-refresher>
   <div class="loading" *ngIf="waitingFlag == true">
     <ion-spinner ></ion-spinner>
   </div>
+
+  <ion-item>
+    <ion-button class="button" color="success" slot="end" size="default">{{'SEARCH' | translate}}</ion-button>
+    <ion-searchbar placeholder="Search..." [(ngModel)]="filterTerm" animated="true"></ion-searchbar>
+  </ion-item>
   
   <ion-list *ngIf="waitingFlag != true">
-    <ion-card class="ion-padding" *ngFor="let expense of expenses">
-      {{expense.name }}
-      <p>{{ expense.expensesType }}</p>
-      <p>{{ expense.expenseNotes }}</p>
-      <p>{{ expense.time }}</p>
-      <p>{{ expense.amount }}</p>
+    <ion-card class="ion-padding" *ngFor="let expense of expenses | filter:filterTerm">
+      <ion-button routerLink="/expense" color="success">{{'EDIT_EXPENSE'  | translate}}</ion-button>
+      <ion-item lines="none">
+        <ion-icon name="cash-outline" slot="start"></ion-icon>
+      <ion-label>
+      <p>{{'EXPENSE_TYPE' | translate}}</p>
+      <h6>{{ expense.expensesType }}</h6>
+    </ion-label>
+  </ion-item>
+
+  <ion-item lines="none">
+  <ion-icon name="save-outline"></ion-icon>    
+   <ion-label class="ion-padding">
+      <p>{{'EXPENSE_NOTE' | translate}}</p>
+      <h6>{{ expense.expenseNotes }}</h6>
+    </ion-label>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-icon name="calendar-outline"></ion-icon>     
+       <ion-label class="ion-padding">
+        <p>{{'DATE' | translate}}</p>
+      <h6>{{ formateDate (expense.date) }}</h6>
+    </ion-label>  
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-icon name="time-outline"></ion-icon>      
+       <ion-label class="ion-padding">
+        <p>{{'TIME' | translate}}</p>
+      <h6>{{ formateTime(expense.time) }}</h6>
+    </ion-label>  
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-icon name="card-outline"></ion-icon>
+      <ion-label class="ion-padding">
+        <p>{{'AMOUNT' | translate}}</p>
+      <h6>{{ expense.amount }}</h6>
+    </ion-label>
+    </ion-item>
     </ion-card>  
   
 </ion-list>
-<ion-fab vertical="center" horizontal="end" slot="fixed">
-  <ion-fab-button routerLink="/expense">
-    <ion-icon name="add"></ion-icon> 
+<ion-fab vertical="bottom" horizontal="end"   slot="fixed">
+  <ion-fab-button color="success" routerLink="/expense">
+    <ion-icon name="add" color="dark"></ion-icon> 
   </ion-fab-button>
 </ion-fab>
 </ion-content>
