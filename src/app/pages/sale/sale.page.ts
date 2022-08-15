@@ -57,20 +57,15 @@ export class SalePage implements OnInit {
    
     this.submited = true;
     console.log(this.saleForm.valid);
-    //if (this.saleForm.valid) {
+    if (this.saleForm.valid) {
       let sale: ISale = this.saleForm.value;
-      //this.saleService.createNewSale(sale);
-    //  this.toastService.displayToast();
-      
+      this.saleService.createNewSale(sale);
+      this.toastService.displayToast();
       console.log(this.calculateTotal());
-
-      // this.calculateTotal();
-
-      
-      //  this.navCtrl.navigateBack("/list-sale");
+       this.navCtrl.navigateBack("/list-sale");
 
       
-   // }
+    }
     
   }
 }

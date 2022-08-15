@@ -9,10 +9,10 @@
 
 <ion-content>
   
-  <ion-refresher slot="fixed"  (ionRefresh)="save($event)">
+  <!-- <ion-refresher slot="fixed"  (ionRefresh)="save($event)">
     <ion-refresher-content >
     </ion-refresher-content>
-  </ion-refresher>
+  </ion-refresher> -->
     <form [formGroup]="saleForm" (ngSubmit)="save()">
       
         <ion-text class="ion-padding" color="danger" *ngIf="submited && saleForm.controls.date.errors?.required">
