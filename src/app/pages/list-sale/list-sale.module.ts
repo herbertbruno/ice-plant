@@ -8,6 +8,7 @@ import { ListSalePageRoutingModule } from './list-sale-routing.module';
 
 import { ListSalePage } from './list-sale.page';
 import { TranslateModule } from '@ngx-translate/core';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { TranslateModule } from '@ngx-translate/core';
     FormsModule,
     IonicModule,
     ListSalePageRoutingModule,
+    Ng2SearchPipeModule,
     TranslateModule.forChild()
   ],
   declarations: [ListSalePage]

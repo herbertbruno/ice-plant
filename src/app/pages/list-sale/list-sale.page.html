@@ -8,23 +8,27 @@
 </ion-header>
 
 <ion-content>
-  
   <ion-refresher slot="fixed"  (ionRefresh)="getSaleList($event)">
     <ion-refresher-content >
     </ion-refresher-content>
   </ion-refresher>
+  
+  <ion-item>
+    <ion-button class="button" color="primary" slot="end" size="default">{{'SEARCH' | translate}}</ion-button>
+    <ion-searchbar placeholder="Search..." [(ngModel)]="filterTerm" animated="true"></ion-searchbar>
+  </ion-item>
   <ion-card>
     <ion-item>
       <ion-label> {{'DATE' | translate}}</ion-label>
       <ion-datetime [(ngModel)]="selectedDate" 
-      (ionChange)="dateChanged()"> </ion-datetime>
+      (ionChange)="dateChanged()" [(ngModel)]="filterTerm" animated="true"> </ion-datetime>
     </ion-item>
     </ion-card> 
     <div class="loading" *ngIf="waitingFlag == true">
     <ion-spinner></ion-spinner>
   </div>
   <ion-list class ="sale-list">
-  <ion-card class="ion-padding" *ngFor="let sale of sales">
+  <ion-card class="ion-padding" *ngFor="let sale of sales | filter:filterTerm">
     <div class="edit">
     <ion-button >{{'EDIT_SALE' | translate }}
     <ion-icon name="create-outline"></ion-icon></ion-button>
@@ -71,7 +75,6 @@
     <h6>{{ sale.iceType }}</h6>
   </ion-label>
 </ion-item>
- 
   </ion-card>
 </ion-list>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
