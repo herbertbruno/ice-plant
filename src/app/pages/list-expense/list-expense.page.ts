@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import * as moment from 'moment';
 import { IExpense } from 'src/app/expense';
 import { ExpenseService } from 'src/app/services/api/expense.service';
@@ -12,7 +13,7 @@ export class ListExpensePage implements OnInit {
   filterTerm: string;
   waitingFlag: boolean;
 
-  constructor(private expenseService: ExpenseService) { }
+  constructor(private expenseService: ExpenseService,public nav: NavController) { }
 
   getExpenseList(event: any = false){
     this.expenseService.getExpenseList().then(cloudCustomersData => { 
@@ -41,6 +42,12 @@ export class ListExpensePage implements OnInit {
   }
   formateTime(d: string) {
     return moment(d).format("HH:mm");
+  }
+  editExpense(expense:IExpense){
+   
+ this.nav.navigateForward('/expense', { state: expense }); // send expense data to edit page
+     
+
   }
 
 }

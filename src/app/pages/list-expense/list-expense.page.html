@@ -23,7 +23,7 @@
   
   <ion-list *ngIf="waitingFlag != true">
     <ion-card class="ion-padding" *ngFor="let expense of expenses | filter:filterTerm">
-      <ion-button routerLink="/expense" color="success">{{'EDIT_EXPENSE'  | translate}}</ion-button>
+      <ion-button  (click)="editExpense(expense)" color="success">{{'EDIT_EXPENSE'  | translate}}</ion-button>
       <ion-item lines="none">
         <ion-icon name="cash-outline" slot="start"></ion-icon>
       <ion-label>

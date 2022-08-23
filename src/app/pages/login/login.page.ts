@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 //import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -46,7 +47,8 @@ export class LoginPage implements OnInit {
   }
 
   navigatePage() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/home']); 
+   
   }
 
 }

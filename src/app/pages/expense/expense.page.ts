@@ -13,12 +13,22 @@ export class ExpensePage implements OnInit {
   expenseForm: FormGroup;
   submited: boolean = false;
 
-
  
+  constructor(private expenseService :  ExpenseService , public formBuilder: FormBuilder,public router: Router) {
 
-  constructor(private expenseService :  ExpenseService , public formBuilder: FormBuilder) { }
+ if (router.getCurrentNavigation().extras.state) {
+       const expenses= this.router.getCurrentNavigation().extras.state;
+       console.log(expenses) 
+     }
+
+   }
  
-
+ // constructor(public router: Router){
+ // if (router.getCurrentNavigation().extras.state) {
+ //       const pageName = this.router.getCurrentNavigation().extras.state;
+ // console.log(pageName) 
+ //     } 
+ // }
 
   ngOnInit() {
 
@@ -39,6 +49,7 @@ export class ExpensePage implements OnInit {
     if (this.expenseForm.valid) {
       let expense:IExpense = this.expenseForm.value;
       this.expenseService.createNewExpense(expense);
+      this.expenseService.updateExpense(expense);
     }
   }
   

@@ -51,7 +51,19 @@ export class ExpenseService {
     //send to firebase
 
     const snapshot = await this.afStore.collection('expense').doc().set(expense, { merge: true });
+    
+    
+    console.log();
 
+  }
+  async updateExpense(expense: IExpense) {
+    console.log(expense);
+    // db.collection('users').doc(user_id).set({foo:'bar'}, {merge: true})//
+    //send to firebase
+
+    const snapshot = await this.afStore.collection('expense').doc().set(expense, { merge: true });
+    
+    
     console.log();
 
   }
