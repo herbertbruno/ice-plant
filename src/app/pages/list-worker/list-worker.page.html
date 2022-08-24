@@ -3,27 +3,49 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>LIST-WORKER</ion-title>
+    <ion-title class="worker">LIST-WORKER</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="loading" *ngIf="waitingFlag == true">
-    <ion-spinner ></ion-spinner>
-  </div>
- 
-      <ion-list *ngIf="waitingFlag != true">
-        <ion-card  *ngFor="let worker of workers">
-          {{worker.date }}
-          <p>{{ worker.time }}</p>
-          <p>{{ worker.iceProduced }}</p>
-    
-    </ion-card>  
   
-</ion-list>
-    <ion-fab vertical="center" horizontal="end" slot="fixed">
-      <ion-fab-button routerLink="/worker">
-        <ion-icon name="add"></ion-icon>  
-      </ion-fab-button>
-    </ion-fab>
+  <div class="loading" *ngIf="waitingFlag == true">
+    <ion-spinner></ion-spinner>
+  </div>
+
+  <ion-list class="worker-list" >
+    <ion-card class="ion-padding" *ngFor="let worker of workers">
+      <ion-button color="danger" (ngSubmit)="edit()">{{'EDIT_SALE' | translate }}
+        <ion-icon  name="create-outline"></ion-icon></ion-button>
+      <ion-item lines="none">
+        <ion-icon slot="start" name="calendar"></ion-icon>
+        <ion-label>
+          <p>{{ 'DATE' | translate}}</p>
+          <h6> {{formateDate(worker.date) }}</h6>
+        </ion-label>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-icon slot="start" name="alarm"></ion-icon>
+        <ion-label>
+          <p>{{ 'TIME' | translate}}</p>
+          <h6> {{formateTime(worker.time) }}</h6>
+        </ion-label>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon slot="start" name="cube"></ion-icon>
+        <ion-label>
+          <p>{{'NO_OF_ICE_PRODUCED' | translate}}:</p>
+          <h6> {{ worker.iceProduced }}</h6>
+        </ion-label>
+      </ion-item>
+
+    </ion-card>
+
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/worker">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

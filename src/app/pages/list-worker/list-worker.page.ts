@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IWorker } from 'src/app/interfaces/worker';
 import { WorkerService } from 'src/app/services/api/worker.service';
-
+import * as moment from 'moment';
 @Component({
   selector: 'app-list-worker',
   templateUrl: './list-worker.page.html',
@@ -10,7 +10,7 @@ import { WorkerService } from 'src/app/services/api/worker.service';
 export class ListWorkerPage implements OnInit {
   workers:IWorker[];
   waitingFlag: boolean;
-
+  selectedDate: any = new Date();
   constructor(private workerService: WorkerService) { }
 
   ngOnInit() {
@@ -22,4 +22,15 @@ export class ListWorkerPage implements OnInit {
     })
 
 }
+formateDate(d: string) {
+  return moment(d).format("DD-MM-YYYY");
 }
+formateTime(d: string) {
+  return moment(d).format("HH:mm");
+}
+
+edit(){
+
+}
+}
+

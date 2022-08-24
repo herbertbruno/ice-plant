@@ -7,13 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { ListWorkerPageRoutingModule } from './list-worker-routing.module';
 
 import { ListWorkerPage } from './list-worker.page';
-
+import { TranslateModule } from '@ngx-translate/core';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ListWorkerPageRoutingModule
+    ListWorkerPageRoutingModule,
+    TranslateModule.forChild()
   ],
   declarations: [ListWorkerPage]
 })
